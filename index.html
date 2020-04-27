@@ -41,8 +41,7 @@ $(document).ready(function() {
             game.shuffle();
         },
         // Iterate over the cards array and each time generate a random number 
-        // then swapping numbers which shuffles cards
-        //
+        // then swapping numbers which shuffles cards and then, after cards are shuffled, assign cards
         shuffle: function() {
             var random = 0;
             var temp = 0;
@@ -52,14 +51,22 @@ $(document).ready(function() {
                 game.cards[i] = game.cards[random];
                 game.cards[random] = temp;
             }
-            game.getCard();
+            game.getCards();
         },
         // Iterate over each one on the elements with class="card" and assign a data-value attribute and a relative value to each one of the individual cards 
-        getCard: function() {
+        // https://api.jquery.com/data/
+        getCards: function() {
             $(".card").each(function (index) {
-                $(this).attr("data-value", game.cards[index]);
+                $(this).attr("data-card-figure", game.cards[index]);
             });
-        }
+            game.clickCardHandlers();
+        },
+        // Display the figure of the card on-click and add the class attibute 'selected' to the selected card.
+        clickCardHandlers: function() {
+            $(".card").click (function() {
+                $(this).html("<p>" + $(this).data("cardFigure") + "</p>").addClass("selected");
+            });
+        },
     };
 
     game.init();
