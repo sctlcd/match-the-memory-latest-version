@@ -40,8 +40,9 @@ $(document).ready(function() {
         init: function() {
             game.shuffle();
         },
-        // Iterate through the array Card and each time generate a random number 
-        // then swapping numbers which going to shuffle cards
+        // Iterate over the cards array and each time generate a random number 
+        // then swapping numbers which shuffles cards
+        //
         shuffle: function() {
             var random = 0;
             var temp = 0;
@@ -51,7 +52,13 @@ $(document).ready(function() {
                 game.cards[i] = game.cards[random];
                 game.cards[random] = temp;
             }
-            console.log(game.cards);
+            game.getCard();
+        },
+        // Iterate over each one on the elements with class="card" and assign a data-value attribute and a relative value to each one of the individual cards 
+        getCard: function() {
+            $(".card").each(function (index) {
+                $(this).attr("data-value", game.cards[index]);
+            });
         }
     };
 
