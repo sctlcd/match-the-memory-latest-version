@@ -3,6 +3,7 @@ $(document).ready(function() {
     // game namespace/game variable  
     var game = {
         cards: ["A", "A", "B", "B", "C", "C", "D", "D"],
+        counter: 0,
         init: function() {
             game.shuffle();
         },
@@ -36,6 +37,7 @@ $(document).ready(function() {
         clickCardHandlers: function() {
             $(".card").click (function() {
                 $(this).html("<p>" + $(this).data("cardFigure") + "</p>").addClass("visible");
+                
                 game.checkForPairedCards();
             });
         },
@@ -58,6 +60,8 @@ $(document).ready(function() {
                         });
                     }, 500);
                 }
+                game.counter++;
+                $("#counter").html("" + game.counter);
             }
         },
 

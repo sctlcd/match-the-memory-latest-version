@@ -2,6 +2,20 @@
     box-sizing: border-box;
 }
 
+/*------------------------------------------------------ header -------------------*/
+
+.header {
+    text-align: center;
+}
+
+/*------------------------------------------------------ container-performances -------------------*/
+
+.container-performances {
+    text-align: center;
+}
+
+/*------------------------------------------------------ container-cards -------------------*/
+
 .container-cards{
         width: 740px; /*-- For 6 cards --*/ 
         /* width: 1080px; for 12 cards */
