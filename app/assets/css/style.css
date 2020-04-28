@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+
 * {
     box-sizing: border-box;
+    /* font-family: 'Press Start 2P', cursive; */
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
 }
 
 /*------------------------------------------------------ header -------------------*/
@@ -12,6 +18,13 @@
 
 .container-performances {
     text-align: center;
+}
+
+.badge {
+    padding-top: 0.55em;
+    padding-right: 0.8em;
+    padding-bottom: 0.45em;
+    padding-left: 0.8em;
 }
 
 /*------------------------------------------------------ container-cards -------------------*/
