@@ -1,23 +1,28 @@
 $(document).ready(function() {
+    
     // game namespace/game variable  
     var game = {
-        cards: [1,1,2,2,3,3,4,4,5,5,6,6],
+        cards: ["A", "A", "B", "B", "C", "C", "D", "D"],
         init: function() {
             game.shuffle();
         },
+
         // Iterate over the cards array and each time generate a random number 
-        // then swapping numbers which shuffles cards and then, after cards are shuffled, assign cards
+        // then switching numbers which shuffles cards and add the html element relative to each individual card with the classes card and unpaired
+        // and then, after cards are shuffled, assign cards
         shuffle: function() {
-            var random = 0;
+            var switching = 0;
             var temp = 0;
-            for ( i = 1; i < game.cards.length; i++) {
-                random = Math.round(Math.random() * i);
+            for ( i = 0; i < game.cards.length ; i++) {
+                switching = Math.round(Math.random() * i);
                 temp = game.cards[i];
-                game.cards[i] = game.cards[random];
-                game.cards[random] = temp;
+                game.cards[i] = game.cards[switching];
+                game.cards[switching] = temp;
+                $(".col-cards").append('<div class="card unpaired"></div>');
             }
             game.getCards();
         },
+
         // Iterate over each one on the elements with class="card" and assign a data-value attribute and a relative value to each one of the individual cards 
         // https://api.jquery.com/data/
         getCards: function() {
@@ -26,13 +31,16 @@ $(document).ready(function() {
             });
             game.clickCardHandlers();
         },
-        // Display the figure of the card on-click and add the class attibute 'selected' to the selected card.
+
+        // Display the figure of the card on-click and add the class attibute "visible" to the selected card.
         clickCardHandlers: function() {
             $(".card").click (function() {
                 $(this).html("<p>" + $(this).data("cardFigure") + "</p>").addClass("visible");
                 game.checkForPairedCards();
             });
         },
+
+        // Check if a pair of cards have a similar figure, make the paired ones disapeared and hide the figures of the unpaired ones after a timeout interval
         checkForPairedCards: function() {
             if ($(".visible").length == 2) {
                 if($(".visible").first().data("cardFigure") == $(".visible").last().data("cardFigure")) {
@@ -48,12 +56,14 @@ $(document).ready(function() {
                         $(".visible").each(function() {
                             $(this).html("").removeClass("visible");
                         });
-                    }, 1000);
+                    }, 500);
                 }
             }
         },
+
+        // Check if all cards are paired
         checkForSuccess: function() {
-            if($("unpaired").length == 0) {
+            if($(".unpaired").length === 0) {
                 $(".container-cards").html('<h1> Congrats! You Won! :) </h1>');
             }
         }

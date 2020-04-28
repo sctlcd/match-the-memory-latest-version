@@ -3,7 +3,8 @@
 }
 
 .container-cards{
-        width: 1080px;
+        width: 740px; /*-- For 6 cards --*/ 
+        /* width: 1080px; for 12 cards */
         margin: 0 auto;
 }
 .card {
