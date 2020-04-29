@@ -1,17 +1,18 @@
-$(document).ready(function() {
+    $(document).ready(function() {
     
     // game namespace/game variable  
     var game = {
         cards: ["A", "A", "B", "B", "C", "C", "D", "D"],
-        counter: 0,
-        init: function() {
-            game.shuffle();
+        moves: 0,
+        init: function(moves) {
+            game.resetMoves();
+            game.shuffleCards();
         },
 
         // Iterate over the cards array and each time generate a random number 
         // then switching numbers which shuffles cards and add the html element relative to each individual card with the classes card and unpaired
         // and then, after cards are shuffled, assign cards
-        shuffle: function() {
+        shuffleCards: function() {
             var switching = 0;
             var temp = 0;
             for ( i = 0; i < game.cards.length ; i++) {
@@ -60,8 +61,8 @@ $(document).ready(function() {
                         });
                     }, 500);
                 }
-                game.counter++;
-                $("#counter").html("" + game.counter);
+                game.moves++;
+                $("#moves").html("" + game.moves);
             }
         },
 
@@ -70,7 +71,22 @@ $(document).ready(function() {
             if($(".unpaired").length === 0) {
                 $(".container-cards").html('<h1> Congrats! You Won! :) </h1>');
             }
+        },
+
+        // Start a new game 
+        restart: function() {
+            $("#target").click(function() {
+                $(".col-cards").empty();
+                game.init();
+            })
+            },
+            
+        // Reset moves counter
+        resetMoves: function() {
+            game.moves = 0;
+            $("#moves").html("" + game.moves);
         }
     };
     game.init();
+    game.restart();  
 });

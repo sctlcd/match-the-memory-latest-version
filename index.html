@@ -13,7 +13,9 @@
     />
     <link rel="stylesheet" href="app/assets/css/style.css" type="text/css" />
   </head>
+
   <body>
+    <!-- header -->
     <header class="header">
       <div class="row">
         <div class="col">
@@ -22,13 +24,21 @@
       </div>
     </header>
 
+    <!-- container-performances -->
     <section class="container-performances">
       <div class="row">
         <div class="col">
-          <p><h4><span class="badge badge-primary"><span id="counter">0</span> moves</span></h4></p>
+          <p>
+            <h4><span class="badge badge-primary moves"><span id="moves">0</span> moves</span></h4>
+          </p>
+          <p id="target">  Click here</p>
+ 
         </div>
+        
       </div>
     </section>
+
+    <!-- container-cards -->
     <section class="container-cards">
       <div class="row">
         <div class="col col-cards"></div>
@@ -36,6 +46,7 @@
     </section>
 
     <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/e576f39845.js" crossorigin="anonymous"></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
