@@ -75,7 +75,7 @@
 
         // Start a new game 
         restart: function() {
-            $("#target").click(function() {
+            $("#restart").click(function() {
                 $(".col-cards").empty();
                 game.init();
             })
