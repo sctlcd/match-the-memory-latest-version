@@ -15,6 +15,7 @@
   </head>
 
   <body>
+  <div class="wrapper">
     <!-- header -->
     <header class="header">
       <div class="row">
@@ -29,12 +30,11 @@
       <div class="row">
         <div class="col">
           <p>
-            <h4><span class="badge badge-primary moves"><span id="moves">0</span> moves</span></h4>
+            <h4 class="inline"><span class="badge badge-primary moves"><span id="moves">0</span> moves</span></h4>
+            <button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button>
           </p>
-          <p id="target">  Click here</p>
- 
+          
         </div>
-        
       </div>
     </section>
 
@@ -44,6 +44,25 @@
         <div class="col col-cards"></div>
       </div>
     </section>
+
+    <div class="push"></div>
+    </div>
+    
+    <!-- Footer -->
+	<footer class="container-fluid footer">
+		<div class="footer-details">
+			<div class="row">
+				<div class="col">
+					<p><i class="far fa-copyright"></i> 2020 by Lucinda Souchet   
+                        <a href="TOADD" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span class="sr-only">Github</span>
+						</a>
+                    </p>
+				</div>
+			</div>
+		</div>
+	</footer>
 
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/e576f39845.js" crossorigin="anonymous"></script>

@@ -8,8 +8,20 @@
     font-weight: 700;
 }
 
-p {
-    display: inline-block;
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+
+.inline{
+  display: inline;
 }
 
 /*------------------------------------------------------ header -------------------*/
@@ -31,15 +43,15 @@ p {
     padding-left: 0.8em;
 }
 .badge.moves {
-    padding-top: 0.65em;
-    padding-bottom: 0.64em;
+    padding-top: 0.57em;
+    padding-bottom: 0.57em;
 
 }
 
 /*------------------------------------------------------ container-cards -------------------*/
 
 .container-cards{
-        width: 740px; /*-- For 6 cards --*/ 
+        width: 740px; /* For 6 cards */
         /* width: 1080px; for 12 cards */
         margin: 0 auto;
 }
@@ -62,4 +74,29 @@ p {
 .card p {
     font-size: 48px;
     color: blue;
+}
+
+/*------------------------------------------------------ footer -------------------*/
+
+.footer {
+    background-color: lightslategray; 
+    color: #fafafa;
+    margin: 0;
+    justify-items: center;
+    display: grid;
+}
+
+.footer p {
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.footer,
+.push {
+  height: 50px;
+}
+
+.footer a {
+    color: goldenrod;
 }
