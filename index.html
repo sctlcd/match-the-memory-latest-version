@@ -19,27 +19,29 @@
     <!-- header -->
     <header class="header">
       <div class="row">
-        <div class="col">
-          <h1>Memory game</h1>
+        <div class="col header-details">
         </div>
       </div>
     </header>
 
+    
+
     <!-- container-start-modal -->
     <section class="container-start-modal">
         <div class="row">
-            <div class="col">
+            <div class="col-12">
+                <button type="button" id="btnStartModal" class="btn btn-primary">Let's play!</button>
                 <div class="modal fade" id="startModal" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                     <div class="modal-body">
                         <h5 class="modal-title" id="startMenuTitle">Let's play!</h5><br>
                         <form>
-                            <label for="#id">Enter your name:</label><br>
-                            <input type="text" class="name" id="name">
+                            <label for="#playerName">Enter your name:</label><br>
+                            <input type="text" class="playerName" id="playerName" required>
                         </form>
                         <br>
-                        <button type="button" class="btn btn-primary" id="startGameButton" data-dismiss="modal">Start the game</button>
+                        <button type="button" class="btn btn-primary" id="startGameButton">Start the game</button>
                     </div>
                     </div>
                 </div>
@@ -51,18 +53,7 @@
     <!-- container-performances -->
     <section class="container-performances">
       <div class="row">
-        <div class="col">
-          <p>
-            <h4 class="inline">
-                <span class="badge badge-primary moves">
-                    <span id="moves">0</span> moves
-                </span>
-                <span class="badge badge-primary moves">
-                    <span id="sec_timer">0</span>s
-                </span>
-            </h4>
-            <button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button>
-          </p>
+        <div class="col performance-details">
         </div>
       </div>
     </section>
@@ -103,7 +94,13 @@
     <script
         src="https://code.jquery.com/jquery-3.5.0.js"
         integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+    <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous">
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"

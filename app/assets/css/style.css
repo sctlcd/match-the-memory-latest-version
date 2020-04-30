@@ -12,6 +12,17 @@ html, body {
   height: 100%;
   margin: 0;
 }
+
+body {
+    background: rgb(18, 10, 78) url('../images/photo-of-multicolored-illustration-2832382 (1).jpg');
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+
 .wrapper {
   min-height: 100%;
 
@@ -26,9 +37,22 @@ html, body {
 
 /*------------------------------------------------------ start modal -------------------*/
 
+#btnStartModal {
+    margin: auto;
+    display: block;
+    background-color: blue;
+}
+
 .modal-content {
     text-align: center;
-    width: 70%;
+    width: 80%;
+    margin: auto;
+}
+
+.btn-primary {
+    background-color: blue;
+    border-color: blue;
+
 }
 
 /*------------------------------------------------------ header -------------------*/
@@ -48,6 +72,8 @@ html, body {
     padding-right: 0.8em;
     padding-bottom: 0.55em;
     padding-left: 0.8em;
+    margin-right: 30px;
+    background-color: blue;
 }
 .badge.moves {
     padding-top: 0.57em;
@@ -67,10 +93,14 @@ html, body {
         margin: 10px;
         height: 200px;
         width: 150px;
-        background: goldenrod;
-        text-align: center;
+        background: #df8c29;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat:no-repeat;
+        background-position: top right;
         border-radius: 5px;
-        box-shadow: 10px 10px 10px #ccc;
 }
 
 .card:hover {
@@ -86,9 +116,10 @@ html, body {
 /*------------------------------------------------------ footer -------------------*/
 
 .footer {
-    background-color: lightslategray; 
+    background-color: transparent; 
     color: #fafafa;
-    margin: 0;
+    margin: auto;
+    width: 100%;
     justify-items: center;
     display: grid;
 }
@@ -101,9 +132,9 @@ html, body {
 
 .footer,
 .push {
-  height: 50px;
+  height: 70px;
 }
 
 .footer a {
-    color: goldenrod;
+    color: gold;
 }
