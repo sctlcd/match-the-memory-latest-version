@@ -8,10 +8,15 @@ $(document).ready(function() {
         imgCategory: "animals",
         init: function() {
             $(".card-details").empty();
-            game.resetMoves();
-            game.initTime();
+            game.resetMoves();   
             game.shuffleCards();
-            $("#exampleModalCenter").show("fade","slow");
+
+            $("#startGameButton").click(function(){
+                // e.preventDefault();
+                game.initTime();
+               $("#startModal").modal("toggle");
+            });
+            //  $("#startModal").modal("hide");
         },
 
         // Iterate over the cards array and each time generate a random number 
@@ -107,6 +112,9 @@ $(document).ready(function() {
             }, 1000);   
         }
     };
+
+    $("#startModal").modal("show");
+    
     game.init();
     game.restart();
     
