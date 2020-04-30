@@ -4,9 +4,12 @@ $(document).ready(function() {
     var game = {
         cards: ["A", "A", "B", "B", "C", "C", "D", "D"],
         moves: 0,
+        timeCounter: 0,
         imgCategory: "animals",
         init: function() {
+            $(".card-details").empty();
             game.resetMoves();
+            game.initTime();
             game.shuffleCards();
         },
 
@@ -39,6 +42,7 @@ $(document).ready(function() {
         clickCardHandlers: function() {
             $(".card").click (function() {
                 game.flipCard($(this));
+                
             });
         },
 
@@ -77,20 +81,33 @@ $(document).ready(function() {
             }
         },
 
-        // Start a new game 
-        restart: function() {
-            $("#restart").click(function() {
-                $(".container-cards").html("");
-                $(".card-details").empty();
-                game.init(); 
-            })
-            },
-            
         // Reset moves counter
         resetMoves: function() {
             game.moves = 0;
             $("#moves").html("" + game.moves);
-        } 
+        },
+
+        resetTime: function() {
+            game.timeCounter = -1;
+            $("#sec_timer").html("", game.timeCounter);
+        },
+
+        // Start a new game 
+        restart: function() {
+            $("#restart").click(function() {
+                game.resetMoves();
+                game.resetTime();
+                $(".card-details").empty();
+                game.shuffleCards();
+            })
+        },
+            
+        initTime: function() {
+            setInterval(function () {
+                game.timeCounter++;      
+                 $("#sec_timer").html("" + game.timeCounter);
+            }, 1000);   
+        }
     };
     game.init();
     game.restart();
