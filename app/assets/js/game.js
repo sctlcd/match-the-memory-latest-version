@@ -11,6 +11,7 @@ $(document).ready(function() {
             game.resetMoves();
             game.initTime();
             game.shuffleCards();
+            $("#exampleModalCenter").show("fade","slow");
         },
 
         // Iterate over the cards array and each time generate a random number 
@@ -38,14 +39,13 @@ $(document).ready(function() {
             game.clickCardHandlers();
         },
 
-        // Display the figure of the card on-click and add the class attibute "visible" to the selected card.
         clickCardHandlers: function() {
             $(".card").click (function() {
-                game.flipCard($(this));
-                
+                game.flipCard($(this));           
             });
         },
 
+        // On-click flip the card and display the figure of the card
         flipCard: function(card) {
             card.addClass("visible");
             card.css({'background-image': 'url("https://placeimg.com/150/200/'+game.imgCategory+'/'+card.data("cardFigure")+'")'});
@@ -81,7 +81,6 @@ $(document).ready(function() {
             }
         },
 
-        // Reset moves counter
         resetMoves: function() {
             game.moves = 0;
             $("#moves").html("" + game.moves);
@@ -92,7 +91,6 @@ $(document).ready(function() {
             $("#sec_timer").html("", game.timeCounter);
         },
 
-        // Start a new game 
         restart: function() {
             $("#restart").click(function() {
                 game.resetMoves();

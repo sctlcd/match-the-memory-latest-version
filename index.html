@@ -25,6 +25,39 @@
       </div>
     </header>
 
+    <section class="container-start-menu">
+        <div class="row">
+            <div class="col">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#startMenu">
+                Launch modal
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="startMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                    <!-- <div class="modal-header">
+                    </div> -->
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="startMenuTitle">Let's play!</h5><br>
+                        <form>
+                            <label for="#id">Enter your name:</label><br>
+                            <input type="text" class="name" id="name">
+                        </form>
+                        <br>
+                        <button type="button" class="btn btn-primary">Start the game</button>
+                    </div>
+                    <!-- <div class="modal-footer">
+                        
+                    </div> -->
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- container-performances -->
     <section class="container-performances">
       <div class="row">
@@ -35,7 +68,6 @@
                     <span id="moves">0</span> moves
                 </span>
                 <span class="badge badge-primary moves">
-                    <!-- <span id="min_timer">0</span>m  -->
                     <span id="sec_timer">0</span>s
                 </span>
             </h4>
