@@ -2,15 +2,35 @@ $(document).ready(function() {
     
     // game namespace/game variable  
     var game = {
-        cards: ["A", "A", "B", "B", "C", "C", "D", "D"],
+        cards: ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "G", "G"],
+        playerName,
         moves: 0,
         timeCounter: 0,
         imgCategory: "animals",
-        init: function() {
-            $(".card-details").empty();
-            game.resetMoves();
-            game.initTime();
-            game.shuffleCards();
+        init: function() {   
+            $(".header-details").append("<h1>Memory game</h1>").addClass("uppercase");  
+            $("#startGameButton").click(function(){
+            game.getPlayerData();            
+            });
+        },
+
+        getPlayerData: function() {
+            if ($("#playerName").val() !== "") {
+                game.playerName = $("#playerName").val();
+                game.clickCardHandlers();                
+                $(".performance-details").empty();
+                $(".performance-details").append('<p><h4 class="inline"><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary seconds"><span id="sec_timer">0</span> s</span></h4><button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button></p>'); 
+                //  <span class="badge badge-primary"><a id="restart"><i class="fas fa-redo-alt"></i></a></span>
+                game.restart();
+                game.initTime();
+                game.resetMoves();
+                game.shuffleCards();
+                $("#startModal").modal("toggle");
+            }else {
+                setTimeout(function() {
+                    $("#playerName").effect("bounce");
+                },500);      
+            } 
         },
 
         // Iterate over the cards array and each time generate a random number 
@@ -19,6 +39,7 @@ $(document).ready(function() {
         shuffleCards: function() {
             var switching = 0;
             var temp = 0;
+            $(".card-details").empty();
             for ( i = 0; i < game.cards.length ; i++) {
                 switching = Math.round(Math.random() * i);
                 temp = game.cards[i];
@@ -38,14 +59,13 @@ $(document).ready(function() {
             game.clickCardHandlers();
         },
 
-        // Display the figure of the card on-click and add the class attibute "visible" to the selected card.
         clickCardHandlers: function() {
             $(".card").click (function() {
-                game.flipCard($(this));
-                
+                game.flipCard($(this));           
             });
         },
 
+        // On-click flip the card and display the figure of the card
         flipCard: function(card) {
             card.addClass("visible");
             card.css({'background-image': 'url("https://placeimg.com/150/200/'+game.imgCategory+'/'+card.data("cardFigure")+'")'});
@@ -81,7 +101,6 @@ $(document).ready(function() {
             }
         },
 
-        // Reset moves counter
         resetMoves: function() {
             game.moves = 0;
             $("#moves").html("" + game.moves);
@@ -92,12 +111,10 @@ $(document).ready(function() {
             $("#sec_timer").html("", game.timeCounter);
         },
 
-        // Start a new game 
         restart: function() {
             $("#restart").click(function() {
                 game.resetMoves();
                 game.resetTime();
-                $(".card-details").empty();
                 game.shuffleCards();
             })
         },
@@ -109,7 +126,14 @@ $(document).ready(function() {
             }, 1000);   
         }
     };
+
+    $('#btnStartModal').click(function(){
+  		$('#startModal').modal({
+    		backdrop: 'static',
+    		keyboard: false
+        });
+        $(this).hide();
+	});
     game.init();
-    game.restart();
     
 });
