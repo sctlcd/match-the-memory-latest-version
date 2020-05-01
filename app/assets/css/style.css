@@ -1,223 +1,341 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sedgwick+Ave+Display&display=swap");
 
 * {
-    box-sizing: border-box;
-    /* font-family: 'Press Start 2P', cursive; */
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 700;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 body {
-    background: rgb(18, 10, 78) url('../images/photo-of-multicolored-illustration-2832382-3000-4000.jpg');
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-position: top center;
+  /* Responsive background image credit: https://www.webfx.com/blog/web-design/responsive-background-image/ */
+  /* Set a background color that will be displayed while the background image is loading and Location of the image */
+  background: #1f1740
+    url("../images/photo-of-multicolored-illustration-2832382-3000-4000-min.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  /* This is what makes the background image rescale based on the container's size */
+  background-size: cover;
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  /* Background image is fixed in the viewport so that it doesn't move when the content's height is greater than the image's height */
+  background-attachment: fixed;
 }
 
 .wrapper {
-  min-height: 100%;
-  /* Equal to height of footer */
-  /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -50px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
 }
 
-.inline{
+.inline {
   display: inline;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 /*------------------------------------------------------ start modal -------------------*/
 
+div#startModal.modal.fade.show {
+  padding-right: 0;
+}
+
 #btnStartModal {
-    margin: auto;
-    display: block;
-    background-color: goldenrod;
-    border-color: goldenrod;
-    color: black;
-    font-weight: bold;
+  margin: auto;
+  display: block;
+  background-color: goldenrod;
+  border-color: goldenrod;
+  color: black;
+  font-weight: bold;
 }
 
 #startGameButton {
-    background-color: goldenrod;
-    border-color: goldenrod;
-    color: black;
-    font-weight: bold;
+  background-color: goldenrod;
+  border-color: goldenrod;
+  color: black;
+  font-weight: 700;
 }
 
-#btnStartModal:hover, #startGameButton:hover {
-    box-shadow: 0 0 15px #fafafa;
+#btnStartModal:hover,
+#startGameButton:hover {
+  box-shadow: 0 0 15px #fafafa;
 }
 
 .modal-content {
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    border: solid 2px goldenrod;
-    color: goldenrod;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  border: solid 2px goldenrod;
+  color: goldenrod;
+}
+
+.modal-content h3 {
+  font-family: "Sedgwick Ave Display", cursive;
+  letter-spacing: 4px;
 }
 
 .modal-body {
-    background-color:#130f23;
+  background-color: #1f1740;
 }
 
 .btn-primary {
-    background-color: blue;
-    border-color: blue;
+  background-color: blue;
+  border-color: blue;
 }
 
 .btn-primary:hover {
-    color: #fafafa;
-    background-color: blue;
-    border-color: blue;
+  color: #fafafa;
+  background-color: blue;
+  border-color: blue;
 }
 
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-    color: #fafafa;
-    background-color: blue;
-    border-color: blue;
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fafafa;
+  background-color: blue;
+  border-color: blue;
 }
 
-.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0 transparent;
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0 transparent;
 }
 
- .btn-primary:focus {
-    box-shadow: 0 0 0 0.2rem transparent;
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem transparent;
 }
 
-.btn-primary.focus, .btn-primary:focus {
-    color: #fff;
-    background-color: blue;
-    border-color: blue;
+.btn-primary.focus,
+.btn-primary:focus {
+  color: #fff;
+  background-color: blue;
+  border-color: blue;
 }
 
-.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem transparent;
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem transparent;
 }
 
-#startGameButton.focus, #btnStartModal.focus, #btnStartModal:focus {
-    box-shadow: 0 0 0 0.2rem #d39e0091;
+#startGameButton.focus,
+#btnStartModal.focus,
+#btnStartModal:focus {
+  box-shadow: 0 0 0 0.2rem #d39e0091;
 }
 
 /*------------------------------------------------------ header -------------------*/
 
-.header{
-    text-align: center;
-    color: #fafafa;
+.header {
+  text-align: center;
+  color: #fafafa;
 }
 
 .header-details h1 {
-    margin: 30px auto 30px auto;
+  margin: 30px auto 30px auto;
+  font-family: "Sedgwick Ave Display", cursive;
+  letter-spacing: 4px;
+  font-size: 52px;
 }
 
 /*------------------------------------------------------ container-performances -------------------*/
 
 .container-performances {
-    text-align: center;
+  text-align: center;
 }
 
 .badge {
-    padding-top: 0.55em;
-    padding-right: 0.8em;
-    padding-bottom: 0.55em;
-    padding-left: 0.8em;
-    margin-right: 30px;
-    background-color: blue;
+  padding-top: 0.55em;
+  padding-right: 0.8em;
+  padding-bottom: 0.55em;
+  padding-left: 0.8em;
+  margin-right: 30px;
+  background-color: blue;
 }
 
-.badge.moves, .badge.seconds {
-    padding-top: 0.65em;
-    padding-bottom: 0.63em;
-
+.badge.moves,
+.badge.seconds {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 #restart:hover {
-    box-shadow: 0 0 15px #fafafa;
+  box-shadow: 0 0 15px #fafafa;
 }
 
 /*------------------------------------------------------ container-cards -------------------*/
 
-.container-cards{
-        /* width: 740px; For 6 cards */
-        /* width: 1080px; for 12 cards */
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+.container-cards {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card-details {
-    width: 660px;
-    min-height: 680px;
-    background: transparent;
-    padding: 32px;
-    border-color: transparent;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    margin: 0 0 3em;
+  width: 900px;
+  /* min-height: 680px; */
+  background: transparent;
+  padding: 32px;
+  border-color: transparent;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin: 0 auto;
 }
 
 .card {
-        margin: 10px;
-        height: 150px;
-        width: 150px;
-        background: black url('../images/city-art-los-angeles-street-art-2334805.jpg');
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-repeat:no-repeat;
-        background-position: center center;
-        border-radius: 8px;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);;
+  margin: 10px;
+  height: 150px;
+  width: 150px;
+  background: black
+    url("../images/city-art-los-angeles-street-art-2334805-min.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 8px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
 .card:hover {
-    cursor: pointer;
-    border: 3px solid blue;
+  cursor: pointer;
+  border: 5px solid blue;
+  box-shadow: 0 0 15px #fafafa;
+}
+
+.card.visible {
+  border: 5px solid blue;
+  box-shadow: 0 0 15px #fafafa;
+  transform: rotateY(180deg);
+  perspective: 1000px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 /*------------------------------------------------------ footer -------------------*/
 
 .footer {
-    background-color: transparent; 
-    color: #fafafa;
-    margin: auto;
-    width: 100%;
-    justify-items: center;
-    display: grid;
+  background-color: transparent;
+  color: #fafafa;
+  margin: auto;
+  width: 100%;
+  justify-items: center;
+  display: grid;
 }
 
 .footer p {
-    margin-top: 20px;
-    margin-bottom: 0;
-    font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
-.footer,
+/* .footer,
 .push {
   height: 50px;
-}
+} */
 
 .footer-details a {
-    color: #fafafa;
+  color: #fafafa;
 }
 
+/*------------------------------------------------------ footer -------------------*/
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .card-details {
+    width: 900px;
+  }
+
+  .card {
+    width: 200px;
+    height: 200px;
+    line-height: 20px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* md - Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-details {
+    width: 600px;
+  }
+
+  .card {
+    width: 150px;
+    height: 150px;
+    /* line-height: 150px; */
+  }
+
+  .header-details h1 {
+    font-size: 48px;
+  }
+
+  .footer p {
+      font-size: 14px;
+  }
+}
+
+/* sm - Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .card-details {
+    width: 500px;
+  }
+
+  .card {
+    width: 100px;
+    height: 100px;
+    /* line-height: 75px; */
+  }
+
+  .header-details h1 {
+    font-size: 40px;
+  }
+
+  .footer p {
+      font-size: 12px;
+  }
+}
+
+/* xs - Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .card-details {
+    width: 400px;
+  }
+
+  .card {
+    width: 75px;
+    height: 75px;
+    /* line-height: 50px; */
+  }
+
+  .header-details h1 {
+    font-size: 40px;
+  }
+
+  .footer p {
+      font-size: 12px;
+  }
+}
