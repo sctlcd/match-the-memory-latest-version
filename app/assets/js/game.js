@@ -2,16 +2,15 @@ $(document).ready(function() {
     
     // game namespace/game variable  
     var game = {
-        cards: ["A", "A", "B", "B", "C", "C", "D", "D"],
+        cards: ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "G", "G"],
         playerName,
         moves: 0,
         timeCounter: 0,
         imgCategory: "animals",
         init: function() {   
-            $(".header-details").append("<h1>Memory game</h1>");  
+            $(".header-details").append("<h1>Memory game</h1>").addClass("uppercase");  
             $("#startGameButton").click(function(){
-            game.getPlayerData(); 
-                       
+            game.getPlayerData();            
             });
         },
 
@@ -20,7 +19,8 @@ $(document).ready(function() {
                 game.playerName = $("#playerName").val();
                 game.clickCardHandlers();                
                 $(".performance-details").empty();
-                $(".performance-details").append('<p><h4 class="inline"><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary moves"><span id="sec_timer">0</span> s</span></h4><button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button></p>'); 
+                $(".performance-details").append('<p><h4 class="inline"><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary seconds"><span id="sec_timer">0</span> s</span></h4><button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button></p>'); 
+                //  <span class="badge badge-primary"><a id="restart"><i class="fas fa-redo-alt"></i></a></span>
                 game.restart();
                 game.initTime();
                 game.resetMoves();
@@ -29,7 +29,6 @@ $(document).ready(function() {
             }else {
                 setTimeout(function() {
                     $("#playerName").effect("bounce");
-                    $("#playerName").css("background","yellow");
                 },500);      
             } 
         },
@@ -133,7 +132,7 @@ $(document).ready(function() {
     		backdrop: 'static',
     		keyboard: false
         });
-        $(this).css({opacity:0},{duration:1000});
+        $(this).hide();
 	});
     game.init();
     

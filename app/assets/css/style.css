@@ -14,18 +14,17 @@ html, body {
 }
 
 body {
-    background: rgb(18, 10, 78) url('../images/photo-of-multicolored-illustration-2832382 (1).jpg');
+    background: rgb(18, 10, 78) url('../images/photo-of-multicolored-illustration-2832382-3000-4000.jpg');
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
     background-size: cover;
     background-repeat:no-repeat;
-    background-position: center center;
+    background-position: top center;
 }
 
 .wrapper {
   min-height: 100%;
-
   /* Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
   margin-bottom: -50px;
@@ -35,30 +34,92 @@ body {
   display: inline;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 /*------------------------------------------------------ start modal -------------------*/
 
 #btnStartModal {
     margin: auto;
     display: block;
-    background-color: blue;
+    background-color: goldenrod;
+    border-color: goldenrod;
+    color: black;
+    font-weight: bold;
+}
+
+#startGameButton {
+    background-color: goldenrod;
+    border-color: goldenrod;
+    color: black;
+    font-weight: bold;
+}
+
+#btnStartModal:hover, #startGameButton:hover {
+    box-shadow: 0 0 15px #fafafa;
 }
 
 .modal-content {
     text-align: center;
     width: 80%;
     margin: auto;
+    border: solid 2px goldenrod;
+    color: goldenrod;
+}
+
+.modal-body {
+    background-color:#130f23;
 }
 
 .btn-primary {
     background-color: blue;
     border-color: blue;
+}
 
+.btn-primary:hover {
+    color: #fafafa;
+    background-color: blue;
+    border-color: blue;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fafafa;
+    background-color: blue;
+    border-color: blue;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0 transparent;
+}
+
+ .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem transparent;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: blue;
+    border-color: blue;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem transparent;
+}
+
+#startGameButton.focus, #btnStartModal.focus, #btnStartModal:focus {
+    box-shadow: 0 0 0 0.2rem #d39e0091;
 }
 
 /*------------------------------------------------------ header -------------------*/
 
-.header {
+.header{
     text-align: center;
+    color: #fafafa;
+}
+
+.header-details h1 {
+    margin: 30px auto 30px auto;
 }
 
 /*------------------------------------------------------ container-performances -------------------*/
@@ -75,42 +136,63 @@ body {
     margin-right: 30px;
     background-color: blue;
 }
-.badge.moves {
-    padding-top: 0.57em;
-    padding-bottom: 0.57em;
 
+.badge.moves, .badge.seconds {
+    padding-top: 0.65em;
+    padding-bottom: 0.63em;
+
+}
+
+#restart:hover {
+    box-shadow: 0 0 15px #fafafa;
 }
 
 /*------------------------------------------------------ container-cards -------------------*/
 
 .container-cards{
-        width: 740px; /* For 6 cards */
+        /* width: 740px; For 6 cards */
         /* width: 1080px; for 12 cards */
         margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 }
+
+.card-details {
+    width: 660px;
+    min-height: 680px;
+    background: transparent;
+    padding: 32px;
+    border-color: transparent;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin: 0 0 3em;
+}
+
 .card {
-        float: left;
         margin: 10px;
-        height: 200px;
+        height: 150px;
         width: 150px;
-        background: #df8c29;
+        background: black url('../images/city-art-los-angeles-street-art-2334805.jpg');
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         background-repeat:no-repeat;
-        background-position: top right;
-        border-radius: 5px;
+        background-position: center center;
+        border-radius: 8px;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);;
 }
 
 .card:hover {
     cursor: pointer;
-    border: 3px solid red;
-}
-
-.card p {
-    font-size: 48px;
-    color: blue;
+    border: 3px solid blue;
 }
 
 /*------------------------------------------------------ footer -------------------*/
@@ -125,16 +207,17 @@ body {
 }
 
 .footer p {
-    margin-top: 0.8rem;
+    margin-top: 20px;
     margin-bottom: 0;
     font-weight: 400;
 }
 
 .footer,
 .push {
-  height: 70px;
+  height: 50px;
 }
 
-.footer a {
-    color: gold;
+.footer-details a {
+    color: #fafafa;
 }
+
