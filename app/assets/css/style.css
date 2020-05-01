@@ -1,11 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
-/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sedgwick+Ave+Display&display=swap');
 
 * {
   box-sizing: border-box;
-  /* font-family: 'Press Start 2P', cursive; */
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 700;
+  /* font-family: 'Sedgwick Ave Display', cursive; */
+  font-family: 'Roboto', sans-serif;
 }
 
 html,
@@ -15,8 +13,8 @@ body {
 }
 
 body {
-  background: rgb(18, 10, 78)
-    url("../images/photo-of-multicolored-illustration-2832382-3000-4000.jpg");
+  background: #1f1740
+    url("../images/photo-of-multicolored-illustration-2832382-3000-4000-min.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -55,7 +53,7 @@ body {
   background-color: goldenrod;
   border-color: goldenrod;
   color: black;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 #btnStartModal:hover,
@@ -71,8 +69,13 @@ body {
   color: goldenrod;
 }
 
+.modal-content h3 {
+    font-family: 'Sedgwick Ave Display', cursive;
+    letter-spacing: 4px;
+}
+
 .modal-body {
-  background-color: #130f23;
+  background-color: #1f1740;
 }
 
 .btn-primary {
@@ -132,6 +135,9 @@ body {
 
 .header-details h1 {
   margin: 30px auto 30px auto;
+  font-family: 'Sedgwick Ave Display', cursive;
+  letter-spacing: 4px;
+  font-size: 52px;
 }
 
 /*------------------------------------------------------ container-performances -------------------*/
@@ -162,8 +168,6 @@ body {
 /*------------------------------------------------------ container-cards -------------------*/
 
 .container-cards {
-  /* width: 740px; For 6 cards */
-  /* width: 1080px; for 12 cards */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -188,7 +192,7 @@ body {
   margin: 10px;
   height: 150px;
   width: 150px;
-  background: black url("../images/city-art-los-angeles-street-art-2334805.jpg");
+  background: black url("../images/city-art-los-angeles-street-art-2334805-min.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -204,7 +208,17 @@ body {
 
 .card:hover {
   cursor: pointer;
-  border: 3px solid blue;
+  border: 5px solid blue;
+  box-shadow: 0 0 15px #fafafa;
+}
+
+.card.visible {
+    border: 5px solid blue;
+    box-shadow: 0 0 15px #fafafa;
+    transform: rotateY(180deg);
+    perspective: 1000px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
 /*------------------------------------------------------ footer -------------------*/

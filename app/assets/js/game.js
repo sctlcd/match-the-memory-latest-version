@@ -7,7 +7,7 @@ $(document).ready(function () {
     timeCounter: 0,
     imgCategory: "any",
     init: function () {
-      $(".header-details").append("<h1>Memory game</h1>").addClass("uppercase");
+      $(".header-details").append("<h1>Match the memory</h1>").addClass("uppercase");
       $("#startGameButton").click(function () {
         game.getPlayerData();
       });
