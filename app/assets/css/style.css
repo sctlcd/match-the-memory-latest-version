@@ -1,33 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sedgwick+Ave+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sedgwick+Ave+Display&display=swap");
 
 * {
   box-sizing: border-box;
-  /* font-family: 'Sedgwick Ave Display', cursive; */
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 html,
 body {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 body {
+  /* Responsive background image credit: https://www.webfx.com/blog/web-design/responsive-background-image/ */
+  /* Set a background color that will be displayed while the background image is loading and Location of the image */
   background: #1f1740
     url("../images/photo-of-multicolored-illustration-2832382-3000-4000-min.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  /* This is what makes the background image rescale based on the container's size */
   background-size: cover;
+  /* Background image doesn't tile */
   background-repeat: no-repeat;
+  /* Background image is centered vertically and horizontally at all times */
   background-position: center center;
+  /* Background image is fixed in the viewport so that it doesn't move when the content's height is greater than the image's height */
+  background-attachment: fixed;
 }
 
 .wrapper {
-  min-height: 100%;
-  /* Equal to height of footer */
-  /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -50px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
 }
 
 .inline {
@@ -39,6 +46,10 @@ body {
 }
 
 /*------------------------------------------------------ start modal -------------------*/
+
+div#startModal.modal.fade.show {
+  padding-right: 0;
+}
 
 #btnStartModal {
   margin: auto;
@@ -64,14 +75,14 @@ body {
 .modal-content {
   text-align: center;
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
   border: solid 2px goldenrod;
   color: goldenrod;
 }
 
 .modal-content h3 {
-    font-family: 'Sedgwick Ave Display', cursive;
-    letter-spacing: 4px;
+  font-family: "Sedgwick Ave Display", cursive;
+  letter-spacing: 4px;
 }
 
 .modal-body {
@@ -135,7 +146,7 @@ body {
 
 .header-details h1 {
   margin: 30px auto 30px auto;
-  font-family: 'Sedgwick Ave Display', cursive;
+  font-family: "Sedgwick Ave Display", cursive;
   letter-spacing: 4px;
   font-size: 52px;
 }
@@ -176,8 +187,8 @@ body {
 }
 
 .card-details {
-  width: 660px;
-  min-height: 680px;
+  width: 900px;
+  /* min-height: 680px; */
   background: transparent;
   padding: 32px;
   border-color: transparent;
@@ -185,14 +196,15 @@ body {
   flex-wrap: wrap !important;
   justify-content: space-between !important;
   align-items: center !important;
-  margin: 0 0 3em;
+  margin: 0 auto;
 }
 
 .card {
   margin: 10px;
   height: 150px;
   width: 150px;
-  background: black url("../images/city-art-los-angeles-street-art-2334805-min.jpg");
+  background: black
+    url("../images/city-art-los-angeles-street-art-2334805-min.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -213,12 +225,12 @@ body {
 }
 
 .card.visible {
-    border: 5px solid blue;
-    box-shadow: 0 0 15px #fafafa;
-    transform: rotateY(180deg);
-    perspective: 1000px;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  border: 5px solid blue;
+  box-shadow: 0 0 15px #fafafa;
+  transform: rotateY(180deg);
+  perspective: 1000px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 /*------------------------------------------------------ footer -------------------*/
@@ -235,14 +247,95 @@ body {
 .footer p {
   margin-top: 20px;
   margin-bottom: 0;
-  font-weight: 400;
 }
 
-.footer,
+/* .footer,
 .push {
   height: 50px;
-}
+} */
 
 .footer-details a {
   color: #fafafa;
+}
+
+/*------------------------------------------------------ footer -------------------*/
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .card-details {
+    width: 900px;
+  }
+
+  .card {
+    width: 200px;
+    height: 200px;
+    line-height: 20px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* md - Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-details {
+    width: 600px;
+  }
+
+  .card {
+    width: 150px;
+    height: 150px;
+    /* line-height: 150px; */
+  }
+
+  .header-details h1 {
+    font-size: 48px;
+  }
+
+  .footer p {
+      font-size: 14px;
+  }
+}
+
+/* sm - Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .card-details {
+    width: 500px;
+  }
+
+  .card {
+    width: 100px;
+    height: 100px;
+    /* line-height: 75px; */
+  }
+
+  .header-details h1 {
+    font-size: 40px;
+  }
+
+  .footer p {
+      font-size: 12px;
+  }
+}
+
+/* xs - Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .card-details {
+    width: 400px;
+  }
+
+  .card {
+    width: 75px;
+    height: 75px;
+    /* line-height: 50px; */
+  }
+
+  .header-details h1 {
+    font-size: 40px;
+  }
+
+  .footer p {
+      font-size: 12px;
+  }
 }
