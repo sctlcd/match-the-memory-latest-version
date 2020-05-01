@@ -2,11 +2,11 @@ $(document).ready(function() {
     
     // game namespace/game variable  
     var game = {
-        cards: ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "G", "G"],
+        cards: [1,2,3,4,5,6,1,2,3,4,5,6],
         playerName,
         moves: 0,
         timeCounter: 0,
-        imgCategory: "animals",
+        imgCategory: "any",
         init: function() {   
             $(".header-details").append("<h1>Memory game</h1>").addClass("uppercase");  
             $("#startGameButton").click(function(){
@@ -25,6 +25,7 @@ $(document).ready(function() {
                 game.initTime();
                 game.resetMoves();
                 game.shuffleCards();
+                game.preloadImages();
                 $("#startModal").modal("toggle");
             }else {
                 setTimeout(function() {
@@ -68,7 +69,7 @@ $(document).ready(function() {
         // On-click flip the card and display the figure of the card
         flipCard: function(card) {
             card.addClass("visible");
-            card.css({'background-image': 'url("https://placeimg.com/150/200/'+game.imgCategory+'/'+card.data("cardFigure")+'")'});
+            card.css({'background-image': 'url("https://placeimg.com/150/150/'+game.imgCategory+'/'+card.data("cardFigure")+'")'});
 			if($(".visible").length == 2) {
 				game.checkForPairedCards();
 			}
@@ -124,6 +125,14 @@ $(document).ready(function() {
                 game.timeCounter++;      
                  $("#sec_timer").html("" + game.timeCounter);
             }, 1000);   
+        }, 
+
+        preloadImages: function() {
+            var img = [];
+            for (i = 0; i < game.cards.length; i++) {
+                img[i] = new Image;
+                img[i].src = "https://placeimg.com/150/150/"+game.imgCategory+"/"+i;
+            }
         }
     };
 
