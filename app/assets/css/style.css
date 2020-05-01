@@ -1,26 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 /* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
 
 * {
-    box-sizing: border-box;
-    /* font-family: 'Press Start 2P', cursive; */
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 700;
+  box-sizing: border-box;
+  /* font-family: 'Press Start 2P', cursive; */
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
 
 body {
-    background: rgb(18, 10, 78) url('../images/photo-of-multicolored-illustration-2832382-3000-4000.jpg');
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-position: top center;
+  background: rgb(18, 10, 78)
+    url("../images/photo-of-multicolored-illustration-2832382-3000-4000.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .wrapper {
@@ -30,186 +32,196 @@ body {
   margin-bottom: -50px;
 }
 
-.inline{
+.inline {
   display: inline;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 /*------------------------------------------------------ start modal -------------------*/
 
 #btnStartModal {
-    margin: auto;
-    display: block;
-    background-color: goldenrod;
-    border-color: goldenrod;
-    color: black;
-    font-weight: bold;
+  margin: auto;
+  display: block;
+  background-color: goldenrod;
+  border-color: goldenrod;
+  color: black;
+  font-weight: bold;
 }
 
 #startGameButton {
-    background-color: goldenrod;
-    border-color: goldenrod;
-    color: black;
-    font-weight: bold;
+  background-color: goldenrod;
+  border-color: goldenrod;
+  color: black;
+  font-weight: bold;
 }
 
-#btnStartModal:hover, #startGameButton:hover {
-    box-shadow: 0 0 15px #fafafa;
+#btnStartModal:hover,
+#startGameButton:hover {
+  box-shadow: 0 0 15px #fafafa;
 }
 
 .modal-content {
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    border: solid 2px goldenrod;
-    color: goldenrod;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  border: solid 2px goldenrod;
+  color: goldenrod;
 }
 
 .modal-body {
-    background-color:#130f23;
+  background-color: #130f23;
 }
 
 .btn-primary {
-    background-color: blue;
-    border-color: blue;
+  background-color: blue;
+  border-color: blue;
 }
 
 .btn-primary:hover {
-    color: #fafafa;
-    background-color: blue;
-    border-color: blue;
+  color: #fafafa;
+  background-color: blue;
+  border-color: blue;
 }
 
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-    color: #fafafa;
-    background-color: blue;
-    border-color: blue;
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fafafa;
+  background-color: blue;
+  border-color: blue;
 }
 
-.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0 transparent;
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0 transparent;
 }
 
- .btn-primary:focus {
-    box-shadow: 0 0 0 0.2rem transparent;
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem transparent;
 }
 
-.btn-primary.focus, .btn-primary:focus {
-    color: #fff;
-    background-color: blue;
-    border-color: blue;
+.btn-primary.focus,
+.btn-primary:focus {
+  color: #fff;
+  background-color: blue;
+  border-color: blue;
 }
 
-.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem transparent;
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem transparent;
 }
 
-#startGameButton.focus, #btnStartModal.focus, #btnStartModal:focus {
-    box-shadow: 0 0 0 0.2rem #d39e0091;
+#startGameButton.focus,
+#btnStartModal.focus,
+#btnStartModal:focus {
+  box-shadow: 0 0 0 0.2rem #d39e0091;
 }
 
 /*------------------------------------------------------ header -------------------*/
 
-.header{
-    text-align: center;
-    color: #fafafa;
+.header {
+  text-align: center;
+  color: #fafafa;
 }
 
 .header-details h1 {
-    margin: 30px auto 30px auto;
+  margin: 30px auto 30px auto;
 }
 
 /*------------------------------------------------------ container-performances -------------------*/
 
 .container-performances {
-    text-align: center;
+  text-align: center;
 }
 
 .badge {
-    padding-top: 0.55em;
-    padding-right: 0.8em;
-    padding-bottom: 0.55em;
-    padding-left: 0.8em;
-    margin-right: 30px;
-    background-color: blue;
+  padding-top: 0.55em;
+  padding-right: 0.8em;
+  padding-bottom: 0.55em;
+  padding-left: 0.8em;
+  margin-right: 30px;
+  background-color: blue;
 }
 
-.badge.moves, .badge.seconds {
-    padding-top: 0.65em;
-    padding-bottom: 0.63em;
-
+.badge.moves,
+.badge.seconds {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 #restart:hover {
-    box-shadow: 0 0 15px #fafafa;
+  box-shadow: 0 0 15px #fafafa;
 }
 
 /*------------------------------------------------------ container-cards -------------------*/
 
-.container-cards{
-        /* width: 740px; For 6 cards */
-        /* width: 1080px; for 12 cards */
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+.container-cards {
+  /* width: 740px; For 6 cards */
+  /* width: 1080px; for 12 cards */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card-details {
-    width: 660px;
-    min-height: 680px;
-    background: transparent;
-    padding: 32px;
-    border-color: transparent;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    margin: 0 0 3em;
+  width: 660px;
+  min-height: 680px;
+  background: transparent;
+  padding: 32px;
+  border-color: transparent;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin: 0 0 3em;
 }
 
 .card {
-        margin: 10px;
-        height: 150px;
-        width: 150px;
-        background: black url('../images/city-art-los-angeles-street-art-2334805.jpg');
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-repeat:no-repeat;
-        background-position: center center;
-        border-radius: 8px;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);;
+  margin: 10px;
+  height: 150px;
+  width: 150px;
+  background: black url("../images/city-art-los-angeles-street-art-2334805.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 8px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
 .card:hover {
-    cursor: pointer;
-    border: 3px solid blue;
+  cursor: pointer;
+  border: 3px solid blue;
 }
 
 /*------------------------------------------------------ footer -------------------*/
 
 .footer {
-    background-color: transparent; 
-    color: #fafafa;
-    margin: auto;
-    width: 100%;
-    justify-items: center;
-    display: grid;
+  background-color: transparent;
+  color: #fafafa;
+  margin: auto;
+  width: 100%;
+  justify-items: center;
+  display: grid;
 }
 
 .footer p {
-    margin-top: 20px;
-    margin-bottom: 0;
-    font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-weight: 400;
 }
 
 .footer,
@@ -218,6 +230,5 @@ body {
 }
 
 .footer-details a {
-    color: #fafafa;
+  color: #fafafa;
 }
-

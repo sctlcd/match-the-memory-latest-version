@@ -15,92 +15,115 @@
   </head>
 
   <body>
-  <div class="wrapper">
-    <!-- header -->
-    <header class="header">
-      <div class="row">
-        <div class="col header-details">
-        </div>
-      </div>
-    </header>
-
-    
-
-    <!-- container-start-modal -->
-    <section class="container-start-modal">
+    <div class="wrapper">
+      <!-- header -->
+      <header class="header">
         <div class="row">
-            <div class="col-12">
-                <button type="button" id="btnStartModal" class="btn btn-warning">Let's play!</button>
-                <div class="modal fade" id="startModal" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                    <div class="modal-body">
-                        <h3 class="modal-title uppercase" id="startMenuTitle">Let's play!</h3><br>
-                        <form>
-                            <label for="#playerName">Enter your name:</label><br>
-                            <input type="text" class="playerName" id="playerName" required>
-                        </form>
-                        <br>
-                        <button type="button" class="btn btn-warning" id="startGameButton">Start the game</button>
-                    </div>
-                    </div>
+          <div class="col header-details"></div>
+        </div>
+      </header>
+
+      <!-- container-start-modal -->
+      <section class="container-start-modal">
+        <div class="row">
+          <div class="col-12">
+            <button type="button" id="btnStartModal" class="btn btn-warning">
+              Let's play!
+            </button>
+            <div
+              class="modal fade"
+              id="startModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="modalCenterTitle"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <h3 class="modal-title uppercase" id="startMenuTitle">
+                      Let's play!
+                    </h3>
+                    <br />
+                    <form>
+                      <label for="#playerName">Enter your name:</label><br />
+                      <input
+                        type="text"
+                        class="playerName"
+                        id="playerName"
+                        required
+                      />
+                    </form>
+                    <br />
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      id="startGameButton"
+                    >
+                      Start the game
+                    </button>
+                  </div>
                 </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- container-performances -->
-    <section class="container-performances">
-      <div class="row">
-        <div class="col performance-details">
+      <!-- container-performances -->
+      <section class="container-performances">
+        <div class="row">
+          <div class="col performance-details"></div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- container-cards -->
-    <section class="container-cards">
-      <div class="row">
-        <div class="col card-details"></div>
-      </div>
-    </section>
+      <!-- container-cards -->
+      <section class="container-cards">
+        <div class="row">
+          <div class="col card-details"></div>
+        </div>
+      </section>
 
-    <div class="push"></div>
+      <div class="push"></div>
     </div>
-    
+
     <!-- Footer -->
-	<footer class="container-fluid footer">
-		<div class="footer-details">
-			<div class="row">
-				<div class="col">
-					<p><i class="far fa-copyright"></i> 2020 by Lucinda Souchet   
-                        <a href="TOADD" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <span class="sr-only">Github</span>
-						</a>
-                    </p>
-				</div>
-			</div>
-		</div>
-	</footer>
+    <footer class="container-fluid footer">
+      <div class="footer-details">
+        <div class="row">
+          <div class="col">
+            <p>
+              <i class="far fa-copyright"></i> 2020 by Lucinda Souchet
+              <a href="https://github.com/sctlcd" target="_blank">
+                <i class="fab fa-github"></i>
+                <span class="sr-only">Github</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Scripts -->
-    <script src="https://kit.fontawesome.com/e576f39845.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/e576f39845.js"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
     ></script>
     <script
-        src="https://code.jquery.com/jquery-3.5.0.js"
-        integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
-        crossorigin="anonymous">
-    </script>
+      src="https://code.jquery.com/jquery-3.5.0.js"
+      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+      crossorigin="anonymous"
+    ></script>
     <script
-        src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-        crossorigin="anonymous">
-    </script>
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
