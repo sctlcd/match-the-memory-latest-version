@@ -1,7 +1,8 @@
 $(document).ready(function () {
   // game namespace/game variable
   var game = {
-    cardFigures: ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"],
+    cardFigures: ["A", "B", "A", "B"],
+    //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"],
     playerName,
     moves: 0,
     timeCounter: 0,
@@ -111,7 +112,11 @@ $(document).ready(function () {
     // Check if all cards are paired
     checkForSuccess: function () {
       if ($(".unpaired").length === 0) {
-        $(".container-cards").html("<h1> Congrats! You Won! :) </h1>");
+          $("#resultsModal").modal({
+                backdrop: "static",
+                keyboard: false,
+            });
+            $(".resultsText").text(`Well done ${game.playerName}! You did it in ${game.timeCounter} seconds and ${game.moves} moves.`)
       }
     },
 
