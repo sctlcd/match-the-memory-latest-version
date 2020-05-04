@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // game namespace/game variable
   var game = {
-    playerName,
+    playerName: "anonymous",
     moves: 0,
     timeCounter: 0,
     imgCategory: "any",
@@ -22,29 +22,37 @@ $(document).ready(function () {
         game.getPlayerData();
         $(".performance-details").empty();
         $(".performance-details").append(
-          '<p><h4 class="inline"><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary seconds"><span id="sec_timer">0</span> s</span></h4><button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button></p>'
+          '<p><h4 class="inline"><span class="badge badge-primary level">Level<span id="levelCounter">0</span></span><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary seconds"><span id="sec_timer">0</span> s</span></h4><button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button></p>'
         );
-        
         game.restart();
         game.initTime();
         game.resetMoves();
         game.gameLevel =  1;
+        game.displayGameLevel(game.gameLevel);
         game.cardFigures = game.getCardFigures(game.gameLevel);
         game.shuffleCards();
         game.preloadImages();
       });
     },
 
-    gameContinu: function () {
+    playAgain: function (level) {
+        // $(".header-details").append("<h1>Match the memory</h1>").addClass("uppercase");
+        $("h1").show();
+        // $(".performance-details").empty();
+        // $(".performance-details").append(
+        //   '<p><h4 class="inline"><span class="badge badge-primary level">Level<span id="levelCounter">0</span></span><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary seconds"><span id="sec_timer">0</span> s</span></h4><button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button></p>'
+        // );
+        $(".container-performances").show();
         game.restart();
         game.initTime();
         game.resetMoves();
-        game.cardFigures = game.getCardFigures(game.gameLevel);
+        game.displayGameLevel(level);
+        game.cardFigures = game.getCardFigures(level);
         game.shuffleCards();
         game.preloadImages();
     },
 
-    getPlayerData: function (gameLevel) {
+    getPlayerData: function (level) {
       if ($("#playerName").val() !== "") {
         game.playerName = $("#playerName").val();
         game.clickCardHandlers();
@@ -152,25 +160,31 @@ $(document).ready(function () {
     // Check if all cards are paired
     checkForSuccess: function () {
       if ($(".unpaired").length === 0) {
-          this.getResults();
+          this.getResults(game.gameLevel);
       }
     },
 
-    getResults: function() {
+    getResults: function(level) {
         $("#resultsModal").modal({
                 backdrop: "static",
                 keyboard: false,
+                
             });
             $(".container-performances").hide();
             $("h1").hide();
-            $(".resultsText").text(`Well done ${game.playerName}! You did Level ${game.gameLevel} in ${game.timeCounter} seconds and ${game.moves} moves.`)
+            $(".resultsText").text(`Well done ${game.playerName}! You finished Level ${level} in ${game.timeCounter} seconds and ${game.moves} moves.`)
             $("#resultsButton").click(function() {
                  $("#resultsModal").modal("toggle");
                  $("#btnStartModal").show();
-                 game.gameLevel++;
-                 game.gameContinu(game.gameLevel);
+                 level++;
+                 game.playAgain(level);
             });
             
+    },
+
+    displayGameLevel: function (level) {
+        game.gameLevel = level;
+        $("#levelCounter").html(" " + game.gameLevel);
     },
 
     resetMoves: function () {
