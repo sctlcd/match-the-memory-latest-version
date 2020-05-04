@@ -8,6 +8,14 @@ $(document).ready(function () {
     timeCounter: 0,
     imgCategory: "any",
     init: function () {
+        $("#btnStartModal").click(function () {
+            $("#startModal").modal({
+            backdrop: "static",
+            keyboard: false,
+            });
+            $(this).hide();
+        });
+
       $(".header-details").append("<h1>Match the memory</h1>").addClass("uppercase");
       $("#startGameButton").click(function () {
         game.getPlayerData();
@@ -112,12 +120,25 @@ $(document).ready(function () {
     // Check if all cards are paired
     checkForSuccess: function () {
       if ($(".unpaired").length === 0) {
-          $("#resultsModal").modal({
+          this.getResults();
+      }
+    },
+
+    getResults: function(moves) {
+        $("#resultsModal").modal({
                 backdrop: "static",
                 keyboard: false,
             });
+            $(".container-performances").hide();
+            $("h1").hide();
             $(".resultsText").text(`Well done ${game.playerName}! You did it in ${game.timeCounter} seconds and ${game.moves} moves.`)
-      }
+            $("#resultsButton").click(function() {
+                 $("#resultsModal").modal("toggle");
+                 $("#btnStartModal").show();
+                 game.init();
+
+            });
+            
     },
 
     resetMoves: function () {
@@ -155,12 +176,12 @@ $(document).ready(function () {
     },
   };
 
-  $("#btnStartModal").click(function () {
-    $("#startModal").modal({
-      backdrop: "static",
-      keyboard: false,
-    });
-    $(this).hide();
-  });
+//   $("#btnStartModal").click(function () {
+//     $("#startModal").modal({
+//       backdrop: "static",
+//       keyboard: false,
+//     });
+//     $(this).hide();
+//   });
   game.init();
 });
