@@ -1,13 +1,15 @@
 $(document).ready(function () {
   // game namespace/game variable
   var game = {
-    cardFigures: ["A", "B", "A", "B"],
-    //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"],
     playerName,
     moves: 0,
     timeCounter: 0,
     imgCategory: "any",
-    init: function () {
+    cardFigures: [],
+    gameLevel: 0,
+
+    init: function () { 
+        $(".header-details").append("<h1>Match the memory</h1>").addClass("uppercase");
         $("#btnStartModal").click(function () {
             $("#startModal").modal({
             backdrop: "static",
@@ -15,33 +17,63 @@ $(document).ready(function () {
             });
             $(this).hide();
         });
-
-      $(".header-details").append("<h1>Match the memory</h1>").addClass("uppercase");
+      
       $("#startGameButton").click(function () {
         game.getPlayerData();
-      });
-    },
-
-    getPlayerData: function () {
-      if ($("#playerName").val() !== "") {
-        game.playerName = $("#playerName").val();
-        game.clickCardHandlers();
         $(".performance-details").empty();
         $(".performance-details").append(
           '<p><h4 class="inline"><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary seconds"><span id="sec_timer">0</span> s</span></h4><button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button></p>'
         );
-        //  <span class="badge badge-primary"><a id="restart"><i class="fas fa-redo-alt"></i></a></span>
+        
         game.restart();
         game.initTime();
         game.resetMoves();
+        game.gameLevel =  1;
+        game.cardFigures = game.getCardFigures(game.gameLevel);
         game.shuffleCards();
         game.preloadImages();
+      });
+    },
+
+    gameContinu: function () {
+        game.restart();
+        game.initTime();
+        game.resetMoves();
+        game.cardFigures = game.getCardFigures(game.gameLevel);
+        game.shuffleCards();
+        game.preloadImages();
+    },
+
+    getPlayerData: function (gameLevel) {
+      if ($("#playerName").val() !== "") {
+        game.playerName = $("#playerName").val();
+        game.clickCardHandlers();
+        
         $("#startModal").modal("toggle");
       } else {
         setTimeout(function () {
           $("#playerName").effect("bounce");
         }, 1000);
       }
+    },
+
+    getCardFigures: function(gameLevel) {
+        switch (gameLevel) {
+            case gameLevel = 1:
+                return cardFigures = ["A", "B", "A", "B"] //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"]
+                break;
+            case gameLevel = 2:
+                return cardFigures = ["A", "B", "C", "A", "B", "C"] //["A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G"]
+                break;
+            case gameLevel = 3:
+                return cardFigures = ["A", "B", "C", "D", "A", "B", "C", "D"] //["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"]
+                break;
+            case gameLevel = 4:
+                return cardFigures = ["A", "B", "C", "D", "E", "A", "B", "C", "D", "E"] //["A", "B", "C", "D", "E", "F", "G", "H", "I", "A", "B", "C", "D", "E", "F", "G", "H", "I"]
+                break;
+            default:
+                return cardFigures = ["A", "A"] //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"]
+        }
     },
 
     // Iterate over the cards array and each time generate a random number
@@ -124,19 +156,19 @@ $(document).ready(function () {
       }
     },
 
-    getResults: function(moves) {
+    getResults: function() {
         $("#resultsModal").modal({
                 backdrop: "static",
                 keyboard: false,
             });
             $(".container-performances").hide();
             $("h1").hide();
-            $(".resultsText").text(`Well done ${game.playerName}! You did it in ${game.timeCounter} seconds and ${game.moves} moves.`)
+            $(".resultsText").text(`Well done ${game.playerName}! You did Level ${game.gameLevel} in ${game.timeCounter} seconds and ${game.moves} moves.`)
             $("#resultsButton").click(function() {
                  $("#resultsModal").modal("toggle");
                  $("#btnStartModal").show();
-                 game.init();
-
+                 game.gameLevel++;
+                 game.gameContinu(game.gameLevel);
             });
             
     },
