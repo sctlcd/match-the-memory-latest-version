@@ -167,12 +167,21 @@ div#startModal.modal.fade.show {
 }
 
 .badge.moves,
-.badge.seconds {
+.badge.levelTimer {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 
-#restart:hover {
+#restart {
+  margin-left: 90px;
+}
+
+#exit {
+  margin-left: 30px;
+}
+
+#restart:hover,
+#exit:hover {
   box-shadow: 0 0 15px #fafafa;
 }
 
@@ -188,7 +197,6 @@ div#startModal.modal.fade.show {
 
 .card-details {
   width: 900px;
-  /* min-height: 680px; */
   background: transparent;
   padding: 32px;
   border-color: transparent;
@@ -294,7 +302,22 @@ div#startModal.modal.fade.show {
   }
 
   .footer p {
-      font-size: 14px;
+    font-size: 14px;
+  }
+
+  .badge {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+
+  #restart {
+    margin-left: 30px;
+    font-size: 18px;
+  }
+
+  #exit {
+    margin-left: 10px;
+    font-size: 18px;
   }
 }
 
@@ -315,7 +338,22 @@ div#startModal.modal.fade.show {
   }
 
   .footer p {
-      font-size: 12px;
+    font-size: 14px;
+  }
+
+  .badge {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+
+  #restart {
+    margin-left: 20px;
+    font-size: 14px;
+  }
+
+  #exit {
+    margin-left: 10px;
+    font-size: 14px;
   }
 }
 
@@ -336,6 +374,21 @@ div#startModal.modal.fade.show {
   }
 
   .footer p {
-      font-size: 12px;
+    font-size: 12px;
+  }
+
+  .badge {
+    margin-right: 10px;
+    font-size: 12px;
+  }
+
+  #restart {
+    margin-left: 20px;
+    font-size: 12px;
+  }
+
+  #exit {
+    margin-left: 10px;
+    font-size: 12px;
   }
 }
