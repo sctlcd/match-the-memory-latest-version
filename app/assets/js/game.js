@@ -1,46 +1,100 @@
 $(document).ready(function () {
   // game namespace/game variable
   var game = {
-    cardFigures: ["A", "B", "A", "B"],
-    //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"],
-    playerName,
+    playerName: "anonymous",
     moves: 0,
     timeCounter: 0,
     imgCategory: "any",
-    init: function () {
-        $("#btnStartModal").click(function () {
-            $("#startModal").modal({
-            backdrop: "static",
-            keyboard: false,
-            });
-            $(this).hide();
-        });
+    cardFigures: [],
+    gameLevel: 0,
 
-      $(".header-details").append("<h1>Match the memory</h1>").addClass("uppercase");
+    init: function () {
+      $(".header-details")
+        .append("<h1>Match the memory</h1>")
+        .addClass("uppercase");
+
+      $("#btnStartModal").click(function () {
+        $("#startModal").modal({
+          backdrop: "static",
+          keyboard: false,
+        });
+        $(this).hide();
+        $("#playerName").val("");
+      });
+
       $("#startGameButton").click(function () {
         game.getPlayerData();
+        if ($("#playerName").val() !== "") {
+          $(".performance-details").empty();
+          $(".performance-details").append(
+            '<p><h4 class="inline"><span class="badge badge-primary level">Level<span id="levelCounter">0</span></span><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary levelTimer"><span id="levelTimer">0</span> s</span></h4><button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button><button type="button" class="btn btn btn-primary" id="exit"><i class="fas fa-sign-out-alt"></i></button></p>'
+          );
+
+          game.exit();
+          game.restart();
+          game.initTime();
+          game.gameLevel = 1;
+          game.displayGameLevel(game.gameLevel);
+          game.cardFigures = game.getCardFigures(game.gameLevel);
+          game.shuffleCards();
+          game.preloadImages();
+        }
       });
     },
 
-    getPlayerData: function () {
+    playAgain: function (level) {
+      $("h1").show();
+      $(".container-performances").show();
+      $("#btnStartModal").hide();
+      game.exit();
+      game.restart();
+      game.resetTime();
+      game.resetMoves();
+      game.displayGameLevel(level);
+      game.cardFigures = game.getCardFigures(level);
+      game.shuffleCards();
+      game.preloadImages();
+    },
+
+    getPlayerData: function (level) {
       if ($("#playerName").val() !== "") {
         game.playerName = $("#playerName").val();
         game.clickCardHandlers();
-        $(".performance-details").empty();
-        $(".performance-details").append(
-          '<p><h4 class="inline"><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary seconds"><span id="sec_timer">0</span> s</span></h4><button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button></p>'
-        );
-        //  <span class="badge badge-primary"><a id="restart"><i class="fas fa-redo-alt"></i></a></span>
-        game.restart();
-        game.initTime();
-        game.resetMoves();
-        game.shuffleCards();
-        game.preloadImages();
         $("#startModal").modal("toggle");
       } else {
         setTimeout(function () {
           $("#playerName").effect("bounce");
         }, 1000);
+      }
+    },
+
+    getCardFigures: function (gameLevel) {
+      switch (gameLevel) {
+        case (gameLevel = 1):
+          return (cardFigures = ["A", "B", "A", "B"]); //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"]
+          break;
+        case (gameLevel = 2):
+          return (cardFigures = ["A", "B", "C", "A", "B", "C"]); //["A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G"]
+          break;
+        case (gameLevel = 3):
+          return (cardFigures = ["A", "B", "C", "D", "A", "B", "C", "D"]); //["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"]
+          break;
+        case (gameLevel = 4):
+          return (cardFigures = [
+            "A",
+            "B",
+            "C",
+            "D",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "E",
+          ]); //["A", "B", "C", "D", "E", "F", "G", "H", "I", "A", "B", "C", "D", "E", "F", "G", "H", "I"]
+          break;
+        default:
+          return (cardFigures = ["A", "A"]); //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"]
       }
     },
 
@@ -105,13 +159,13 @@ $(document).ready(function () {
               .removeClass("unpaired visible");
           });
           game.checkForSuccess();
-        }, 1000);
+        }, 500);
       } else {
         setTimeout(function () {
           $(".visible").each(function () {
             $(this).css({ background: "" }).removeClass("visible");
           });
-        }, 1000);
+        }, 500);
       }
       game.moves++;
       $("#moves").html("" + game.moves);
@@ -120,25 +174,33 @@ $(document).ready(function () {
     // Check if all cards are paired
     checkForSuccess: function () {
       if ($(".unpaired").length === 0) {
-          this.getResults();
+        this.getResults(game.gameLevel);
       }
     },
 
-    getResults: function(moves) {
-        $("#resultsModal").modal({
-                backdrop: "static",
-                keyboard: false,
-            });
-            $(".container-performances").hide();
-            $("h1").hide();
-            $(".resultsText").text(`Well done ${game.playerName}! You did it in ${game.timeCounter} seconds and ${game.moves} moves.`)
-            $("#resultsButton").click(function() {
-                 $("#resultsModal").modal("toggle");
-                 $("#btnStartModal").show();
-                 game.init();
+    getResults: function (level) {
+      $("#resultsModal").modal({
+        backdrop: "static",
+        keyboard: false,
+      });
 
-            });
-            
+      $(".container-performances").hide();
+      $("h1").hide();
+      $(".resultsText").text(
+        `Well done ${game.playerName}! You finished Level ${level} in ${game.timeCounter} seconds and ${game.moves} moves.`
+      );
+
+      $("#resultsButton").click(function () {
+        $("#resultsModal").modal("toggle");
+        $("#btnStartModal").show();
+        level++;
+        game.playAgain(level);
+      });
+    },
+
+    displayGameLevel: function (level) {
+      game.gameLevel = level;
+      $("#levelCounter").html(" " + game.gameLevel);
     },
 
     resetMoves: function () {
@@ -147,8 +209,8 @@ $(document).ready(function () {
     },
 
     resetTime: function () {
-      game.timeCounter = -1;
-      $("#sec_timer").html("", game.timeCounter);
+      game.timeCounter = 0;
+      $("#levelTimer").html("" + game.timeCounter);
     },
 
     restart: function () {
@@ -160,10 +222,14 @@ $(document).ready(function () {
     },
 
     initTime: function () {
-      setInterval(function () {
+      game.refreshIntervalId = setInterval(function () {
         game.timeCounter++;
-        $("#sec_timer").html("" + game.timeCounter);
+        $("#levelTimer").html("" + game.timeCounter);
       }, 1000);
+    },
+
+    clearTime: function() {
+        clearInterval(game.refreshIntervalId);
     },
 
     preloadImages: function () {
@@ -174,14 +240,43 @@ $(document).ready(function () {
           "https://placeimg.com/150/150/" + game.imgCategory + "/" + i;
       }
     },
+
+    exit: function () {
+      $("#exit").click(function () {
+        $(".container-performances").hide();
+        $(".container-cards").hide();
+        $("#btnStartModal").show();
+        
+        $("#btnStartModal").click(function () {
+          $("#startModal").modal({
+            backdrop: "static",
+            keyboard: false,
+          });
+          $(this).hide();
+        });
+
+        $("#startGameButton").click(function () {
+          game.getPlayerData();
+          $(".performance-details").empty();
+          $(".performance-details").append(
+            '<p><h4 class="inline"><span class="badge badge-primary level">Level<span id="levelCounter">0</span></span><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary levelTimer"><span id="levelTimer">0</span> s</span></h4><button type="button" class="btn btn btn-primary" id="restart"><i class="fas fa-redo-alt"></i></button><button type="button" class="btn btn btn-primary" id="exit"><i class="fas fa-sign-out-alt"></i></button></p>'
+          );
+          $(".container-performances").show();
+          $(".container-cards").show();
+          game.exit();
+          game.clearTime();
+          game.restart();
+          game.resetTime();
+          game.resetMoves();
+          game.gameLevel = 1;
+          game.displayGameLevel(game.gameLevel);
+          game.cardFigures = game.getCardFigures(game.gameLevel);
+          game.shuffleCards();
+          game.preloadImages();
+        });
+      });
+    },
   };
 
-//   $("#btnStartModal").click(function () {
-//     $("#startModal").modal({
-//       backdrop: "static",
-//       keyboard: false,
-//     });
-//     $(this).hide();
-//   });
   game.init();
 });
