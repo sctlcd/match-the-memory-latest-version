@@ -15,7 +15,8 @@
   </head>
 
   <body>
-    <div class="container wrapper">
+    <!-- wrapper -->
+    <section class="wrapper">
       <!-- header -->
       <header class="header">
         <div class="row">
@@ -78,14 +79,49 @@
       </section>
 
       <!-- container-cards -->
-      <section class="container-cards">
+      <section class="container container-cards">
         <div class="row">
           <div class="col-12 card-details"></div>
         </div>
       </section>
 
+      <!-- container-start-modal -->
+      <section class="container container-results-modal">
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="modal fade"
+              id="resultsModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="modalCenterTitle"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <h3 class="modal-title uppercase" id="resultMenuTitle">
+                      Congrats!
+                    </h3>
+                        <p class="resultsText">
+                        </p>
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      id="resultsButton"
+                    >
+                      Play again
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div class="push"></div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer class="container container-fluid footer">
