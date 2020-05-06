@@ -4,10 +4,22 @@
 
 |  | Galaxy S5 | Pixel | Pixel 2 XL |iPhone 6/7/8 | iPhone 6/7/8 Plus | iPhone X | iPad | iPad Pro | Desktop 1024px | Desktop >1200px |
 | :--- | :--- | :---| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Navigation < px | Good | Good | Good | Good | Good | Good | Good | n/a | n/a | n/a |
-| Navigation > px | n/a | n/a | n/a | n/a | n/a | n/a | n/a | Good | Good | Good |
+| website is responsive < px | Good | Good | Good | Good | Good | Good | Good | n/a | n/a | n/a |
+| website is responsive > px | n/a | n/a | n/a | n/a | n/a | n/a | n/a | Good | Good | Good |
+|**user stories** |
+| view the site from any devices |  |  |  |  |  |  |  |  |  |  |
+| Enter my player name |  |  |  |  |  |  |  |  |  |  |
+| Start the game by myself |
+| Reset the game round (scope: current level) |  |  |  |  |  |  |  |  |  |  |
+| Exit the game |  |  |  |  |  |  |  |  |  |  |
+| view information of my current level |  |  |  |  |  |  |  |  |  |  |
+| view round results |  |  |  |  |  |  |  |  |  |  |
+| links/buttons |  |  |  |  |  |  |  |  |  |  |
 |**index.html** |
-|  | Good | Good | Good | Good | Good | Good | Good | Good | Good | Good |
+| modals |  |  |  |  |  |  |  |  |  |  |
+| images work |  |  |  |  |  |  |  |  |  |  |
+| render as expected |  |  |  |  |  |  |  |  |  |  |
+
 
 
 ### Compatibility <a name="Compatibility"></a>
@@ -17,14 +29,14 @@ I tested the website across the 6 main browsers in both desktop and mobile confi
 - Chrome v.80.0
 - Edge v.44
 - Firefox v.73.0.1
-- Safari v.5.1.7 on Windows 10
+- Safari v.5.1.7 for Windows 10
 - Opera v.67.0
 - Internet Explorer v.11
 
-| All pages | Chrome | Edge | Firefox | Safari | Opera | IE |
+|All pages | Chrome | Edge | Firefox | Safari | Opera | IE |
 | :--- | :--- | :---| :--- | :--- | :--- | :--- |
-| Expected appearance | Good | Fair | Good | Poor | Good | Poor |
-| Expected responsiveness | Good | Good | Good | Poor | Good | Poor |
+| Expected appearance |  |  |  |  |  |  |
+| Expected responsiveness |  |  |  |  |  |  |
 
 - **Edge**:
 
