@@ -71,30 +71,21 @@ $(document).ready(function () {
     getCardFigures: function (gameLevel) {
       switch (gameLevel) {
         case (gameLevel = 1):
-          return (cardFigures = ["A", "B", "A", "B"]); //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"]
+          return (cardFigures = [1, 2, 1, 2]); 
           break;
         case (gameLevel = 2):
-          return (cardFigures = ["A", "B", "C", "A", "B", "C"]); //["A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G"]
+          return (cardFigures = [3, 4, 5, 3, 4, 5]); 
           break;
         case (gameLevel = 3):
-          return (cardFigures = ["A", "B", "C", "D", "A", "B", "C", "D"]); //["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"]
+          return (cardFigures = [6, 7, 8, 9, 6, 7, 8, 9]); 
           break;
         case (gameLevel = 4):
-          return (cardFigures = [
-            "A",
-            "B",
-            "C",
-            "D",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "E",
-          ]); //["A", "B", "C", "D", "E", "F", "G", "H", "I", "A", "B", "C", "D", "E", "F", "G", "H", "I"]
+          return (cardFigures = [10, 11, 12, 13, 14, 10, 11, 12, 13, 14]); 
           break;
+        case (gameLevel = 5):
+          return (cardFigures = [10, 11, 12, 13, 14, 15, 10, 11, 12, 13, 14, 15]); 
         default:
-          return (cardFigures = ["A", "A"]); //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"]
+          return (cardFigures = [20, 21]); 
       }
     },
 
@@ -142,12 +133,25 @@ $(document).ready(function () {
           '")',
       });
       if ($(".visible").length == 2) {
-        game.checkForPairedCards();
+        game.checkForPairedCards(game.gameLevel);
       }
     },
 
     // Check if a pair of cards have a similar figure, make the paired ones disapeared and hide the figures of the unpaired ones after a timeout interval
-    checkForPairedCards: function () {
+    checkForPairedCards: function (level) {
+      game.gameLevel = level;
+      switch (game.gameLevel) {
+        case game.gameLevel = 1:
+            time = 1000;
+            break;
+        case game.gameLevel = 2:
+            time = 800;
+            break;
+        case game.gameLevel = 3:
+            time = 500;
+            break;
+      }
+        
       if (
         $(".visible").first().data("cardFigure") ==
         $(".visible").last().data("cardFigure")
@@ -159,13 +163,13 @@ $(document).ready(function () {
               .removeClass("unpaired visible");
           });
           game.checkForSuccess();
-        }, 500);
+        }, time);
       } else {
         setTimeout(function () {
           $(".visible").each(function () {
             $(this).css({ background: "" }).removeClass("visible");
           });
-        }, 500);
+        }, time);
       }
       game.moves++;
       $("#moves").html("" + game.moves);
@@ -228,8 +232,8 @@ $(document).ready(function () {
       }, 1000);
     },
 
-    clearTime: function() {
-        clearInterval(game.refreshIntervalId);
+    clearTime: function () {
+      clearInterval(game.refreshIntervalId);
     },
 
     preloadImages: function () {
@@ -246,7 +250,7 @@ $(document).ready(function () {
         $(".container-performances").hide();
         $(".container-cards").hide();
         $("#btnStartModal").show();
-        
+
         $("#btnStartModal").click(function () {
           $("#startModal").modal({
             backdrop: "static",
