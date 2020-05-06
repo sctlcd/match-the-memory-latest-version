@@ -16,7 +16,7 @@ body {
   /* Responsive background image credit: https://www.webfx.com/blog/web-design/responsive-background-image/ */
   /* Set a background color that will be displayed while the background image is loading and Location of the image */
   background: #1f1740
-    url("../images/photo-of-multicolored-illustration-2832382-3000-4000-min.jpg");
+    url("../images/photo-of-multicolored-illustration-min.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -212,7 +212,7 @@ div#startModal.modal.fade.show {
   height: 150px;
   width: 150px;
   background: #1f1740
-    url("../images/city-art-los-angeles-street-art-2334805-min.jpg");
+    url("../images/city-art-los-angeles-street-art-min.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
