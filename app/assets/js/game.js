@@ -71,22 +71,21 @@ $(document).ready(function () {
     getCardFigures: function (gameLevel) {
       switch (gameLevel) {
         case (gameLevel = 1):
-          return (cardFigures = [1, 2, 1, 2]); //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"]
+          return (cardFigures = [1, 2, 1, 2]); 
           break;
         case (gameLevel = 2):
-          return (cardFigures = [3, 4, 5, 3, 4, 5]); //["A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G"]
+          return (cardFigures = [3, 4, 5, 3, 4, 5]); 
           break;
         case (gameLevel = 3):
-          return (cardFigures = [6, 7, 8, 9, 6, 7, 8, 9]); //["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"]
+          return (cardFigures = [6, 7, 8, 9, 6, 7, 8, 9]); 
           break;
         case (gameLevel = 4):
-          return (cardFigures = [10, 11, 12, 13, 14, 10, 11, 12, 13, 14]); //["A", "B", "C", "D", "E", "F", "G", "H", "I", "A", "B", "C", "D", "E", "F", "G", "H", "I"]
+          return (cardFigures = [10, 11, 12, 13, 14, 10, 11, 12, 13, 14]); 
           break;
         case (gameLevel = 5):
-          return (cardFigures = [10, 11, 12, 13, 14, 15, 10, 11, 12, 13, 14, 15]); //["A", "B", "C", "D", "E", "F", "G", "H", "I", "A", "B", "C", "D", "E", "F", "G", "H", "I"]
-          break;
+          return (cardFigures = [10, 11, 12, 13, 14, 15, 10, 11, 12, 13, 14, 15]); 
         default:
-          return (cardFigures = [20, 21]); //["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"]
+          return (cardFigures = [20, 21]); 
       }
     },
 
