@@ -16,7 +16,7 @@ body {
   /* Responsive background image credit: https://www.webfx.com/blog/web-design/responsive-background-image/ */
   /* Set a background color that will be displayed while the background image is loading and Location of the image */
   background: #1f1740
-    url("../images/photo-of-multicolored-illustration-2832382-3000-4000-min.jpg");
+    url("../images/photo-of-multicolored-illustration-min.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -54,16 +54,16 @@ div#startModal.modal.fade.show {
 #btnStartModal {
   margin: auto;
   display: block;
-  background-color: goldenrod;
-  border-color: goldenrod;
-  color: black;
+  background-color: #DAA520;
+  border-color: #DAA520;
+  color: #000000;
   font-weight: bold;
 }
 
 #startGameButton {
-  background-color: goldenrod;
-  border-color: goldenrod;
-  color: black;
+  background-color: #DAA520;
+  border-color: #DAA520;
+  color: #000000;
   font-weight: 700;
 }
 
@@ -76,8 +76,8 @@ div#startModal.modal.fade.show {
   text-align: center;
   width: 80%;
   margin: 0 auto;
-  border: solid 2px goldenrod;
-  color: goldenrod;
+  border: solid 2px #DAA520;
+  color: #DAA520;
 }
 
 .modal-content h3 {
@@ -90,22 +90,22 @@ div#startModal.modal.fade.show {
 }
 
 .btn-primary {
-  background-color: blue;
-  border-color: blue;
+  background-color: #0000FF;
+  border-color: #0000FF;
 }
 
 .btn-primary:hover {
   color: #fafafa;
-  background-color: blue;
-  border-color: blue;
+  background-color: #0000FF;
+  border-color: #0000FF;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
 .show > .btn-primary.dropdown-toggle {
   color: #fafafa;
-  background-color: blue;
-  border-color: blue;
+  background-color: #0000FF;
+  border-color: #0000FF;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -120,9 +120,9 @@ div#startModal.modal.fade.show {
 
 .btn-primary.focus,
 .btn-primary:focus {
-  color: #fff;
-  background-color: blue;
-  border-color: blue;
+  color: #fafafa;
+  background-color: #0000FF;
+  border-color: #0000FF;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -163,7 +163,7 @@ div#startModal.modal.fade.show {
   padding-bottom: 0.55em;
   padding-left: 0.8em;
   margin-right: 30px;
-  background-color: blue;
+  background-color: #0000FF;
 }
 
 .badge.moves,
@@ -211,8 +211,8 @@ div#startModal.modal.fade.show {
   margin: 10px;
   height: 150px;
   width: 150px;
-  background: black
-    url("../images/city-art-los-angeles-street-art-2334805-min.jpg");
+  background: #1f1740
+    url("../images/city-art-los-angeles-street-art-min.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -228,12 +228,12 @@ div#startModal.modal.fade.show {
 
 .card:hover {
   cursor: pointer;
-  border: 5px solid blue;
+  border: 5px solid #0000FF;
   box-shadow: 0 0 15px #fafafa;
 }
 
 .card.visible {
-  border: 5px solid blue;
+  border: 5px solid #0000FF;
   box-shadow: 0 0 15px #fafafa;
   transform: rotateY(180deg);
   perspective: 1000px;
