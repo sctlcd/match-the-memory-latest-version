@@ -136,6 +136,9 @@ I chose the combination of [purple](https://placehold.it/15/1f1740/1f1740) and [
 
 I picked a Google Font [Sedgwick Ave Display](https://fonts.google.com/specimen/Sedgwick+Ave+Display) which emphasizes the Urban art concept with a graffiti style writing font.
 
+I did not add any sound effects on purpose in this version of the game which the general purpose is memory and concentration as I believe sounds can disturb concentration. 
+Sound effects will possibly be part of a future version with the option to mute them.
+
 #### Framework <a name="Framework"></a>
 
 Bootstrap 4 - Because I've already used Bootstrap and I liked it, because it meets the project requirements "*Incorporate a structured layout*". I've decided to build this website with Bootstrap 4.
@@ -192,6 +195,8 @@ Back to [top](#TableOfContents)
  - Implement Scores saving and storage with player name
  - Displaying the highest scores recorded in the results pop up or in another specific place in the application (to be defined)
  - Add more complexity to the levels
+ - Allow the player to choose the level (to be defined, it could be implemented as options 'choose level mode' vs 'standard mode' which would be the current version of the game)
+ - Add sound effects and an option to mute them
 
 Back to [top](#TableOfContents)
 
@@ -219,7 +224,7 @@ Back to [top](#TableOfContents)
 
 ## Testing <a name="Testing"></a>
 
-Please see the testing coverage [here]() TO_ADD or below.
+My testing coverage for this project can be found [here](https://github.com/sctlcd/match-the-memory/blob/master/app/assets/testing/testing_README.md) in the testing sub-directory or below.
 
 ### Layout responsiveness <a name="LayoutResponsiveness"></a>
 
@@ -266,28 +271,31 @@ I tested the website across the 6 main browsers in both desktop and mobile confi
 
 ### Testing left <a name="Testingleft"></a>
 
-There is no way to install the latest version of the Safari browser on Windows 10 as Apple stopped developing Safari for Windows operating system long ago.
+- There is no way to install the latest version of the Safari browser on Windows 10 as Apple stopped developing Safari for Windows operating system long ago.
 For testing this website on the latest version of Safari, I will have to install the newest version of macOS on Windows 10 in a virtual machine.
+- Adding automated tests to speed up regression testing 
 
 ### Validators <a name="Validators"></a>
 
 **HTML**
 - [W3C HTML Validator](https://validator.w3.org/)
-    -
+    - No errors
 
 **CSS**
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-	-
+	- No errors
 
 **Javascript**
 - [Javascript Validator](http://beautifytools.com/javascript-validator.php)
-	-
+	- No errors
+
 **Chrome DevTools**
 - [Chrome DevTools] (https://developers.google.com/web/tools/chrome-devtools/)
 Console Navigating through the Website rendered no critical fails/errors in the console that were necessary to fix.
 
 ### Known Issues <a name="KnownIssues"></a>
 
+- Background overlay of the modal on Galaxy S5, Pixel, Pixel 2 XL, iPhone 6/7/8, iPhone X, iPad does not display as expected
 
 Back to [top](#TableOfContents)
 
@@ -331,7 +339,7 @@ Back to [top](#TableOfContents)
 
 ### Content <a name="Content"></a>
 
-- All images visible on the cards come from [PlaceIMG](https://placeimg.com/), a random images generator website. It offers the possibility to customise images (width, height, category).
+- All images visible on the cards come from [PlaceIMG](https://placeimg.com/), a random image generator website. It offers the possibility to customise images (width, height, category) before their random generation.
 
 ### Media <a name="Media"></a>
 
