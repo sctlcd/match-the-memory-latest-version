@@ -16,7 +16,7 @@
 
   <body>
     <!-- wrapper -->
-    <section class="wrapper">
+    <div class="wrapper">
       <!-- header -->
       <header class="header">
         <div class="row">
@@ -36,7 +36,6 @@
               id="startModal"
               tabindex="-1"
               role="dialog"
-              aria-labelledby="modalCenterTitle"
               aria-hidden="true"
             >
               <div class="modal-dialog modal-dialog-centered" role="document">
@@ -47,7 +46,7 @@
                     </h3>
                     <br />
                     <form>
-                      <label for="#playerName">Enter your name:</label><br />
+                      <label for="playerName">Enter your name:</label><br />
                       <input
                         type="text"
                         class="playerName"
@@ -72,21 +71,21 @@
       </section>
 
       <!-- container-information -->
-      <section class="container container-information">
+      <div class="container container-information">
         <div class="row">
           <div class="col-12 information-details"></div>
         </div>
-      </section>
+      </div>
 
       <!-- container-cards -->
-      <section class="container container-cards">
+      <div class="container container-cards">
         <div class="row">
           <div class="col-12 card-details"></div>
         </div>
-      </section>
+      </div>
 
       <!-- container-start-modal -->
-      <section class="container container-results-modal">
+      <div class="container container-results-modal">
         <div class="row">
           <div class="col-12">
             <div
@@ -94,17 +93,16 @@
               id="resultsModal"
               tabindex="-1"
               role="dialog"
-              aria-labelledby="modalCenterTitle"
-              aria-hidden="true"
+              
             >
+            <!-- aria-hidden="true" -->
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-body">
                     <h3 class="modal-title uppercase" id="resultMenuTitle">
                       Congrats!
                     </h3>
-                        <p class="resultsText">
-                        </p>
+                    <p class="resultsText"></p>
                     <button
                       type="button"
                       class="btn btn-warning"
@@ -118,10 +116,10 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <div class="push"></div>
-    </section>
+      <!-- <div class="push"></div> -->
+    </div>
 
     <!-- Footer -->
     <footer class="container container-fluid footer">

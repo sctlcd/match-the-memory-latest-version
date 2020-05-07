@@ -256,11 +256,6 @@ div#startModal.modal.fade.show {
   margin-bottom: 0;
 }
 
-/* .footer,
-.push {
-  height: 50px;
-} */
-
 .footer-details a {
   color: #fafafa;
 }
@@ -328,7 +323,6 @@ div#startModal.modal.fade.show {
   .card {
     width: 180px;
     height: 180px;
-    /* line-height: 40px; */
   }
 
   .header-details h1 {
@@ -380,7 +374,6 @@ div#startModal.modal.fade.show {
   .card {
     width: 150px;
     height: 150px;
-    /* line-height: 150px; */
   }
 
   .header-details h1 {
@@ -432,7 +425,6 @@ div#startModal.modal.fade.show {
   .card {
     width: 100px;
     height: 100px;
-    /* line-height: 75px; */
   }
 
   .header-details h1 {
@@ -484,7 +476,6 @@ div#startModal.modal.fade.show {
   .card {
     width: 75px;
     height: 75px;
-    /* line-height: 50px; */
   }
 
   .header-details h1 {
