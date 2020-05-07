@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Memory game</title>
+    <title>Match the memory</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -15,8 +15,8 @@
   </head>
 
   <body>
-    <!-- wrapper -->
-    <div class="wrapper">
+    <!-- content -->
+    <div class="container container-fluid content">
       <!-- header -->
       <header class="header">
         <div class="row">
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-      <!-- container-start-modal -->
+      <!-- container-results-modal -->
       <div class="container container-results-modal">
         <div class="row">
           <div class="col-12">
@@ -93,9 +93,7 @@
               id="resultsModal"
               tabindex="-1"
               role="dialog"
-              
             >
-            <!-- aria-hidden="true" -->
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-body">
@@ -108,7 +106,14 @@
                       class="btn btn-warning"
                       id="resultsButton"
                     >
-                      Play again
+                      Level up
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      id="endGameButton"
+                    >
+                      Play again!
                     </button>
                   </div>
                 </div>
@@ -117,8 +122,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="push"></div> -->
     </div>
 
     <!-- Footer -->

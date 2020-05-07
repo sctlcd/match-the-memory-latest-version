@@ -352,18 +352,19 @@ Sources of the images used on this site:
 ### Code <a name="Code"></a>
 
 - Sticky footer - [Css-tricks](https://css-tricks.com/couple-takes-sticky-footer/)
+- Way to implement wrapper - [Css-tricks](https://css-tricks.com/best-way-implement-wrapper-css/)
+- Responsive background image - [Webfx](https://www.webfx.com/blog/web-design/responsive-background-image/)
 - Shuffle cards details - [Medium](https://medium.com/swlh/the-javascript-shuffle-62660df19a5d)
-- How To Create a Flip Card [W3schools](https://www.w3schools.com/howto/howto_css_flip_card.asp)
-- Disable background after modal popup [Stackoverflow](https://stackoverflow.com/questions/39672346/bootstrap-3-disable-background-after-modal-popup)
-- jQuery timer [Yogihosting](https://www.yogihosting.com/jquery-timer/)
-- Stop setInterval call in JavaScript [Stackoverflow](https://stackoverflow.com/questions/109086/stop-setinterval-call-in-javascript)
-- jQuery effect [jQuery UI](https://jqueryui.com/effect/)
-- jQuery API documentation [API jQuery](https://api.jquery.com/data/)
-- Memory Game built with jQuery [Medium](https://medium.com/letsboot/memory-game-built-with-jquery-ec6099618d67)
-- Memory Game Programming JavaScript Tutorial
- [YouTube](https://www.youtube.com/watch?v=c_ohDPWmsM0&feature=emb_rel_pause)
-- Part 1 - HTML / CSS - 4×4 Memory Game In JavaScript [YouTube](https://www.youtube.com/watch?v=qYMJMf7JsbM)
-- Memory Card Game - JavaScript Tutorial [YouTube](https://www.youtube.com/watch?v=ZniVgo8U7ek)
+- How To Create a Flip Card - [W3schools](https://www.w3schools.com/howto/howto_css_flip_card.asp)
+- Disable background after modal popup - [Stackoverflow](https://stackoverflow.com/questions/39672346/bootstrap-3-disable-background-after-modal-popup)
+- jQuery timer - [Yogihosting](https://www.yogihosting.com/jquery-timer/)
+- Stop setInterval call in JavaScript - [Stackoverflow](https://stackoverflow.com/questions/109086/stop-setinterval-call-in-javascript)
+- jQuery effect - [jQuery UI](https://jqueryui.com/effect/)
+- jQuery API documentation - [API jQuery](https://api.jquery.com/data/)
+- Memory Game built with jQuery - [Medium](https://medium.com/letsboot/memory-game-built-with-jquery-ec6099618d67)
+- Memory Game Programming JavaScript Tutorial - [YouTube](https://www.youtube.com/watch?v=c_ohDPWmsM0&feature=emb_rel_pause)
+- Part 1 - HTML / CSS - 4×4 Memory Game In JavaScript - [YouTube](https://www.youtube.com/watch?v=qYMJMf7JsbM)
+- Memory Card Game - JavaScript Tutorial - [YouTube](https://www.youtube.com/watch?v=ZniVgo8U7ek)
 
 ### Acknowledgements <a name="Acknowledgements"></a>
 

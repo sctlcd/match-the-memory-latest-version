@@ -28,13 +28,15 @@ body {
   background-position: center center;
   /* Background image is fixed in the viewport so that it doesn't move when the content's height is greater than the image's height */
   background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.wrapper {
-  min-height: 100vh;
+.content {
   margin: 0 auto;
   padding: 0;
-  display: grid;
+  flex: 1 0 auto;
 }
 
 .inline {
@@ -43,6 +45,10 @@ body {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.modal {
+  width: 95%;
 }
 
 /*------------------------------------------------------ start modal -------------------*/
@@ -58,6 +64,7 @@ div#startModal.modal.fade.show {
   border-color: #daa520;
   color: #000000;
   font-weight: bold;
+  margin-top: 30%;
 }
 
 #startGameButton {
@@ -245,7 +252,7 @@ div#startModal.modal.fade.show {
 .footer {
   background-color: transparent;
   color: #fafafa;
-  margin: auto;
+  margin: 0 auto;
   width: 100%;
   justify-items: center;
   display: grid;
@@ -271,7 +278,6 @@ div#startModal.modal.fade.show {
   .card {
     width: 200px;
     height: 200px;
-    /* line-height: 100px; */
   }
 
   .header-details h1 {
@@ -368,12 +374,12 @@ div#startModal.modal.fade.show {
 /* md - Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .card-details {
-    width: 800px;
+    width: 600px;
   }
 
   .card {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
   }
 
   .header-details h1 {
@@ -419,12 +425,12 @@ div#startModal.modal.fade.show {
 /* sm - Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
   .card-details {
-    width: 500px;
+    width: 550px;
   }
 
   .card {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 
   .header-details h1 {
@@ -443,11 +449,13 @@ div#startModal.modal.fade.show {
   #restart {
     margin-left: 20px;
     font-size: 12px;
+    padding: 3px 10px;
   }
 
   #exit {
     margin-left: 15px;
     font-size: 12px;
+    padding: 3px 10px;
   }
 
   #btnStartModal {
@@ -474,8 +482,8 @@ div#startModal.modal.fade.show {
   }
 
   .card {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
   }
 
   .header-details h1 {
@@ -483,7 +491,7 @@ div#startModal.modal.fade.show {
   }
 
   .footer p {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .badge {
@@ -492,13 +500,15 @@ div#startModal.modal.fade.show {
   }
 
   #restart {
-    margin-left: 20px;
+    margin-left: 15px;
     font-size: 12px;
+    padding: 3px 10px;
   }
 
   #exit {
     margin-left: 10px;
     font-size: 12px;
+    padding: 3px 10px;
   }
 
   #btnStartModal {
