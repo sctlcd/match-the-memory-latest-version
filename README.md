@@ -1,6 +1,6 @@
-# [Match the memory]()
+# [Match the memory](https://sctlcd.github.io/match-the-memory/)
 
-to_add img or demo
+<img src="https://github.com/sctlcd/match-the-memory/tree/master/app/assets/wireframes/Multi Device Website Mockup Generator-min.png" alt="Match the memory" width="700">
 <dl>
 <dt>A nice blast from the past!</dt><br>
 <dd>I was playing memory card games with my sister when I was a little girl and I kept pretty fun memories of theses times</dd>
@@ -61,33 +61,36 @@ to_add img or demo
 
 The general purpose of this website is to give the opportunity to people to improve their concentration and challenging their visual memory while having fun. And this anytime, anywhere as this game is available on various devices as desktops, tablets and mobile.
 
-**Match the memory** is a card game in which all of the cards are laid face down on the screen and two cards are flipped face up over each turn. If the cards match they stay face up if not they flip back. The object of the game is to turn over pairs of matching cards. Once all cards are matched, a popup message appears and congratulates the player for winning the game. The popup gives the game round result, how much time and how many moves it took to end the game.  
+**Match the memory** is a card game in which all of the cards are laid face down on the screen and two cards are flipped face up over each turn. If the cards match they stay face up if not they flip back. The object of the game is to turn over pairs of matching cards. Once all cards are matched, a popup message appears and congratulates the player for winning the game. The popup gives the game round result, how much time and how many moves it took to end the game.
 
 ### How to play? <a name="HowToPlay"></a>
 
 The goal is to match all the cards together and win the game round.
+
 1. Click on the Let's play button. Enter your player name and start playing.
 
 2. Click on two cards, if they match, look for another pair of cards. If cards don't pair, try again.
 
 3. Keep matching up pairs until all cards are matched and faced up.
 
-4. Once you matched all cards together. Congrats you win!
-An pop up window appears showing you your game result, time and moves, to complete the game.
-
-5. If there is an issue during the game, just hit the restart button on the right corner of the game.
+4. If there is an issue during the game, just hit the restart button on the right corner of the game.
  If you want to start over, hit the exit button on the right corner of the game.
 
-6. On the result pop up, you can hit 'Play Again!' to have another go at the level up game, keep playing for the minimum of moves in the minimum of time.
+5. Once you matched all cards together. Congrats you win!
+An popup window appears showing you your game round result, time and moves, to complete the game.
 
-7. Good luck and may the best fan win!
+6. In the result popup, you can hit 'Level up!' to have another go at the level up game, keep playing for the minimum of moves in the minimum of time.
 
-Level description: TO_ADD
-Level 1: X paired of cards, trigger the animation of flipping back the card after 1s  
-Level 2: X paired of cards, trigger the animation of flipping back the card after 0,8s animation
-Level 3: X paired of cards, trigger the animation of flipping back the card after 0,5s animation
-Level 4: X paired of cards, trigger the animation of flipping back the card after 0,5s animation
-Level 5: X paired of cards, trigger the animation of flipping back the card after 0,5s animation
+7. When the player complete the 5 levels, a popup invite him to start the game over by hitting 'Play again!'.
+
+8. Good luck and may the best fan win!
+
+Levels description:
+- Level 1: 4 paired of cards, trigger the animation of flipping back the pair of card after 1s
+- Level 2: 6 paired of cards, trigger the animation of flipping back the pair of card after 0,9s
+- Level 3: 8 paired of cards, trigger the animation of flipping back the pair of card after 0,7s
+- Level 4: 10 paired of cards, trigger the animation of flipping back the pair of card after 0,7s
+- Level 5: 12 paired of cards, trigger the animation of flipping back the pair of card after 0,5s
 
 ### Why this project? <a name="WhyThisProject"></a>
 
@@ -118,7 +121,8 @@ Back to [top](#TableOfContents)
 - [x] Exit the game (start the game over and enter your player name again)
 - [x] View information of my current game round in progress (level, moves, timer)
 - [x] View game round results (player name, level, moves and time it took to finish the current game round)
-- [x] Play again with level up by default
+- [x] Play again with level up by default.
+- [x] Start the game over after 5 levels completed
 
 <br>
 - [x] *marked the item as implemented successfully*
@@ -185,7 +189,17 @@ Back to [top](#TableOfContents)
 
 ##### [Main page](https://github.com/sctlcd/match-the-memory/blob/master/index.html) <a name="Mainpage"></a>
 
-- TO_ADD
+- A button 'Let's play' opens a Start popup asking the player to enter a player name. This entry is requiered prior to start the game.
+- By hitting 'Let's play' from the Start popup the user trigger the timer / the beginning of the game.
+- When a card is selected it triggers a flip effect which makes the figure of the card visible.
+- Only 2 cards can be visible at the same time. 
+- If the 2 visible cards match the 2 cards disappear if not both cards are flipped back. 
+- Each try of matching 2 pair of cards count for 1 move. 
+- The current level, timer and moves in progress of the game round are displayed on the screen 
+- The reset button reset the timer and the moves of the current level.
+- The exit button starts the game over. (the user name has to be enter again)
+- When all cards are matched a Result popup show the player's results : player name, level, time and moves it took to finish the game round. A 'Level up' button triggers a level up game round.
+- When the player completed 5 levels a popup informs and invites him/her to play the game over by hitting 'Play again!'
 
 ### Features Left to Implement <a name="FeaturesLeftToImplement"></a>
 
@@ -193,7 +207,7 @@ Back to [top](#TableOfContents)
  - Total moves counter (all levels finished)
  - Implement score
  - Implement Scores saving and storage with player name
- - Displaying the highest scores recorded in the results pop up or in another specific place in the application (to be defined)
+ - Displaying the highest scores recorded in the results popup or in another specific place in the application (to be defined)
  - Add more complexity to the levels
  - Allow the player to choose the level (to be defined, it could be implemented as options 'choose level mode' vs 'standard mode' which would be the current version of the game)
  - Add sound effects and an option to mute them
@@ -226,19 +240,6 @@ Back to [top](#TableOfContents)
 
 My testing coverage for this project can be found [here](https://github.com/sctlcd/match-the-memory/blob/master/app/assets/testing/testing_README.md) in the testing sub-directory or below.
 
-### Layout responsiveness <a name="LayoutResponsiveness"></a>
-
-|  | Galaxy S5 | Pixel | Pixel 2 XL |iPhone 6/7/8 | iPhone 6/7/8 Plus | iPhone X | iPad | iPad Pro | Desktop 1024px | Desktop >1200px |
-| :--- | :--- | :---| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| website is responsive < 767 px | Good | Good | Good | Good | Good | Good | n/a | n/a | n/a | n/a |
-| website is responsive > 768 px | n/a | n/a | n/a | n/a | n/a | n/a | Good | Good | Good | Good |
-|**index.html** |
-| modals | Good | Good | Good | Good | Good | Good | Good | Good | Good | Good |
-| overlay | Poor | Fair | Fair | Poor | Good | Poor | Poor | Good | Good | Good |
-| images work | Good | Good | Good | Good | Good | Good |Good  | Good | Good | Good |
-| links/buttons | Good | Good | Good | Good | Good | Good | Good | Good  | Good | Good |
-| render as expected | Good | Good | Good | Good | Good | Good | Good | Good | Good | Good |
-
 ### User story validation <a name="UserStoryValidation"></a>
 
 |  | Galaxy S5 | Pixel | Pixel 2 XL |iPhone 6/7/8 | iPhone 6/7/8 Plus | iPhone X | iPad | iPad Pro | Desktop 1024px | Desktop >1200px |
@@ -252,28 +253,46 @@ My testing coverage for this project can be found [here](https://github.com/sctl
 | View information of my current game round in progress (level, moves, timer) | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
 | View game round results (player name, level, moves and time it took to finish the current game round) | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
 | Play again with level up by default | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |Pass  |
+| Start the game over after 5 levels completed | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |Pass  |
+
+### Layout responsiveness <a name="LayoutResponsiveness"></a>
+
+|  | Galaxy S5 | Pixel | Pixel 2 XL |iPhone 6/7/8 | iPhone 6/7/8 Plus | iPhone X | iPad | iPad Pro | Desktop 1024px | Desktop >1200px |
+| :--- | :--- | :---| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| website is responsive < 767 px | Good | Good | Good | Good | Good | Good | n/a | n/a | n/a | n/a |
+| website is responsive > 768 px | n/a | n/a | n/a | n/a | n/a | n/a | Good | Good | Good | Good |
+|**index.html** |
+| modals | Good | Good | Good | Good | Good | Good | Good | Good | Good | Good |
+| overlay of the background modal | Poor | Poor | Poor | Poor | Poor | Poor | Good | Good | Good | Good |
+| images work | Good | Good | Good | Good | Good | Good |Good  | Good | Good | Good |
+| links/buttons | Good | Good | Good | Good | Good | Good | Good | Good  | Good | Good |
+| render as expected | Good | Good | Good | Good | Good | Good | Good | Good | Good | Good |
 
 ### Compatibility <a name="Compatibility"></a>
 
 I tested the website across the 6 main browsers in both desktop and mobile configuration to ensure a large number of users can use it successfully.
 
-- Chrome v.80.0
+- Chrome v.81.0
 - Edge v.44
-- Firefox v.73.0.1
+- Firefox v.75.0
 - Safari v.5.1.7 for Windows 10
-- Opera v.67.0
+- Opera v.68.0
 - Internet Explorer v.11
 
 |All pages | Chrome | Edge | Firefox | Safari | Opera | IE |
 | :--- | :--- | :---| :--- | :--- | :--- | :--- |
-| Expected appearance | Good |  | Good |  |  |  |
-| Expected responsiveness | Good |  | Good |  |  |  |
+| Expected appearance | Good | Fair | Good | Poor | Good | Poor |
+| Expected responsiveness | Good | Good | Good | Poor | Good | Poor |
+
+- IE: Some CSS3 properties and HTML5 elements are not fully supported
+
+- Safari v.5.1.7: It’s an outdated version and lacks many of the features present in the latest version of Safari. The last version of Safari for Windows was released on May 9, 2012.
 
 ### Testing left <a name="Testingleft"></a>
 
 - There is no way to install the latest version of the Safari browser on Windows 10 as Apple stopped developing Safari for Windows operating system long ago.
 For testing this website on the latest version of Safari, I will have to install the newest version of macOS on Windows 10 in a virtual machine.
-- Adding automated tests to speed up regression testing 
+- Adding automated tests
 
 ### Validators <a name="Validators"></a>
 
@@ -295,7 +314,7 @@ Console Navigating through the Website rendered no critical fails/errors in the 
 
 ### Known Issues <a name="KnownIssues"></a>
 
-- Background overlay of the modal on Galaxy S5, Pixel, Pixel 2 XL, iPhone 6/7/8, iPhone X, iPad does not display as expected
+- Background overlay of the Start and Result modal on Galaxy S5, Pixel Pixel 2 XL, iPhone 6/7/8, iPhone 6/7/8 Plus, iPhone X does not display as expected.
 
 Back to [top](#TableOfContents)
 
@@ -310,7 +329,7 @@ Back to [top](#TableOfContents)
  3.	Find the “settings” tab and click on it.
  4.	Scroll down until the “GitHub Pages” sections.
  5.	Under the “source” drop down menu, choose a branch. I chose “master branch” and select it.
- 6.	You will then see a URL to your live webpage. In my case the URL is https://sctlcd.github.io// TO_ADD
+ 6.	You will then see a URL to your live webpage. In my case the URL is https://sctlcd.github.io/match-the-memory/
 
 ### Deployment – Run Locally <a name="Deploymentrunlocally"></a>
 
@@ -345,7 +364,7 @@ Back to [top](#TableOfContents)
 
 Sources of the images used on this site:
 
-- From images sub-directory - [Github] TO_ADD()
+- From images sub-directory - [Github](https://github.com/sctlcd/match-the-memory/tree/master/app/assets/images)
 	- city-art-los-angeles-street-art-min.jpg - [Pexel | copyright ᒷ⟁⨃.ᖇ.ᕮ.∥.ᕮ](https://www.pexels.com/photo/city-art-los-angeles-street-art-2334805/)
 	- photo-of-multicolored-illustration-min.jpg - [Pexel | copyright Anni Roenkae](https://www.pexels.com/photo/photo-of-multicolored-illustration-2832382/)
 
