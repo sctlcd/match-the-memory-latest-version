@@ -54,15 +54,15 @@ div#startModal.modal.fade.show {
 #btnStartModal {
   margin: auto;
   display: block;
-  background-color: #DAA520;
-  border-color: #DAA520;
+  background-color: #daa520;
+  border-color: #daa520;
   color: #000000;
   font-weight: bold;
 }
 
 #startGameButton {
-  background-color: #DAA520;
-  border-color: #DAA520;
+  background-color: #daa520;
+  border-color: #daa520;
   color: #000000;
   font-weight: 700;
 }
@@ -74,10 +74,10 @@ div#startModal.modal.fade.show {
 
 .modal-content {
   text-align: center;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  border: solid 2px #DAA520;
-  color: #DAA520;
+  border: solid 2px #daa520;
+  color: #daa520;
 }
 
 .modal-content h3 {
@@ -90,22 +90,22 @@ div#startModal.modal.fade.show {
 }
 
 .btn-primary {
-  background-color: #0000FF;
-  border-color: #0000FF;
+  background-color: #0000ff;
+  border-color: #0000ff;
 }
 
 .btn-primary:hover {
   color: #fafafa;
-  background-color: #0000FF;
-  border-color: #0000FF;
+  background-color: #0000ff;
+  border-color: #0000ff;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
 .show > .btn-primary.dropdown-toggle {
   color: #fafafa;
-  background-color: #0000FF;
-  border-color: #0000FF;
+  background-color: #0000ff;
+  border-color: #0000ff;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -121,8 +121,8 @@ div#startModal.modal.fade.show {
 .btn-primary.focus,
 .btn-primary:focus {
   color: #fafafa;
-  background-color: #0000FF;
-  border-color: #0000FF;
+  background-color: #0000ff;
+  border-color: #0000ff;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -151,9 +151,9 @@ div#startModal.modal.fade.show {
   font-size: 52px;
 }
 
-/*------------------------------------------------------ container-performances -------------------*/
+/*------------------------------------------------------ container-information -------------------*/
 
-.container-performances {
+.container-information {
   text-align: center;
 }
 
@@ -163,7 +163,7 @@ div#startModal.modal.fade.show {
   padding-bottom: 0.55em;
   padding-left: 0.8em;
   margin-right: 30px;
-  background-color: #0000FF;
+  background-color: #0000ff;
 }
 
 .badge.moves,
@@ -211,8 +211,7 @@ div#startModal.modal.fade.show {
   margin: 10px;
   height: 150px;
   width: 150px;
-  background: #1f1740
-    url("../images/city-art-los-angeles-street-art-min.jpg");
+  background: #1f1740 url("../images/city-art-los-angeles-street-art-min.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -228,12 +227,12 @@ div#startModal.modal.fade.show {
 
 .card:hover {
   cursor: pointer;
-  border: 5px solid #0000FF;
+  border: 5px solid #0000ff;
   box-shadow: 0 0 15px #fafafa;
 }
 
 .card.visible {
-  border: 5px solid #0000FF;
+  border: 5px solid #0000ff;
   box-shadow: 0 0 15px #fafafa;
   transform: rotateY(180deg);
   perspective: 1000px;
@@ -268,6 +267,58 @@ div#startModal.modal.fade.show {
 
 /*------------------------------------------------------ footer -------------------*/
 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .card-details {
+    width: 1100px;
+  }
+
+  .card {
+    width: 200px;
+    height: 200px;
+    /* line-height: 100px; */
+  }
+
+  .header-details h1 {
+    font-size: 48px;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
+
+  .badge {
+    margin-right: 40px;
+    font-size: 20px;
+  }
+
+  #restart {
+    margin-left: 100px;
+    font-size: 20px;
+  }
+
+  #exit {
+    margin-left: 40px;
+    font-size: 20px;
+  }
+
+  #btnStartModal {
+    font-size: 20px;
+  }
+
+  .modal-body form {
+    font-size: 20px;
+  }
+
+  #startGameButton {
+    font-size: 20px;
+  }
+
+  .modal-content h3 {
+    font-size: 32px;
+  }
+}
+
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .card-details {
@@ -275,20 +326,55 @@ div#startModal.modal.fade.show {
   }
 
   .card {
-    width: 200px;
-    height: 200px;
-    line-height: 20px;
+    width: 180px;
+    height: 180px;
+    /* line-height: 40px; */
   }
-}
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+  .header-details h1 {
+    font-size: 48px;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
+
+  .badge {
+    margin-right: 36px;
+    font-size: 18px;
+  }
+
+  #restart {
+    margin-left: 80px;
+    font-size: 18px;
+  }
+
+  #exit {
+    margin-left: 30px;
+    font-size: 18px;
+  }
+
+  #btnStartModal {
+    font-size: 18px;
+  }
+
+  .modal-body form {
+    font-size: 18px;
+  }
+
+  #startGameButton {
+    font-size: 18px;
+  }
+
+  .modal-content h3 {
+    font-size: 30px;
+  }
 }
 
 /* md - Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .card-details {
-    width: 600px;
+    width: 800px;
   }
 
   .card {
@@ -306,18 +392,34 @@ div#startModal.modal.fade.show {
   }
 
   .badge {
-    margin-right: 10px;
-    font-size: 18px;
+    margin-right: 32px;
+    font-size: 16px;
   }
 
   #restart {
-    margin-left: 30px;
-    font-size: 18px;
+    margin-left: 60px;
+    font-size: 16px;
   }
 
   #exit {
-    margin-left: 10px;
-    font-size: 18px;
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+  #btnStartModal {
+    font-size: 16px;
+  }
+
+  .modal-body form {
+    font-size: 16px;
+  }
+
+  #startGameButton {
+    font-size: 16px;
+  }
+
+  .modal-content h3 {
+    font-size: 28px;
   }
 }
 
@@ -338,22 +440,38 @@ div#startModal.modal.fade.show {
   }
 
   .footer p {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .badge {
-    margin-right: 10px;
-    font-size: 14px;
+    margin-right: 15px;
+    font-size: 12px;
   }
 
   #restart {
     margin-left: 20px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   #exit {
-    margin-left: 10px;
-    font-size: 14px;
+    margin-left: 15px;
+    font-size: 12px;
+  }
+
+  #btnStartModal {
+    font-size: 12px;
+  }
+
+  .modal-body form {
+    font-size: 12px;
+  }
+
+  #startGameButton {
+    font-size: 12px;
+  }
+
+  .modal-content h3 {
+    font-size: 22px;
   }
 }
 
@@ -370,7 +488,7 @@ div#startModal.modal.fade.show {
   }
 
   .header-details h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .footer p {
@@ -390,5 +508,21 @@ div#startModal.modal.fade.show {
   #exit {
     margin-left: 10px;
     font-size: 12px;
+  }
+
+  #btnStartModal {
+    font-size: 12px;
+  }
+
+  .modal-body form {
+    font-size: 12px;
+  }
+
+  #startGameButton {
+    font-size: 12px;
+  }
+
+  .modal-content h3 {
+    font-size: 20px;
   }
 }
