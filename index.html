@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Memory game</title>
+    <title>Match the memory</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -15,8 +15,8 @@
   </head>
 
   <body>
-    <!-- wrapper -->
-    <section class="wrapper">
+    <!-- content -->
+    <div class="container container-fluid content">
       <!-- header -->
       <header class="header">
         <div class="row">
@@ -36,7 +36,6 @@
               id="startModal"
               tabindex="-1"
               role="dialog"
-              aria-labelledby="modalCenterTitle"
               aria-hidden="true"
             >
               <div class="modal-dialog modal-dialog-centered" role="document">
@@ -47,7 +46,7 @@
                     </h3>
                     <br />
                     <form>
-                      <label for="#playerName">Enter your name:</label><br />
+                      <label for="playerName">Enter your name:</label><br />
                       <input
                         type="text"
                         class="playerName"
@@ -72,21 +71,21 @@
       </section>
 
       <!-- container-information -->
-      <section class="container container-information">
+      <div class="container container-information">
         <div class="row">
           <div class="col-12 information-details"></div>
         </div>
-      </section>
+      </div>
 
       <!-- container-cards -->
-      <section class="container container-cards">
+      <div class="container container-cards">
         <div class="row">
           <div class="col-12 card-details"></div>
         </div>
-      </section>
+      </div>
 
-      <!-- container-start-modal -->
-      <section class="container container-results-modal">
+      <!-- container-results-modal -->
+      <div class="container container-results-modal">
         <div class="row">
           <div class="col-12">
             <div
@@ -94,8 +93,6 @@
               id="resultsModal"
               tabindex="-1"
               role="dialog"
-              aria-labelledby="modalCenterTitle"
-              aria-hidden="true"
             >
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -103,14 +100,20 @@
                     <h3 class="modal-title uppercase" id="resultMenuTitle">
                       Congrats!
                     </h3>
-                        <p class="resultsText">
-                        </p>
+                    <p class="resultsText"></p>
                     <button
                       type="button"
                       class="btn btn-warning"
                       id="resultsButton"
                     >
-                      Play again
+                      Level up
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      id="endGameButton"
+                    >
+                      Play again!
                     </button>
                   </div>
                 </div>
@@ -118,10 +121,8 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <div class="push"></div>
-    </section>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="container container-fluid footer">

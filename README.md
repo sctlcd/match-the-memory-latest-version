@@ -36,7 +36,8 @@ to_add img or demo
 
 4. [Testing](#Testing)
 
-	- [Layout responsiveness](#Layoutresponsiveness)
+    - [User story validation](#UserStoryValidation)
+	- [Layout responsiveness](#LayoutResponsiveness)
 	- [Compatibility](#Compatibility)
 	- [Testing left](#Testingleft)
 	- [Validators](#Validators)
@@ -111,11 +112,13 @@ Back to [top](#TableOfContents)
 
 - [x] view the site from **any devices** (mobile, tablet, desktop).
 - [x] Enter my player name
-- [x] Start the game by myself
+- [x] Player name is requiered prior to start the game
+- [x] Start the game by myself (by clicking on a button)
 - [x] Reset the game round (scope: current level)
-- [x] Exit the game (start the game over, before entering the player name)
-- [x] view information of my current level in progress (moves, timer)
-- [x] view round game results (player name, moves and time it took to finish the current level)
+- [x] Exit the game (start the game over and enter your player name again)
+- [x] View information of my current game round in progress (level, moves, timer)
+- [x] View game round results (player name, level, moves and time it took to finish the current game round)
+- [x] Play again with level up by default
 
 <br>
 - [x] *marked the item as implemented successfully*
@@ -132,6 +135,9 @@ I picked the [blue color](https://placehold.it/15/0000FF/0000FF) reminiscent of 
 I chose the combination of [purple](https://placehold.it/15/1f1740/1f1740) and [gold](https://placehold.it/15/DAA520/DAA520) reminiscent of the same colors in the [abstract background](https://www.pexels.com/photo/photo-of-multicolored-illustration-2832382/) for showing the start menu and the results menu.
 
 I picked a Google Font [Sedgwick Ave Display](https://fonts.google.com/specimen/Sedgwick+Ave+Display) which emphasizes the Urban art concept with a graffiti style writing font.
+
+I did not add any sound effects on purpose in this version of the game which the general purpose is memory and concentration as I believe sounds can disturb concentration. 
+Sound effects will possibly be part of a future version with the option to mute them.
 
 #### Framework <a name="Framework"></a>
 
@@ -189,6 +195,8 @@ Back to [top](#TableOfContents)
  - Implement Scores saving and storage with player name
  - Displaying the highest scores recorded in the results pop up or in another specific place in the application (to be defined)
  - Add more complexity to the levels
+ - Allow the player to choose the level (to be defined, it could be implemented as options 'choose level mode' vs 'standard mode' which would be the current version of the game)
+ - Add sound effects and an option to mute them
 
 Back to [top](#TableOfContents)
 
@@ -216,27 +224,34 @@ Back to [top](#TableOfContents)
 
 ## Testing <a name="Testing"></a>
 
-Please see the testing coverage [here]() TO_ADD or below.
+My testing coverage for this project can be found [here](https://github.com/sctlcd/match-the-memory/blob/master/app/assets/testing/testing_README.md) in the testing sub-directory or below.
 
-### Layout responsiveness <a name="Layoutresponsiveness"></a>
+### Layout responsiveness <a name="LayoutResponsiveness"></a>
 
 |  | Galaxy S5 | Pixel | Pixel 2 XL |iPhone 6/7/8 | iPhone 6/7/8 Plus | iPhone X | iPad | iPad Pro | Desktop 1024px | Desktop >1200px |
 | :--- | :--- | :---| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| website is responsive < px | Good | Good | Good | Good | Good | Good | Good | n/a | n/a | n/a |
-| website is responsive > px | n/a | n/a | n/a | n/a | n/a | n/a | n/a | Good | Good | Good |
-|**user stories** |
-| view the site from any devices |  |  |  |  |  |  |  |  |  |  |
-| Enter my player name |  |  |  |  |  |  |  |  |  |  |
-| Start the game by myself |
-| Reset the game round (scope: current level) |  |  |  |  |  |  |  |  |  |  |
-| Exit the game |  |  |  |  |  |  |  |  |  |  |
-| view information of my current level |  |  |  |  |  |  |  |  |  |  |
-| view round results |  |  |  |  |  |  |  |  |  |  |
-| links/buttons |  |  |  |  |  |  |  |  |  |  |
+| website is responsive < 767 px | Good | Good | Good | Good | Good | Good | n/a | n/a | n/a | n/a |
+| website is responsive > 768 px | n/a | n/a | n/a | n/a | n/a | n/a | Good | Good | Good | Good |
 |**index.html** |
-| modals |  |  |  |  |  |  |  |  |  |  |
-| images work |  |  |  |  |  |  |  |  |  |  |
-| render as expected |  |  |  |  |  |  |  |  |  |  |
+| modals | Good | Good | Good | Good | Good | Good | Good | Good | Good | Good |
+| overlay | Poor | Fair | Fair | Poor | Good | Poor | Poor | Good | Good | Good |
+| images work | Good | Good | Good | Good | Good | Good |Good  | Good | Good | Good |
+| links/buttons | Good | Good | Good | Good | Good | Good | Good | Good  | Good | Good |
+| render as expected | Good | Good | Good | Good | Good | Good | Good | Good | Good | Good |
+
+### User story validation <a name="UserStoryValidation"></a>
+
+|  | Galaxy S5 | Pixel | Pixel 2 XL |iPhone 6/7/8 | iPhone 6/7/8 Plus | iPhone X | iPad | iPad Pro | Desktop 1024px | Desktop >1200px |
+| :--- | :--- | :---| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| View the site from any devices | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |Pass  |
+| Enter my player name | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
+| Player name is requiered prior to start the game | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |Pass  |
+| Start the game by myself (by clicking on a button) | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
+| Reset the game round (scope: current level) | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
+| Exit the game (start the game over and enter your player name again) | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
+| View information of my current game round in progress (level, moves, timer) | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
+| View game round results (player name, level, moves and time it took to finish the current game round) | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
+| Play again with level up by default | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |Pass  |
 
 ### Compatibility <a name="Compatibility"></a>
 
@@ -251,33 +266,36 @@ I tested the website across the 6 main browsers in both desktop and mobile confi
 
 |All pages | Chrome | Edge | Firefox | Safari | Opera | IE |
 | :--- | :--- | :---| :--- | :--- | :--- | :--- |
-| Expected appearance |  |  |  |  |  |  |
-| Expected responsiveness |  |  |  |  |  |  |
+| Expected appearance | Good |  | Good |  |  |  |
+| Expected responsiveness | Good |  | Good |  |  |  |
 
 ### Testing left <a name="Testingleft"></a>
 
-There is no way to install the latest version of the Safari browser on Windows 10 as Apple stopped developing Safari for Windows operating system long ago.
+- There is no way to install the latest version of the Safari browser on Windows 10 as Apple stopped developing Safari for Windows operating system long ago.
 For testing this website on the latest version of Safari, I will have to install the newest version of macOS on Windows 10 in a virtual machine.
+- Adding automated tests to speed up regression testing 
 
 ### Validators <a name="Validators"></a>
 
 **HTML**
 - [W3C HTML Validator](https://validator.w3.org/)
-    -
+    - No errors
 
 **CSS**
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-	-
+	- No errors
 
 **Javascript**
 - [Javascript Validator](http://beautifytools.com/javascript-validator.php)
-	-
+	- No errors
+
 **Chrome DevTools**
 - [Chrome DevTools] (https://developers.google.com/web/tools/chrome-devtools/)
 Console Navigating through the Website rendered no critical fails/errors in the console that were necessary to fix.
 
 ### Known Issues <a name="KnownIssues"></a>
 
+- Background overlay of the modal on Galaxy S5, Pixel, Pixel 2 XL, iPhone 6/7/8, iPhone X, iPad does not display as expected
 
 Back to [top](#TableOfContents)
 
@@ -321,7 +339,7 @@ Back to [top](#TableOfContents)
 
 ### Content <a name="Content"></a>
 
-- All images visible on the cards come from [PlaceIMG](https://placeimg.com/), a random images generator website. It offers the possibility to customise images (width, height, category).
+- All images visible on the cards come from [PlaceIMG](https://placeimg.com/), a random image generator website. It offers the possibility to customise images (width, height, category) before their random generation.
 
 ### Media <a name="Media"></a>
 
@@ -334,18 +352,19 @@ Sources of the images used on this site:
 ### Code <a name="Code"></a>
 
 - Sticky footer - [Css-tricks](https://css-tricks.com/couple-takes-sticky-footer/)
+- Way to implement wrapper - [Css-tricks](https://css-tricks.com/best-way-implement-wrapper-css/)
+- Responsive background image - [Webfx](https://www.webfx.com/blog/web-design/responsive-background-image/)
 - Shuffle cards details - [Medium](https://medium.com/swlh/the-javascript-shuffle-62660df19a5d)
-- How To Create a Flip Card [W3schools](https://www.w3schools.com/howto/howto_css_flip_card.asp)
-- Disable background after modal popup [Stackoverflow](https://stackoverflow.com/questions/39672346/bootstrap-3-disable-background-after-modal-popup)
-- jQuery timer [Yogihosting](https://www.yogihosting.com/jquery-timer/)
-- Stop setInterval call in JavaScript [Stackoverflow](https://stackoverflow.com/questions/109086/stop-setinterval-call-in-javascript)
-- jQuery effect [jQuery UI](https://jqueryui.com/effect/)
-- jQuery API documentation [API jQuery](https://api.jquery.com/data/)
-- Memory Game built with jQuery [Medium](https://medium.com/letsboot/memory-game-built-with-jquery-ec6099618d67)
-- Memory Game Programming JavaScript Tutorial
- [YouTube](https://www.youtube.com/watch?v=c_ohDPWmsM0&feature=emb_rel_pause)
-- Part 1 - HTML / CSS - 4×4 Memory Game In JavaScript [YouTube](https://www.youtube.com/watch?v=qYMJMf7JsbM)
-- Memory Card Game - JavaScript Tutorial [YouTube](https://www.youtube.com/watch?v=ZniVgo8U7ek)
+- How To Create a Flip Card - [W3schools](https://www.w3schools.com/howto/howto_css_flip_card.asp)
+- Disable background after modal popup - [Stackoverflow](https://stackoverflow.com/questions/39672346/bootstrap-3-disable-background-after-modal-popup)
+- jQuery timer - [Yogihosting](https://www.yogihosting.com/jquery-timer/)
+- Stop setInterval call in JavaScript - [Stackoverflow](https://stackoverflow.com/questions/109086/stop-setinterval-call-in-javascript)
+- jQuery effect - [jQuery UI](https://jqueryui.com/effect/)
+- jQuery API documentation - [API jQuery](https://api.jquery.com/data/)
+- Memory Game built with jQuery - [Medium](https://medium.com/letsboot/memory-game-built-with-jquery-ec6099618d67)
+- Memory Game Programming JavaScript Tutorial - [YouTube](https://www.youtube.com/watch?v=c_ohDPWmsM0&feature=emb_rel_pause)
+- Part 1 - HTML / CSS - 4×4 Memory Game In JavaScript - [YouTube](https://www.youtube.com/watch?v=qYMJMf7JsbM)
+- Memory Card Game - JavaScript Tutorial - [YouTube](https://www.youtube.com/watch?v=ZniVgo8U7ek)
 
 ### Acknowledgements <a name="Acknowledgements"></a>
 
