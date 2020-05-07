@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // game namespace/game variable
   var game = {
-    playerName: "anonymous",
+    playerName: "noname",
     moves: 0,
     timeCounter: 0,
     imgCategory: "any",
@@ -37,7 +37,7 @@ $(document).ready(function () {
           game.displayGameLevel(game.gameLevel);
           game.cardFigures = game.getCardFigures(game.gameLevel);
           game.shuffleCards();
-          game.preloadImages();
+          game.getImagesloaded();
         }
       });
     },
@@ -53,7 +53,7 @@ $(document).ready(function () {
       game.displayGameLevel(level);
       game.cardFigures = game.getCardFigures(level);
       game.shuffleCards();
-      game.preloadImages();
+      game.getImagesloaded();
     },
 
     getPlayerData: function (level) {
@@ -150,6 +150,12 @@ $(document).ready(function () {
         case game.gameLevel = 3:
             time = 500;
             break;
+        case game.gameLevel = 4:
+        time = 500;
+        break;
+        case game.gameLevel = 5:
+        time = 500;
+        break;
       }
         
       if (
@@ -236,7 +242,7 @@ $(document).ready(function () {
       clearInterval(game.refreshIntervalId);
     },
 
-    preloadImages: function () {
+    getImagesloaded: function () {
       var img = [];
       for (i = 0; i < game.cardFigures.length; i++) {
         img[i] = new Image();
@@ -276,7 +282,7 @@ $(document).ready(function () {
           game.displayGameLevel(game.gameLevel);
           game.cardFigures = game.getCardFigures(game.gameLevel);
           game.shuffleCards();
-          game.preloadImages();
+          game.getImagesloaded();
         });
       });
     },

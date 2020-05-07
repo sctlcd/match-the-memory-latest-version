@@ -29,7 +29,6 @@ to_add img or demo
 		- [Footer](#Footer)
 		- [Main page](#Mainpage)
 	- [Features Left to Implement](#FeaturesLeftToImplement)
-	-[]
 
 3. [Technologies Used](#TechnologiesUsed)
 
@@ -60,21 +59,49 @@ to_add img or demo
 ## About <a name="About"></a>
 
 The general purpose of this website is to give the opportunity to people to improve their concentration and challenging their visual memory while having fun. And this anytime, anywhere as this game is available on various devices as desktops, tablets and mobile.
-Match the memory is a card game in which all of the cards are laid face down on the screen and two cards are flipped face up over each turn. If the cards match they stay face up if not they flip back. The object of the game is to turn over pairs of matching cards. Once all cards are matched, a popup message appears and congratulates the player for winning the game. The popup gives the game result, how much time it took, and how many moves it took to finish the game.  
 
-## How to play? <a name="HowToPlay"></a>
+**Match the memory** is a card game in which all of the cards are laid face down on the screen and two cards are flipped face up over each turn. If the cards match they stay face up if not they flip back. The object of the game is to turn over pairs of matching cards. Once all cards are matched, a popup message appears and congratulates the player for winning the game. The popup gives the game round result, how much time and how many moves it took to end the game.  
 
-TO_ADD
+### How to play? <a name="HowToPlay"></a>
+
+The goal is to match all the cards together and win the game round.
+1. Click on the Let's play button. Enter your player name and start playing.
+
+2. Click on two cards, if they match, look for another pair of cards. If cards don't pair, try again.
+
+3. Keep matching up pairs until all cards are matched and faced up.
+
+4. Once you matched all cards together. Congrats you win!
+An pop up window appears showing you your game result, time and moves, to complete the game.
+
+5. If there is an issue during the game, just hit the restart button on the right corner of the game.
+ If you want to start over, hit the exit button on the right corner of the game.
+
+6. On the result pop up, you can hit 'Play Again!' to have another go at the level up game, keep playing for the minimum of moves in the minimum of time.
+
+7. Good luck and may the best fan win!
+
+Level description: TO_ADD
+Level 1: X paired of cards, trigger the animation of flipping back the card after 1s  
+Level 2: X paired of cards, trigger the animation of flipping back the card after 0,8s animation
+Level 3: X paired of cards, trigger the animation of flipping back the card after 0,5s animation
+Level 4: X paired of cards, trigger the animation of flipping back the card after 0,5s animation
+Level 5: X paired of cards, trigger the animation of flipping back the card after 0,5s animation
 
 ### Why this project? <a name="WhyThisProject"></a>
 
 This project is part of my [Code Institute](https://codeinstitute.net/) Full Stack Software Development studies, the **Interactive Front-End Development** module. The objective of this milestone project is the presentation of interactive data. "In this project, you'll build an interactive front-end site. The site should respond to the users' actions, allowing users to actively engage with data, alter the way the site displays the information to achieve their preferred goals."
+
 For this project we could choose from one of the following ideas:
 - Bring your own idea(s) to life, based on providing value to users to address a specific real or imagined need.
 - Create a site that calls on the Google Maps API and/or the Google Places API (or similar) to allow users to search for their next holiday destination.
 - Build a memory game (for inspiration [Simon](https://en.wikipedia.org/wiki/Simon_(game)) and [Bop It](https://en.wikipedia.org/wiki/Bop_It))
 
 I have decided to create a website using HTML, CSS, Bootstrap 4, JavaScript and jQuery based on visual memory.
+
+Back to [top](#TableOfContents)
+
+---
 
 ## UX  <a name="UX"></a>
 
@@ -86,13 +113,12 @@ I have decided to create a website using HTML, CSS, Bootstrap 4, JavaScript and 
 - [x] Enter my player name
 - [x] Start the game by myself
 - [x] Reset the game round (scope: current level)
-- [x] Exit the game (bring the user back to the very beginning of the game, before entering the player name)
-- [x] view information of my current level (moves, time)
-- [x] view round results (player name, moves and time to finish the current level)
+- [x] Exit the game (start the game over, before entering the player name)
+- [x] view information of my current level in progress (moves, timer)
+- [x] view round game results (player name, moves and time it took to finish the current level)
 
 <br>
 - [x] *marked the item as implemented successfully*
-
 
 ### Design <a name="Design"></a>
 
@@ -105,11 +131,11 @@ I picked the [blue color](https://placehold.it/15/0000FF/0000FF) reminiscent of 
 
 I chose the combination of [purple](https://placehold.it/15/1f1740/1f1740) and [gold](https://placehold.it/15/DAA520/DAA520) reminiscent of the same colors in the [abstract background](https://www.pexels.com/photo/photo-of-multicolored-illustration-2832382/) for showing the start menu and the results menu.
 
-I picked a Google Font [Sedgwick Ave Display](https://fonts.google.com/specimen/Sedgwick+Ave+Display) which emphasizes the Urban art concept with a graffiti style.
+I picked a Google Font [Sedgwick Ave Display](https://fonts.google.com/specimen/Sedgwick+Ave+Display) which emphasizes the Urban art concept with a graffiti style writing font.
 
 #### Framework <a name="Framework"></a>
 
-Bootstrap 4 - Because I've already used Bootstrap and I liked it and because it meets the project requirements "*Incorporate a structured layout*" I've decided to build this website with Bootstrap 4.
+Bootstrap 4 - Because I've already used Bootstrap and I liked it, because it meets the project requirements "*Incorporate a structured layout*". I've decided to build this website with Bootstrap 4.
 
 #### Color Scheme <a name="ColorScheme"></a>
 
@@ -137,7 +163,7 @@ I have used [Balsamiq Wireframes](https://balsamiq.com/wireframes/) for my wiref
 - Code Institute have provided all students a free licence until end of 2020. I got to use this software a few year ago and I am pretty happy to get the chance to use it again.
 - The simplicity, rapidity and ease of use by focusing on structure and content.
 
-My wireframes for this project can be found [here]() TO_ADD in the wireframes sub-directory.
+My wireframes for this project can be found [here](https://github.com/sctlcd/match-the-memory/tree/master/app/assets/wireframes) in the wireframes sub-directory.
 
 Back to [top](#TableOfContents)
 
@@ -153,16 +179,16 @@ Back to [top](#TableOfContents)
 
 ##### [Main page](https://github.com/sctlcd/match-the-memory/blob/master/index.html) <a name="Mainpage"></a>
 
--
+- TO_ADD
 
 ### Features Left to Implement <a name="FeaturesLeftToImplement"></a>
 
- - Total time (all levels finished)
- - Total moves (all levels finished)
- - Score is a combination of Total time and Total moves
- - Scores saving and storage with player name
- - Displaying the highest scores recorded in the result menu of in another specific place
- - More complexity to the levels
+ - Total time timer (all levels finished)
+ - Total moves counter (all levels finished)
+ - Implement score
+ - Implement Scores saving and storage with player name
+ - Displaying the highest scores recorded in the results pop up or in another specific place in the application (to be defined)
+ - Add more complexity to the levels
 
 Back to [top](#TableOfContents)
 
@@ -174,6 +200,7 @@ Back to [top](#TableOfContents)
 - [Gitpod](https://www.gitpod.io/) - Used as an online IDE.
 - [Notepad++](https://notepad-plus-plus.org/) - Used as local source code editor.
 - [Compressjpeg](https://compressjpeg.com/) - Used to compress images for loading faster
+- [Techsini](https://techsini.com/multi-mockup/) - Used to generate multi-device website mockup
 
 ##### Front-End Technologies <a name="Front-end-technologies"></a>
 
@@ -207,12 +234,9 @@ Please see the testing coverage [here]() TO_ADD or below.
 | view round results |  |  |  |  |  |  |  |  |  |  |
 | links/buttons |  |  |  |  |  |  |  |  |  |  |
 |**index.html** |
-|**index.html** |
 | modals |  |  |  |  |  |  |  |  |  |  |
 | images work |  |  |  |  |  |  |  |  |  |  |
 | render as expected |  |  |  |  |  |  |  |  |  |  |
-
-
 
 ### Compatibility <a name="Compatibility"></a>
 
@@ -229,8 +253,6 @@ I tested the website across the 6 main browsers in both desktop and mobile confi
 | :--- | :--- | :---| :--- | :--- | :--- | :--- |
 | Expected appearance |  |  |  |  |  |  |
 | Expected responsiveness |  |  |  |  |  |  |
-
--
 
 ### Testing left <a name="Testingleft"></a>
 
@@ -256,7 +278,6 @@ Console Navigating through the Website rendered no critical fails/errors in the 
 
 ### Known Issues <a name="KnownIssues"></a>
 
--
 
 Back to [top](#TableOfContents)
 
