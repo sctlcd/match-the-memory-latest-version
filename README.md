@@ -61,7 +61,7 @@
 
 The general purpose of this website is to give the opportunity to people to improve their concentration and challenging their visual memory while having fun. And this anytime, anywhere as this game is available on various devices as desktops, tablets and mobile.
 
-**Match the memory** is a card game in which all of the cards are laid face down on the screen and two cards are flipped face up over each turn. If the cards match they stay face up if not they flip back. The object of the game is to turn over pairs of matching cards. Once all cards are matched, a popup message appears and congratulates the player for winning the game. The popup gives the game round result, how much time and how many moves it took to end the game.
+**Match the memory** is a card game in which all of the cards are laid face down on the screen and two cards are flipped face up over each turn. If the cards match they fade if not they flip back. The object of the game is to turn over pairs of matching cards. Once all cards are matched, a popup message appears and congratulates the player for winning the game. The popup gives the game round result, how much time and how many moves it took to end the game.
 
 ### How to play? <a name="HowToPlay"></a>
 
@@ -71,7 +71,7 @@ The goal is to match all the cards together and win the game round.
 
 2. Click on two cards, if they match, look for another pair of cards. If cards don't pair, try again.
 
-3. Keep matching up pairs until all cards are matched and faced up.
+3. Keep matching up pairs until all cards are matched and faded.
 
 4. If there is an issue during the game, just hit the restart button on the right corner of the game.
  If you want to start over, hit the exit button on the right corner of the game.
@@ -115,7 +115,7 @@ Back to [top](#TableOfContents)
 
 - [x] view the site from **any devices** (mobile, tablet, desktop).
 - [x] Enter my player name
-- [x] Player name is requiered prior to start the game
+- [x] Player name is required prior to start the game
 - [x] Start the game by myself (by clicking on a button)
 - [x] Reset the game round (scope: current level)
 - [x] Exit the game (start the game over and enter your player name again)
@@ -140,7 +140,7 @@ I chose the combination of [purple](https://placehold.it/15/1f1740/1f1740) and [
 
 I picked a Google Font [Sedgwick Ave Display](https://fonts.google.com/specimen/Sedgwick+Ave+Display) which emphasizes the Urban art concept with a graffiti style writing font.
 
-I did not add any sound effects on purpose in this version of the game which the general purpose is memory and concentration as I believe sounds can disturb concentration. 
+I did not add any sound effects on purpose in this version of the game which the general purpose is memory and concentration as I believe sounds can disturb concentration.
 Sound effects will possibly be part of a future version with the option to mute them.
 
 #### Framework <a name="Framework"></a>
@@ -189,13 +189,13 @@ Back to [top](#TableOfContents)
 
 ##### [Main page](https://github.com/sctlcd/match-the-memory/blob/master/index.html) <a name="Mainpage"></a>
 
-- A button 'Let's play' opens a Start popup asking the player to enter a player name. This entry is requiered prior to start the game.
+- A button 'Let's play' opens a Start popup asking the player to enter a player name. This entry is required prior to start the game.
 - By hitting 'Let's play' from the Start popup the user trigger the timer / the beginning of the game.
 - When a card is selected it triggers a flip effect which makes the figure of the card visible.
-- Only 2 cards can be visible at the same time. 
-- If the 2 visible cards match the 2 cards disappear if not both cards are flipped back. 
-- Each try of matching 2 pair of cards count for 1 move. 
-- The current level, timer and moves in progress of the game round are displayed on the screen 
+- Only 2 cards can be visible at the same time.
+- If the 2 visible cards match the 2 cards fade if not both cards are flipped back.
+- Each try of matching 2 pair of cards count for 1 move.
+- The current level, timer and moves in progress of the game round are displayed on the screen
 - The reset button reset the timer and the moves of the current level.
 - The exit button starts the game over. (the user name has to be enter again)
 - When all cards are matched a Result popup show the player's results : player name, level, time and moves it took to finish the game round. A 'Level up' button triggers a level up game round.
@@ -203,14 +203,7 @@ Back to [top](#TableOfContents)
 
 ### Features Left to Implement <a name="FeaturesLeftToImplement"></a>
 
- - Total time timer (all levels finished)
- - Total moves counter (all levels finished)
- - Implement score
- - Implement Scores saving and storage with player name
- - Displaying the highest scores recorded in the results popup or in another specific place in the application (to be defined)
- - Add more complexity to the levels
- - Allow the player to choose the level (to be defined, it could be implemented as options 'choose level mode' vs 'standard mode' which would be the current version of the game)
- - Add sound effects and an option to mute them
+ - Potential sound effects with an option to mute them
 
 Back to [top](#TableOfContents)
 
@@ -246,7 +239,7 @@ My testing coverage for this project can be found [here](https://github.com/sctl
 | :--- | :--- | :---| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | View the site from any devices | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |Pass  |
 | Enter my player name | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
-| Player name is requiered prior to start the game | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |Pass  |
+| Player name is required prior to start the game | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |Pass  |
 | Start the game by myself (by clicking on a button) | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
 | Reset the game round (scope: current level) | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
 | Exit the game (start the game over and enter your player name again) | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |
@@ -292,7 +285,6 @@ I tested the website across the 6 main browsers in both desktop and mobile confi
 
 - There is no way to install the latest version of the Safari browser on Windows 10 as Apple stopped developing Safari for Windows operating system long ago.
 For testing this website on the latest version of Safari, I will have to install the newest version of macOS on Windows 10 in a virtual machine.
-- Adding automated tests
 
 ### Validators <a name="Validators"></a>
 
