@@ -63,6 +63,7 @@ $(document).ready(function() {
 		getPlayerData: function() {
 			if ($("#playerName").val() !== "") {
 				game.playerName = $("#playerName").val();
+				console.log(game.playerName)
 				game.clickCardHandlers();
 				$("#startModal").modal("toggle");
 			} else {
@@ -287,7 +288,7 @@ $(document).ready(function() {
 
 		// Start the game over
 		exit: function() {
-			// From the Exit button 
+			// From the Exit button
 			$("#exit").click(function() {
 				$(".container-information").hide();
 				$(".container-cards").hide();

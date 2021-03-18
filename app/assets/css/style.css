@@ -68,6 +68,7 @@ div#startModal.modal.fade.show {
 }
 
 #startGameButton {
+
   background-color: #daa520;
   border-color: #daa520;
   color: #000000;
@@ -76,7 +77,7 @@ div#startModal.modal.fade.show {
 
 #btnStartModal:hover,
 #startGameButton:hover {
-  box-shadow: 0 0 15px #fafafa;
+  box-shadow: 0 0 10px #fafafa;
 }
 
 .modal-content {
@@ -97,22 +98,22 @@ div#startModal.modal.fade.show {
 }
 
 .btn-primary {
-  background-color: #2424ce;
-  border-color: #2424ce;
+  background-color: #2222a3a6;
+  border-color: #2222a3a6;
 }
 
 .btn-primary:hover {
   color: #fafafa;
-  background-color: #2424ce;
-  border-color: #2424ce;
+  background-color: #2222a300;
+  border-color: #2222a300;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
 .show > .btn-primary.dropdown-toggle {
   color: #fafafa;
-  background-color: #2424ce;
-  border-color: #2424ce;
+  background-color: #2222a3a6;
+  border-color: #2222a3a6;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -128,8 +129,8 @@ div#startModal.modal.fade.show {
 .btn-primary.focus,
 .btn-primary:focus {
   color: #fafafa;
-  background-color: #2424ce;
-  border-color: #2424ce;
+  background-color: #2222a3a6;
+  border-color: #2222a3a6;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -143,6 +144,18 @@ div#startModal.modal.fade.show {
 #btnStartModal:focus {
   box-shadow: 0 0 0 0.2rem #d39e0091;
 }
+
+input:required:invalid, input:focus:invalid {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);
+    background-position: right;
+    background-repeat: no-repeat;
+    -moz-box-shadow: none;
+  }
+  input:required:valid {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAepJREFUeNrEk79PFEEUx9/uDDd7v/AAQQnEQokmJCRGwc7/QeM/YGVxsZJQYI/EhCChICYmUJigNBSGzobQaI5SaYRw6imne0d2D/bYmZ3dGd+YQKEHYiyc5GUyb3Y+77vfeWNpreFfhvXfAWAAJtbKi7dff1rWK9vPHx3mThP2Iaipk5EzTg8Qmru38H7izmkFHAF4WH1R52654PR0Oamzj2dKxYt/Bbg1OPZuY3d9aU82VGem/5LtnJscLxWzfzRxaWNqWJP0XUadIbSzu5DuvUJpzq7sfYBKsP1GJeLB+PWpt8cCXm4+2+zLXx4guKiLXWA2Nc5ChOuacMEPv20FkT+dIawyenVi5VcAbcigWzXLeNiDRCdwId0LFm5IUMBIBgrp8wOEsFlfeCGm23/zoBZWn9a4C314A1nCoM1OAVccuGyCkPs/P+pIdVIOkG9pIh6YlyqCrwhRKD3GygK9PUBImIQQxRi4b2O+JcCLg8+e8NZiLVEygwCrWpYF0jQJziYU/ho2TUuCPTn8hHcQNuZy1/94sAMOzQHDeqaij7Cd8Dt8CatGhX3iWxgtFW/m29pnUjR7TSQcRCIAVW1FSr6KAVYdi+5Pj8yunviYHq7f72po3Y9dbi7CxzDO1+duzCXH9cEPAQYAhJELY/AqBtwAAAAASUVORK5CYII=);
+    background-position: right;
+    background-repeat: no-repeat;
+  }
 
 /*------------------------------------------------------ header -------------------*/
 
@@ -170,7 +183,7 @@ div#startModal.modal.fade.show {
   padding-bottom: 0.55em;
   padding-left: 0.8em;
   margin-right: 30px;
-  background-color: #bb202f;
+  background-color: #990c19a6;
 }
 
 .badge.moves,
@@ -234,7 +247,7 @@ div#startModal.modal.fade.show {
 
 .card:hover,
 .card.visible {
-  border: 3px solid #2424ce;
+  border: 3px solid #2222a3a6;
   box-shadow: 0 0 10px #fafafa;
 }
 
@@ -311,6 +324,10 @@ div#startModal.modal.fade.show {
 
   .modal-body form {
     font-size: 20px;
+  }
+
+  form input#playerName.playerName {
+    font-size: 16px;
   }
 
   #startGameButton {
