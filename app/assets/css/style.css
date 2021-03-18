@@ -97,22 +97,22 @@ div#startModal.modal.fade.show {
 }
 
 .btn-primary {
-  background-color: #0000ff;
-  border-color: #0000ff;
+  background-color: #2424ce;
+  border-color: #2424ce;
 }
 
 .btn-primary:hover {
   color: #fafafa;
-  background-color: #0000ff;
-  border-color: #0000ff;
+  background-color: #2424ce;
+  border-color: #2424ce;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
 .show > .btn-primary.dropdown-toggle {
   color: #fafafa;
-  background-color: #0000ff;
-  border-color: #0000ff;
+  background-color: #2424ce;
+  border-color: #2424ce;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -128,8 +128,8 @@ div#startModal.modal.fade.show {
 .btn-primary.focus,
 .btn-primary:focus {
   color: #fafafa;
-  background-color: #0000ff;
-  border-color: #0000ff;
+  background-color: #2424ce;
+  border-color: #2424ce;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -170,7 +170,7 @@ div#startModal.modal.fade.show {
   padding-bottom: 0.55em;
   padding-left: 0.8em;
   margin-right: 30px;
-  background-color: #0000ff;
+  background-color: #bb202f;
 }
 
 .badge.moves,
@@ -232,15 +232,17 @@ div#startModal.modal.fade.show {
   box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
+.card:hover,
+.card.visible {
+  border: 3px solid #2424ce;
+  box-shadow: 0 0 10px #fafafa;
+}
+
 .card:hover {
   cursor: pointer;
-  border: 5px solid #0000ff;
-  box-shadow: 0 0 15px #fafafa;
 }
 
 .card.visible {
-  border: 5px solid #0000ff;
-  box-shadow: 0 0 15px #fafafa;
   transform: rotateY(180deg);
   perspective: 1000px;
   transition: transform 0.8s;
