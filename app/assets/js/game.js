@@ -12,16 +12,7 @@ $(document).ready(function() {
 
 		// Initialize the game
 		init: function() {
-			$(".header-details")
-				.append("<h1>Match the memory</h1>")
-				.addClass("uppercase");
-
 			$("#btnStartModal").click(function() {
-				$("#startModal").modal({
-					backdrop: "static",
-					keyboard: false,
-				});
-				$(this).hide();
 				$("#playerName").val("");
 			});
 
@@ -65,7 +56,11 @@ $(document).ready(function() {
 				game.playerName = $("#playerName").val();
 				console.log(game.playerName)
 				game.clickCardHandlers();
-				$("#startModal").modal("toggle");
+				$("#startModal").hide();
+				$(".wrapper-init").hide();
+				$(".header-details")
+					.append("<h1>Match the memory</h1>")
+					.addClass("uppercase");
 			} else {
 				setTimeout(function() {
 					$("#playerName").effect("bounce");
@@ -292,7 +287,8 @@ $(document).ready(function() {
 			$("#exit").click(function() {
 				$(".container-information").hide();
 				$(".container-cards").hide();
-				$("#btnStartModal").show();
+				$(".wrapper-init").show();
+				$(".header-details").remove();
 
 				$("#btnStartModal").click(function() {
 					$("#startModal").modal({

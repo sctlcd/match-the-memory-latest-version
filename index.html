@@ -11,79 +11,74 @@
 </head>
 
 <body>
-  <!-- content -->
-  <div class="container container-fluid content">
-    <!-- header -->
-    <header class="header">
+  <!-- wrapper -->
+  <div class="wrapper-init">
+    <a id="btnStartModal" href="#startModal" class="btn">Match The Memory</a>
+  </div>
+
+  <div id="startModal" class="modal fade">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h3 class="modal-title uppercase" id="startMenuTitle">
+          Can you make it ?
+        </h3>
+        <br />
+        <form>
+          <label for="playerName">Enter your username:</label><br />
+          <input type="text" class="playerName" id="playerName" placeholder="Username" required />
+          <br /><br />
+          <button type="button" class="btn" id="startGameButton">
+            Let's play!
+          </button>
+        </form>
+      </div>
+
+      <a href="#" class="modal-close">&times;</a>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header>
+    <div class="container container-fluid content">
       <div class="row">
         <div class="col-12 header-details"></div>
       </div>
-    </header>
-
-    <!-- container-start-modal -->
-    <section class="container container-start-modal">
-      <div class="row">
-        <div class="col-12">
-          <button type="button" id="btnStartModal" class="btn btn-warning">
-            Let's play!
-          </button>
-          <div class="modal fade" id="startModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <h3 class="modal-title uppercase" id="startMenuTitle">
-                    Can you make it ?
-                  </h3>
-                  <br />
-                  <form>
-                    <label for="playerName">Enter your username:</label><br />
-                    <input type="text" class="playerName" id="playerName" placeholder="Username" required />
-                    <br /><br />
-                    <button type="button" class="btn btn-warning" id="startGameButton">
-                      Let's play!
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- container-information -->
-    <div class="container container-information">
-      <div class="row">
-        <div class="col-12 information-details"></div>
-      </div>
     </div>
+  </header>
 
-    <!-- container-cards -->
-    <div class="container container-cards">
-      <div class="row">
-        <div class="col-12 card-details"></div>
-      </div>
+
+  <!-- container-information -->
+  <div class="container container-information">
+    <div class="row">
+      <div class="col-12 information-details"></div>
     </div>
+  </div>
 
-    <!-- container-results-modal -->
-    <div class="container container-results-modal">
-      <div class="row">
-        <div class="col-12">
-          <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <h3 class="modal-title uppercase" id="resultMenuTitle">
-                    Congrats!
-                  </h3>
-                  <p class="resultsText"></p>
-                  <button type="button" class="btn btn-warning" id="resultsButton">
-                    Level up
-                  </button>
-                  <button type="button" class="btn btn-warning" id="endGameButton">
-                    Play again!
-                  </button>
-                </div>
+  <!-- container-cards -->
+  <div class="container container-cards">
+    <div class="row">
+      <div class="col-12 card-details"></div>
+    </div>
+  </div>
+
+  <!-- container-results-modal -->
+  <div class="container container-results-modal">
+    <div class="row">
+      <div class="col-12">
+        <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <h3 class="modal-title uppercase" id="resultMenuTitle">
+                  Congrats!
+                </h3>
+                <p class="resultsText"></p>
+                <button type="button" class="btn" id="resultsButton">
+                  Level up
+                </button>
+                <button type="button" class="btn" id="endGameButton">
+                  Play again!
+                </button>
               </div>
             </div>
           </div>
@@ -93,8 +88,8 @@
   </div>
 
   <!-- Footer -->
-  <footer class="container container-fluid footer">
-    <div class="footer-details">
+  <footer>
+    <div class="container container-fluid text-center">
       <div class="row">
         <div class="col-12">
           <p>
