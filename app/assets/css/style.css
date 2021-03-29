@@ -40,7 +40,7 @@ body {
 
 /*------------------------------------------------------ start modal -------------------*/
 
-.wrapper-init {
+.initWrapper {
   height: 100vh;
   /* This part is important for centering the content */
   display: flex;
@@ -49,7 +49,7 @@ body {
   /* End center */
 }
 
-.wrapper-init a {
+.initWrapper a {
   display: inline-block;
   text-decoration: none;
   padding: 15px;
@@ -60,7 +60,19 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.modal {
+.modal-header {
+  border-bottom: 0;
+}
+
+.modal-footer {
+  border-top: 0;
+}
+
+.modal-backdrop.show {
+  opacity: .3;
+}
+
+/* .modal {
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -73,18 +85,18 @@ body {
   justify-content: center;
   background: transparent;
   transition: all .4s;
-}
+} */
 
-.modal:target {
+/* .modal:target {
   visibility: visible;
   opacity: 1;
-}
+} */
 
 #startModal.modal.fade.show {
   padding: 0;
 }
 
-#btnStartModal {
+#btnStartModal, #btnResultsModal {
   background-color: #daa520;
   border-color: #daa520;
   color: #1f1740;
@@ -93,7 +105,9 @@ body {
   font-size: 32px;
 }
 
-#startGameButton {
+#btnStartGame,
+#btnResults,
+#btnEndGame {
   background-color: #daa520;
   border-color: #daa520;
   color: #1f1740;
@@ -101,7 +115,10 @@ body {
 }
 
 #btnStartModal:hover,
-#startGameButton:hover {
+#btnResultsModal:hover,
+#btnStartGame:hover,
+#btnResults:hover,
+#btnEndGame:hover {
   box-shadow: 0 0 10px #fafafa;
 }
 
@@ -123,17 +140,16 @@ body {
   letter-spacing: 4px;
 }
 
-.modal-close {
+.close {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: #daa520;
+  color: #5a62689e;
   text-decoration: none;
 }
 
-.modal-close:hover {
-  color: #fafafa;
-  text-decoration: none;
+.close:hover {
+  color: #6c757d42;
 }
 
 .btn-primary {
@@ -178,23 +194,26 @@ body {
   box-shadow: 0 0 0 0.2rem transparent;
 }
 
-#startGameButton.focus,
+#btnStartGame.focus,
 #btnStartModal.focus,
 #btnStartModal:focus {
   box-shadow: 0 0 0 0.2rem #d39e0091;
 }
 
 input:required:invalid, input:focus:invalid {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);
-    background-position: right;
-    background-repeat: no-repeat;
-    -moz-box-shadow: none;
-  }
-  input:required:valid {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAepJREFUeNrEk79PFEEUx9/uDDd7v/AAQQnEQokmJCRGwc7/QeM/YGVxsZJQYI/EhCChICYmUJigNBSGzobQaI5SaYRw6imne0d2D/bYmZ3dGd+YQKEHYiyc5GUyb3Y+77vfeWNpreFfhvXfAWAAJtbKi7dff1rWK9vPHx3mThP2Iaipk5EzTg8Qmru38H7izmkFHAF4WH1R52654PR0Oamzj2dKxYt/Bbg1OPZuY3d9aU82VGem/5LtnJscLxWzfzRxaWNqWJP0XUadIbSzu5DuvUJpzq7sfYBKsP1GJeLB+PWpt8cCXm4+2+zLXx4guKiLXWA2Nc5ChOuacMEPv20FkT+dIawyenVi5VcAbcigWzXLeNiDRCdwId0LFm5IUMBIBgrp8wOEsFlfeCGm23/zoBZWn9a4C314A1nCoM1OAVccuGyCkPs/P+pIdVIOkG9pIh6YlyqCrwhRKD3GygK9PUBImIQQxRi4b2O+JcCLg8+e8NZiLVEygwCrWpYF0jQJziYU/ho2TUuCPTn8hHcQNuZy1/94sAMOzQHDeqaij7Cd8Dt8CatGhX3iWxgtFW/m29pnUjR7TSQcRCIAVW1FSr6KAVYdi+5Pj8yunviYHq7f72po3Y9dbi7CxzDO1+duzCXH9cEPAQYAhJELY/AqBtwAAAAASUVORK5CYII=);
-    background-position: right;
-    background-repeat: no-repeat;
-  }
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);
+  background-position: right;
+  background-repeat: no-repeat;
+  -moz-box-shadow: none;
+  border: 2px solid #e04e5c;
+}
+
+input:required:valid {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAepJREFUeNrEk79PFEEUx9/uDDd7v/AAQQnEQokmJCRGwc7/QeM/YGVxsZJQYI/EhCChICYmUJigNBSGzobQaI5SaYRw6imne0d2D/bYmZ3dGd+YQKEHYiyc5GUyb3Y+77vfeWNpreFfhvXfAWAAJtbKi7dff1rWK9vPHx3mThP2Iaipk5EzTg8Qmru38H7izmkFHAF4WH1R52654PR0Oamzj2dKxYt/Bbg1OPZuY3d9aU82VGem/5LtnJscLxWzfzRxaWNqWJP0XUadIbSzu5DuvUJpzq7sfYBKsP1GJeLB+PWpt8cCXm4+2+zLXx4guKiLXWA2Nc5ChOuacMEPv20FkT+dIawyenVi5VcAbcigWzXLeNiDRCdwId0LFm5IUMBIBgrp8wOEsFlfeCGm23/zoBZWn9a4C314A1nCoM1OAVccuGyCkPs/P+pIdVIOkG9pIh6YlyqCrwhRKD3GygK9PUBImIQQxRi4b2O+JcCLg8+e8NZiLVEygwCrWpYF0jQJziYU/ho2TUuCPTn8hHcQNuZy1/94sAMOzQHDeqaij7Cd8Dt8CatGhX3iWxgtFW/m29pnUjR7TSQcRCIAVW1FSr6KAVYdi+5Pj8yunviYHq7f72po3Y9dbi7CxzDO1+duzCXH9cEPAQYAhJELY/AqBtwAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+  border: 2px solid #28a745;
+}
 
 /*------------------------------------------------------ header -------------------*/
 
@@ -203,16 +222,16 @@ header {
   color: #fafafa;
 }
 
-.header-details h1 {
+.headerDetails h1 {
   margin: 4rem auto 4rem auto;
   font-family: "Sedgwick Ave Display", cursive;
   letter-spacing: 4px;
   font-size: 52px;
 }
 
-/*------------------------------------------------------ container-information -------------------*/
+/*------------------------------------------------------ containerInformation -------------------*/
 
-.container-information {
+.containerInformation {
   text-align: center;
 }
 
@@ -339,7 +358,7 @@ footer a:hover {
     height: 60px;
   }
 
-  .header-details h1 {
+  .headerDetails h1 {
     font-size: 28px;
   }
 
@@ -372,7 +391,7 @@ footer a:hover {
     font-size: 12px;
   }
 
-  #startGameButton {
+  #btnStartGame {
     font-size: 12px;
   }
 
@@ -392,7 +411,7 @@ footer a:hover {
     height: 90px;
   }
 
-  .header-details h1 {
+  .headerDetails h1 {
     font-size: 36px;
   }
 
@@ -425,7 +444,7 @@ footer a:hover {
     font-size: 12px;
   }
 
-  #startGameButton {
+  #btnStartGame {
     font-size: 12px;
   }
 
@@ -445,7 +464,7 @@ footer a:hover {
     height: 100px;
   }
 
-  .header-details h1 {
+  .headerDetails h1 {
     font-size: 42px;
   }
 
@@ -476,7 +495,7 @@ footer a:hover {
     font-size: 16px;
   }
 
-  #startGameButton {
+  #btnStartGame {
     font-size: 16px;
   }
 
@@ -496,7 +515,7 @@ footer a:hover {
     height: 180px;
   }
 
-  .header-details h1 {
+  .headerDetails h1 {
     font-size: 48px;
   }
 
@@ -527,7 +546,7 @@ footer a:hover {
     font-size: 18px;
   }
 
-  #startGameButton {
+  #btnStartGame {
     font-size: 18px;
   }
 
@@ -547,7 +566,7 @@ footer a:hover {
     height: 200px;
   }
 
-  .header-details h1 {
+  .headerDetails h1 {
     font-size: 48px;
   }
 
@@ -582,7 +601,7 @@ footer a:hover {
     font-size: 16px;
   }
 
-  #startGameButton {
+  #btnStartGame {
     font-size: 20px;
   }
 
