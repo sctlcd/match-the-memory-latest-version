@@ -40,7 +40,7 @@ body {
 
 /*------------------------------------------------------ start modal -------------------*/
 
-.initWrapper {
+.init-wrapper {
   height: 100vh;
   /* This part is important for centering the content */
   display: flex;
@@ -49,7 +49,7 @@ body {
   /* End center */
 }
 
-.initWrapper a {
+.init-wrapper a {
   display: inline-block;
   text-decoration: none;
   padding: 15px;
@@ -92,33 +92,38 @@ body {
   opacity: 1;
 } */
 
-#startModal.modal.fade.show {
+#start-modal.modal.fade.show {
   padding: 0;
 }
 
-#btnStartModal, #btnResultsModal {
+#btn-start-modal,
+#btn-results-modal,
+#btn-start-game,
+#btn-level-up,
+#btn-play-again {
   background-color: #daa520;
   border-color: #daa520;
   color: #1f1740;
+}
+
+#btn-start-game,
+#btn-level-up,
+#btn-play-again {
+  font-weight: 700;
+}
+
+#btn-start-modal,
+#btn-results-modal {
   font-family: "Sedgwick Ave Display", cursive;
   letter-spacing: 4px;
   font-size: 32px;
 }
 
-#btnStartGame,
-#btnLevelUp,
-#btnPlayAgain {
-  background-color: #daa520;
-  border-color: #daa520;
-  color: #1f1740;
-  font-weight: 700;
-}
-
-#btnStartModal:hover,
-#btnResultsModal:hover,
-#btnStartGame:hover,
-#btnLevelUp:hover,
-#btnPlayAgain:hover {
+#btn-start-modal:hover,
+#btn-results-modal:hover,
+#btn-start-game:hover,
+#btn-level-up:hover,
+#btn-play-again:hover {
   box-shadow: 0 0 10px #fafafa;
 }
 
@@ -194,9 +199,9 @@ body {
   box-shadow: 0 0 0 0.2rem transparent;
 }
 
-#btnStartGame.focus,
-#btnStartModal.focus,
-#btnStartModal:focus {
+#btn-start-game.focus,
+#btn-start-modal.focus,
+#btn-start-modal:focus {
   box-shadow: 0 0 0 0.2rem #d39e0091;
 }
 
@@ -222,16 +227,16 @@ header {
   color: #fafafa;
 }
 
-.headerDetails h1 {
+.header-details h1 {
   margin: 4rem auto 4rem auto;
   font-family: "Sedgwick Ave Display", cursive;
   letter-spacing: 4px;
   font-size: 52px;
 }
 
-/*------------------------------------------------------ containerInformation -------------------*/
+/*------------------------------------------------------ container-information -------------------*/
 
-.containerInformation {
+.container-information {
   text-align: center;
 }
 
@@ -250,16 +255,16 @@ header {
   padding-bottom: 0.5em;
 }
 
-#btnRestart {
+#btn-restart {
   margin-left: 90px;
 }
 
-#btnExit {
+#btn-exit {
   margin-left: 30px;
 }
 
-#btnRestart:hover,
-#btnExit:hover {
+#btn-restart:hover,
+#btn-exit:hover {
   box-shadow: 0 0 15px #fafafa;
 }
 
@@ -358,7 +363,7 @@ footer a:hover {
     height: 60px;
   }
 
-  .headerDetails h1 {
+  .header-details h1 {
     font-size: 28px;
   }
 
@@ -371,19 +376,19 @@ footer a:hover {
     font-size: 12px;
   }
 
-  #btnRestart {
+  #btn-restart {
     margin-left: 15px;
     font-size: 12px;
     padding: 3px 10px;
   }
 
-  #btnExit {
+  #btn-exit {
     margin-left: 10px;
     font-size: 12px;
     padding: 3px 10px;
   }
 
-  #btnStartModal {
+  #btn-start-modal {
     /* font-size: 12px; */
   }
 
@@ -391,7 +396,7 @@ footer a:hover {
     font-size: 12px;
   }
 
-  #btnStartGame {
+  #btn-start-game {
     font-size: 12px;
   }
 
@@ -411,7 +416,7 @@ footer a:hover {
     height: 90px;
   }
 
-  .headerDetails h1 {
+  .header-details h1 {
     font-size: 36px;
   }
 
@@ -424,19 +429,19 @@ footer a:hover {
     font-size: 12px;
   }
 
-  #btnRestart {
+  #btn-restart {
     margin-left: 20px;
     font-size: 12px;
     padding: 3px 10px;
   }
 
-  #btnExit {
+  #btn-exit {
     margin-left: 15px;
     font-size: 12px;
     padding: 3px 10px;
   }
 
-  #btnStartModal {
+  #btn-start-modal {
     /* font-size: 12px; */
   }
 
@@ -444,7 +449,7 @@ footer a:hover {
     font-size: 12px;
   }
 
-  #btnStartGame {
+  #btn-start-game {
     font-size: 12px;
   }
 
@@ -464,7 +469,7 @@ footer a:hover {
     height: 100px;
   }
 
-  .headerDetails h1 {
+  .header-details h1 {
     font-size: 42px;
   }
 
@@ -477,17 +482,17 @@ footer a:hover {
     font-size: 16px;
   }
 
-  #btnRestart {
+  #btn-restart {
     margin-left: 60px;
     font-size: 16px;
   }
 
-  #btnExit {
+  #btn-exit {
     margin-left: 20px;
     font-size: 16px;
   }
 
-  #btnStartModal {
+  #btn-start-modal {
     /* font-size: 16px; */
   }
 
@@ -495,7 +500,7 @@ footer a:hover {
     font-size: 16px;
   }
 
-  #btnStartGame {
+  #btn-start-game {
     font-size: 16px;
   }
 
@@ -515,7 +520,7 @@ footer a:hover {
     height: 180px;
   }
 
-  .headerDetails h1 {
+  .header-details h1 {
     font-size: 48px;
   }
 
@@ -528,17 +533,17 @@ footer a:hover {
     font-size: 18px;
   }
 
-  #btnRestart {
+  #btn-restart {
     margin-left: 80px;
     font-size: 18px;
   }
 
-  #btnExit {
+  #btn-exit {
     margin-left: 30px;
     font-size: 18px;
   }
 
-  #btnStartModal {
+  #btn-start-modal {
     /* font-size: 18px; */
   }
 
@@ -546,7 +551,7 @@ footer a:hover {
     font-size: 18px;
   }
 
-  #btnStartGame {
+  #btn-start-game {
     font-size: 18px;
   }
 
@@ -566,7 +571,7 @@ footer a:hover {
     height: 200px;
   }
 
-  .headerDetails h1 {
+  .header-details h1 {
     font-size: 48px;
   }
 
@@ -579,17 +584,17 @@ footer a:hover {
     font-size: 20px;
   }
 
-  #btnRestart {
+  #btn-restart {
     margin-left: 100px;
     font-size: 20px;
   }
 
-  #btnExit {
+  #btn-exit {
     margin-left: 40px;
     font-size: 20px;
   }
 
-  #btnStartModal {
+  #btn-start-modal {
     /* font-size: 20px; */
   }
 
@@ -597,11 +602,11 @@ footer a:hover {
     font-size: 20px;
   }
 
-  form input#playerName.playerName {
+  form input#player-name.player-name {
     font-size: 16px;
   }
 
-  #btnStartGame {
+  #btn-start-game {
     font-size: 20px;
   }
 

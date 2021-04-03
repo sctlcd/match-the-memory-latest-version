@@ -2,14 +2,14 @@
 
 $(document).ready(function() {
 
-  const btnStartModal = document.getElementById("btnStartModal");
-  const btnStartGame = document.getElementById("btnStartGame");
-  const inputPlayerName = document.getElementById("playerName");
-  const btnResultsModal = document.getElementById("btnResultsModal");
-  const btnLevelUp = document.getElementById("btnLevelUp");
-  const btnPlayAgain = document.getElementById("btnPlayAgain");
-  const btnRestart = document.getElementById("btnRestart");
-  const btnExit = document.getElementById("btnExit");
+  const btnStartModal = document.getElementById("btn-start-modal");
+  const btnStartGame = document.getElementById("btn-start-game");
+  const inputPlayerName = document.getElementById("player-name");
+  const btnResultsModal = document.getElementById("btn-results-modal");
+  const btnLevelUp = document.getElementById("btn-level-up");
+  const btnPlayAgain = document.getElementById("btn-play-again");
+  const btnRestart = document.getElementById("btn-restart");
+  const btnExit = document.getElementById("btn-exit");
   const card = document.querySelector('.card');
 
   // game namespace/scope
@@ -24,7 +24,7 @@ $(document).ready(function() {
     // Event listener BtnStartModal click
     // Open the start modal
     clickBtnStartModal: function() {
-      $("#startModal").modal({
+      $("#start-modal").modal({
         backdrop: "static",
         keyboard: false,
       });
@@ -52,7 +52,7 @@ $(document).ready(function() {
         game.getPlayerData();
       } else {
         setTimeout(function() {
-          $("#playerName").effect("bounce");
+          $("#player-name").effect("bounce");
         }, 10);
       }
     },
@@ -60,27 +60,27 @@ $(document).ready(function() {
     // Event listener BtnResultsModal click
     // Display the result modal according to the game level
     clickBtnResultsModal: function() {
-      $("#resultsModal").modal({
+      $("#results-modal").modal({
         backdrop: "static",
         keyboard: false,
       });
-      $("#btnLevelUp").hide();
-      $("#btnPlayAgain").hide();
+      $("#btn-level-up").hide();
+      $("#btn-play-again").hide();
 
       // todo: change end game level
       if (game.gameLevel == 3) {
-        $(".resultsText").text(
+        $(".results-text").text(
           `Well done ${game.playerName}! You finished the game. Do you want to \
           start the game over?`
         );
-        $("#btnPlayAgain").show();
+        $("#btn-play-again").show();
         btnPlayAgain.addEventListener("click", game.clickBtnPlayAgain);
       } else {
-        $(".resultsText").text(
+        $(".results-text").text(
           `Well done ${game.playerName}! You finished Level ${game.gameLevel} \
           in ${game.timeCounter} seconds and ${game.moves} moves.`
         );
-        $("#btnLevelUp").show();
+        $("#btn-level-up").show();
         btnLevelUp.addEventListener("click", game.clickBtnLevelUp);
       }
     },
@@ -88,7 +88,7 @@ $(document).ready(function() {
     // Event listener BtnLevelUp click
     // Display a level up game round
     clickBtnLevelUp: function() {
-      $("#resultsModal").modal("toggle");
+      $("#results-modal").modal("toggle");
       game.gameLevel++;
       game.getLevelUp(game.gameLevel);
     },
@@ -97,7 +97,7 @@ $(document).ready(function() {
     // Start the game over from the result pop up when the player has completed
     // the 5 levels
     clickBtnPlayAgain: function() {
-      $("#resultsModal").modal("toggle");
+      $("#results-modal").modal("toggle");
       game.clearTime();
       game.resetTime();
       game.init();
@@ -131,36 +131,36 @@ $(document).ready(function() {
     init: function() {
       btnStartModal.addEventListener("click", game.clickBtnStartModal);
 
-      $(".initWrapper").show();
-      $("#btnStartModal").show();
-      $("#btnResultsModal").hide();
+      $(".init-wrapper").show();
+      $("#btn-start-modal").show();
+      $("#btn-results-modal").hide();
     },
 
     // Get the player game environment data
     getPlayerData: function() {
       game.playerName = inputPlayerName.value;
       game.clickCardHandlers();
-      $("#startModal").modal("toggle");
-      $(".initWrapper").hide();
+      $("#start-modal").modal("toggle");
+      $(".init-wrapper").hide();
       game.getHeaderDetails();
       game.getInformationDetails();
     },
 
     // Display game title
     getHeaderDetails: function() {
-      $(".headerDetails").empty();
-      $(".headerDetails")
+      $(".header-details").empty();
+      $(".header-details")
         .append("<h1>Match the memory</h1>")
         .addClass("uppercase");
     },
 
     // Display info buttons (level, moves, time) and action buttons (reset, exit)
     getInformationDetails: function() {
-      $(".informationDetails h4").empty();
-      $(".informationDetails h4").append(
+      $(".information-details h4").empty();
+      $(".information-details h4").append(
         '<span class="badge badge-primary level">Level<span id="levelCounter">0</span></span><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary levelTimer"><span id="levelTimer">0</span> s</span>'
       );
-      $(".informationDetails").show();
+      $(".information-details").show();
 
       btnExit.addEventListener("click", game.clickBtnExit);
       btnRestart.addEventListener("click", game.clickBtnRestart);
@@ -300,11 +300,11 @@ $(document).ready(function() {
     // Once all cards are paired, pop up your results: player name, level,
     // time and moves it took to finish the game round
     getResults: function() {
-      $(".informationDetails").hide();
+      $(".information-details").hide();
       $("h1").hide();
-      $(".initWrapper").show();
-      $("#btnStartModal").hide();
-      $("#btnResultsModal").show();
+      $(".init-wrapper").show();
+      $("#btn-start-modal").hide();
+      $("#btn-results-modal").show();
 
       btnResultsModal.addEventListener("click", game.clickBtnResultsModal)
     },
@@ -312,10 +312,10 @@ $(document).ready(function() {
     // Continue the game by starting a new game round to the level up
     getLevelUp: function() {
       game.clickCardHandlers();
-      $("#resultsModal").modal("toggle");
-      $(".initWrapper").hide();
+      $("#results-modal").modal("toggle");
+      $(".init-wrapper").hide();
       game.getHeaderDetails();
-      $(".informationDetails").show();
+      $(".information-details").show();
 
       game.resetTime();
       game.resetMoves();
