@@ -28,7 +28,7 @@ $(document).ready(function() {
         backdrop: "static",
         keyboard: false,
       });
-      inputPlayerName.value === "";
+      $("#player-name").val("");
 
       btnStartGame.addEventListener("click", game.clickBtnStartGame);
     },

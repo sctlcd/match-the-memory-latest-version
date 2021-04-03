@@ -1,6 +1,6 @@
-# [Match the memory](https://sctlcd.github.io/match-the-memory/)
+# [Match the memory]()
 
-<img src="https://github.com/sctlcd/match-the-memory/tree/master/app/assets/wireframes/Multi Device Website Mockup Generator-min.png" alt="Match the memory" width="700">
+todo <img src="" alt="Match the memory" width="700">
 <dl>
 <dt>A nice blast from the past!</dt><br>
 <dd>I was playing memory card games with my sister when I was a little girl and I kept pretty fun memories of theses times</dd>
@@ -36,7 +36,7 @@
 
 4. [Testing](#Testing)
 
-    - [User story validation](#UserStoryValidation)
+	- [User story validation](#UserStoryValidation)
 	- [Layout responsiveness](#LayoutResponsiveness)
 	- [Compatibility](#Compatibility)
 	- [Testing left](#Testingleft)
@@ -61,13 +61,17 @@
 
 The general purpose of this website is to give the opportunity to people to improve their concentration and challenging their visual memory while having fun. And this anytime, anywhere as this game is available on various devices as desktops, tablets and mobile.
 
-**Match the memory** is a card game in which all of the cards are laid face down on the screen and two cards are flipped face up over each turn. If the cards match they fade if not they flip back. The object of the game is to turn over pairs of matching cards. Once all cards are matched, a popup message appears and congratulates the player for winning the game. The popup gives the game round result, how much time and how many moves it took to end the game.
+**Match the memory** is a card game in which all of the cards are laid face down on the screen and two cards are flipped face up over each turn. If the cards match they fade if not they flip back. The object of the game is to turn over pairs of matching cards. Once all cards are matched, a popup message appears and congratulates the player for winning the game round. The popup gives the result, how much time and how many moves it took to end the game round. The game ends when the player complete the 3 levels.
+
+Back to [top](#TableOfContents)
+
+---
 
 ### How to play? <a name="HowToPlay"></a>
 
 The goal is to match all the cards together and win the game round.
 
-1. Click on the Let's play button. Enter your player name and start playing.
+1. Click on the Match the memory button. Enter your username and start playing.
 
 2. Click on two cards, if they match, look for another pair of cards. If cards don't pair, try again.
 
@@ -77,20 +81,22 @@ The goal is to match all the cards together and win the game round.
  If you want to start over, hit the exit button on the right corner of the game.
 
 5. Once you matched all cards together. Congrats you win!
-An popup window appears showing you your game round result, time and moves, to complete the game.
+An popup window appears showing your result, time and moves to complete the game round.
 
 6. In the result popup, you can hit 'Level up!' to have another go at the level up game, keep playing for the minimum of moves in the minimum of time.
 
-7. When the player complete the 5 levels, a popup invite him to start the game over by hitting 'Play again!'.
+7. When the player complete the 3 levels, a popup invite him to start the game over by hitting 'Play again!'.
 
 8. Good luck and may the best fan win!
 
 Levels description:
-- Level 1: 4 paired of cards, trigger the animation of flipping back the pair of card after 1s
-- Level 2: 6 paired of cards, trigger the animation of flipping back the pair of card after 0,9s
-- Level 3: 8 paired of cards, trigger the animation of flipping back the pair of card after 0,7s
-- Level 4: 10 paired of cards, trigger the animation of flipping back the pair of card after 0,7s
-- Level 5: 12 paired of cards, trigger the animation of flipping back the pair of card after 0,5s
+- Level 1: 4 paired of cards, trigger the animation of flipping back the pair of card after 0,9s
+- Level 2: 6 paired of cards, trigger the animation of flipping back the pair of card after 0,7s
+- Level 3: 8 paired of cards, trigger the animation of flipping back the pair of card after 0,5s
+
+Back to [top](#TableOfContents)
+
+---
 
 ### Why this project? <a name="WhyThisProject"></a>
 
@@ -101,7 +107,7 @@ For this project we could choose from one of the following ideas:
 - Create a site that calls on the Google Maps API and/or the Google Places API (or similar) to allow users to search for their next holiday destination.
 - Build a memory game (for inspiration [Simon](https://en.wikipedia.org/wiki/Simon_(game)) and [Bop It](https://en.wikipedia.org/wiki/Bop_It))
 
-I have decided to create a website using HTML, CSS, Bootstrap 4, JavaScript and jQuery based on visual memory.
+I have decided to create a game using HTML, CSS, Bootstrap 4, JavaScript and jQuery based on visual memory.
 
 Back to [top](#TableOfContents)
 
@@ -111,21 +117,26 @@ Back to [top](#TableOfContents)
 
 ### User Stories <a name="UserStories"></a>
 
+:heavy_check_mark: successfully implemented
+<br/>
+:x: not yet implemented
+
 "***As a user, I want to _____***"
 
-- [x] view the site from **any devices** (mobile, tablet, desktop).
-- [x] Enter my player name
-- [x] Player name is required prior to start the game
-- [x] Start the game by myself (by clicking on a button)
-- [x] Reset the game round (scope: current level)
-- [x] Exit the game (start the game over and enter your player name again)
-- [x] View information of my current game round in progress (level, moves, timer)
-- [x] View game round results (player name, level, moves and time it took to finish the current game round)
-- [x] Play again with level up by default.
-- [x] Start the game over after 5 levels completed
+- :heavy_check_mark: view the site from **any devices** (mobile, tablet, desktop).
+- :heavy_check_mark: Enter my player name
+- :heavy_check_mark: Player name is required prior to start the game
+- :heavy_check_mark: Start the game by myself (by clicking on a button)
+- :heavy_check_mark: Reset the game round (scope: current level)
+- :heavy_check_mark: Exit the game (start the game over and enter your player name again)
+- :heavy_check_mark: View information of my current game round in progress (level, moves, timer)
+- :heavy_check_mark: View game round results (player name, level, moves and time it took to finish the current game round)
+- :heavy_check_mark: Play again with level up by default.
+- :heavy_check_mark: Start the game over after 3 levels completed
 
-<br>
-- [x] *marked the item as implemented successfully*
+Back to [top](#TableOfContents)
+
+---
 
 ### Design <a name="Design"></a>
 
@@ -143,9 +154,13 @@ I picked a Google Font [Sedgwick Ave Display](https://fonts.google.com/specimen/
 I did not add any sound effects on purpose in this version of the game which the general purpose is memory and concentration as I believe sounds can disturb concentration.
 Sound effects will possibly be part of a future version with the option to mute them.
 
+Back to [top](#TableOfContents)
+
+---
+
 #### Framework <a name="Framework"></a>
 
-Bootstrap 4 - Because I've already used Bootstrap and I liked it, because it meets the project requirements "*Incorporate a structured layout*". I've decided to build this website with Bootstrap 4.
+Bootstrap 4 - Because I've already used Bootstrap and I liked it, because it meets the project requirements "*Incorporate a structured layout*". I've decided to build this game with Bootstrap 4.
 
 #### Color Scheme <a name="ColorScheme"></a>
 
@@ -158,6 +173,10 @@ In keeping with the **Urban art** and **Abstract art** idea, I have chosen a col
 - ![#0000FF](https://placehold.it/15/0000FF/0000FF) Blue
 - ![#d39e00](https://placehold.it/15/d39e00/d39e00) `#d39e00`
 
+Back to [top](#TableOfContents)
+
+---
+
 #### Icons <a name="Icons"></a>
 
 - [Font Awesome 5.12](https://fontawesome.com/)
@@ -165,7 +184,7 @@ In keeping with the **Urban art** and **Abstract art** idea, I have chosen a col
 
 #### Typography <a name="Typography"></a>
 
-- I have opted to use the Google Font [Sedgwick Ave Display](https://fonts.google.com/specimen/Sedgwick+Ave+Display) which emphasizes the Urban art concept with a graffiti style throughout the application. As a secondary font I have imported the simple and easy to read font Google Font [Roboto](https://fonts.google.com/specimen/Roboto).
+- I have opted to use the Google Font [Sedgwick Ave Display](https://fonts.google.com/specimen/Sedgwick+Ave+Display) which emphasizes the Urban art concept with a graffiti style throughout the application. As a secondary font I have imported the simple and easy to read Google Font [Roboto](https://fonts.google.com/specimen/Roboto).
 
 ### Wireframes <a name="Wireframes"></a>
 
@@ -174,6 +193,8 @@ I have used [Balsamiq Wireframes](https://balsamiq.com/wireframes/) for my wiref
 - The simplicity, rapidity and ease of use by focusing on structure and content.
 
 My wireframes for this project can be found [here](https://github.com/sctlcd/match-the-memory/tree/master/app/assets/wireframes) in the wireframes sub-directory.
+
+My Balsamiq Wireframes are not updated according to the latest version. The free licence provided by Code Institute has expired.
 
 Back to [top](#TableOfContents)
 
@@ -203,7 +224,7 @@ Back to [top](#TableOfContents)
 
 ### Features Left to Implement <a name="FeaturesLeftToImplement"></a>
 
- - Potential sound effects with an option to mute them
+ - Sound effects will possibly be part of a future version with the option to mute them.
 
 Back to [top](#TableOfContents)
 
@@ -248,6 +269,10 @@ My testing coverage for this project can be found [here](https://github.com/sctl
 | Play again with level up by default | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |Pass  |
 | Start the game over after 5 levels completed | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass | Pass |Pass  |
 
+Back to [top](#TableOfContents)
+
+---
+
 ### Layout responsiveness <a name="LayoutResponsiveness"></a>
 
 |  | Galaxy S5 | Pixel | Pixel 2 XL |iPhone 6/7/8 | iPhone 6/7/8 Plus | iPhone X | iPad | iPad Pro | Desktop 1024px | Desktop >1200px |
@@ -261,15 +286,19 @@ My testing coverage for this project can be found [here](https://github.com/sctl
 | links/buttons | Good | Good | Good | Good | Good | Good | Good | Good  | Good | Good |
 | render as expected | Good | Good | Good | Good | Good | Good | Good | Good | Good | Good |
 
+Back to [top](#TableOfContents)
+
+---
+
 ### Compatibility <a name="Compatibility"></a>
 
 I tested the website across the 6 main browsers in both desktop and mobile configuration to ensure a large number of users can use it successfully.
 
-- Chrome v.81.0
-- Edge v.44
-- Firefox v.75.0
+- Chrome v.89.0
+- Edge v.89.0
+- Firefox v.86.0
 - Safari v.5.1.7 for Windows 10
-- Opera v.68.0
+- Opera v.74.0
 - Internet Explorer v.11
 
 |All pages | Chrome | Edge | Firefox | Safari | Opera | IE |
@@ -280,6 +309,10 @@ I tested the website across the 6 main browsers in both desktop and mobile confi
 - IE: Some CSS3 properties and HTML5 elements are not fully supported
 
 - Safari v.5.1.7: It’s an outdated version and lacks many of the features present in the latest version of Safari. The last version of Safari for Windows was released on May 9, 2012.
+
+Back to [top](#TableOfContents)
+
+---
 
 ### Testing left <a name="Testingleft"></a>
 
@@ -304,13 +337,11 @@ For testing this website on the latest version of Safari, I will have to install
 - [Chrome DevTools] (https://developers.google.com/web/tools/chrome-devtools/)
 Console Navigating through the Website rendered no critical fails/errors in the console that were necessary to fix.
 
-### Known Issues <a name="KnownIssues"></a>
-
-- Background overlay of the Start and Result modal on Galaxy S5, Pixel Pixel 2 XL, iPhone 6/7/8, iPhone 6/7/8 Plus, iPhone X does not display as expected.
-
 Back to [top](#TableOfContents)
 
 ---
+
+### Known Issues <a name="KnownIssues"></a>
 
 ## Deployment <a name="Deployment"></a>
 
@@ -321,18 +352,22 @@ Back to [top](#TableOfContents)
  3.	Find the “settings” tab and click on it.
  4.	Scroll down until the “GitHub Pages” sections.
  5.	Under the “source” drop down menu, choose a branch. I chose “master branch” and select it.
- 6.	You will then see a URL to your live webpage. In my case the URL is https://sctlcd.github.io/match-the-memory/
+ 6.	You will then see a URL to your live webpage. In my case the URL is https://github.com/sctlcd/match-the-memory-latest-version
+
+ Back to [top](#TableOfContents)
+
+ ---
 
 ### Deployment – Run Locally <a name="Deploymentrunlocally"></a>
 
-1.	Again, click on the repository called [Match the memory](https://github.com/sctlcd/match-the-memory)
+1.	Again, click on the repository called [Match the memory](https://github.com/sctlcd/match-the-memory-latest-version)
 2.	Along the top bar, find the “clone or download” button.
 3.	Here you have the option to clone by HTTPS or SSH.
 4.	Once you have chose your desired option, then click the copy icon next to the URL.
 5.	Open Git Bash.
 6.	Ensure you are in the correct directory which you want to copy the code into. If not, change the directory.
 7.	In the terminal, write
-			$ git clone https://github.com/sctlcd/match-the-memory.git
+			$ git clone https://github.com/sctlcd/match-the-memory-latest-version.git
 8.	Press the enter button and your clone will be created.
 
 Back to [top](#TableOfContents)
@@ -348,17 +383,29 @@ Back to [top](#TableOfContents)
 	- Part 1 - HTML / CSS - 4×4 Memory Game In JavaScript [YouTube](https://www.youtube.com/watch?v=qYMJMf7JsbM)
 	- Memory Card Game - JavaScript Tutorial [YouTube](https://www.youtube.com/watch?v=ZniVgo8U7ek)
 
+Back to [top](#TableOfContents)
+
+---
+
 ### Content <a name="Content"></a>
 
 - All images visible on the cards come from [PlaceIMG](https://placeimg.com/), a random image generator website. It offers the possibility to customise images (width, height, category) before their random generation.
+
+Back to [top](#TableOfContents)
+
+---
 
 ### Media <a name="Media"></a>
 
 Sources of the images used on this site:
 
-- From images sub-directory - [Github](https://github.com/sctlcd/match-the-memory/tree/master/app/assets/images)
+- From images sub-directory - [Github](https://github.com/sctlcd/match-the-memory-latest-version/tree/master/app/assets/images)
 	- city-art-los-angeles-street-art-min.jpg - [Pexel | copyright ᒷ⟁⨃.ᖇ.ᕮ.∥.ᕮ](https://www.pexels.com/photo/city-art-los-angeles-street-art-2334805/)
 	- photo-of-multicolored-illustration-min.jpg - [Pexel | copyright Anni Roenkae](https://www.pexels.com/photo/photo-of-multicolored-illustration-2832382/)
+
+	Back to [top](#TableOfContents)
+
+	---
 
 ### Code <a name="Code"></a>
 
@@ -376,6 +423,10 @@ Sources of the images used on this site:
 - Memory Game Programming JavaScript Tutorial - [YouTube](https://www.youtube.com/watch?v=c_ohDPWmsM0&feature=emb_rel_pause)
 - Part 1 - HTML / CSS - 4×4 Memory Game In JavaScript - [YouTube](https://www.youtube.com/watch?v=qYMJMf7JsbM)
 - Memory Card Game - JavaScript Tutorial - [YouTube](https://www.youtube.com/watch?v=ZniVgo8U7ek)
+
+Back to [top](#TableOfContents)
+
+---
 
 ### Acknowledgements <a name="Acknowledgements"></a>
 
