@@ -68,7 +68,7 @@ $(document).ready(function() {
       $("#btn-play-again").hide();
 
       // todo: change end game level
-      if (game.gameLevel == 3) {
+      if (game.gameLevel === 3) {
         $(".results-text").text(
           `Well done ${game.playerName}! You finished the game. Do you want to \
           start the game over?`
@@ -169,20 +169,14 @@ $(document).ready(function() {
     // Get the card deck according to the game round level
     getCardFigures: function(gameLevel) {
       switch (gameLevel) {
-        case (gameLevel = 1):
+        case (1):
           // return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
           return (game.cardFigures = [1, 1]);
-        case (gameLevel = 2):
+        case (2):
           // return (game.cardFigures = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
           return (game.cardFigures = [1, 1]);
-        case (gameLevel = 3):
+        case (3):
           // return (game.cardFigures = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]);
-          return (game.cardFigures = [1, 1]);
-        case (gameLevel = 4):
-          // return (game.cardFigures = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-          return (game.cardFigures = [1, 1]);
-        case (gameLevel = 5):
-          // return (game.cardFigures = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
           return (game.cardFigures = [1, 1]);
         default:
           // return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
@@ -230,7 +224,7 @@ $(document).ready(function() {
           card.data("cardFigure") +
           '")',
       });
-      if ($(".visible").length == 2) {
+      if ($(".visible").length === 2) {
         game.checkForPairedCards(game.gameLevel);
       }
     },
@@ -242,25 +236,19 @@ $(document).ready(function() {
       let time = 0;
       game.gameLevel = level;
       switch (game.gameLevel) {
-        case (game.gameLevel = 1):
-          time = 1000;
-          break;
-        case (game.gameLevel = 2):
+        case (1):
           time = 900;
           break;
-        case (game.gameLevel = 3):
+        case (2):
           time = 700;
           break;
-        case (game.gameLevel = 4):
-          time = 700;
-          break;
-        case (game.gameLevel = 5):
+        case (3):
           time = 500;
           break;
       }
 
       if (
-        $(".visible").first().data("cardFigure") ==
+        $(".visible").first().data("cardFigure") ===
         $(".visible").last().data("cardFigure")
       ) {
         setTimeout(function() {
