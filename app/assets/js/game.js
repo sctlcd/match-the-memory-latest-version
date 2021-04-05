@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   // game namespace/scope
   let game = {
-    playerName: "noname",
+    playerName: "",
     moves: 0,
     timeCounter: 0,
     imgCategory: "any",
@@ -36,14 +36,9 @@ $(document).ready(function() {
     // Event listener BtnStartGame click
     // Start the player's game
     clickBtnStartGame: function() {
-      inputPlayerName.addEventListener("input", game.changeInputPlayerName());
-
       game.initTime();
-      game.gameLevel = 1;
-      game.displayGameLevel(game.gameLevel);
-      game.cardFigures = game.getCardFigures(game.gameLevel);
-      game.shuffleCards();
-      game.getImagesloaded();
+
+      inputPlayerName.addEventListener("input", game.changeInputPlayerName());
     },
 
     // Event listener InputPlayerName change
@@ -90,7 +85,7 @@ $(document).ready(function() {
     clickBtnLevelUp: function() {
       $("#results-modal").modal("toggle");
       game.gameLevel++;
-      game.getLevelUp(game.gameLevel);
+      game.getLevelUp();
     },
 
     // Event listener BtnPlayAgain click
@@ -134,6 +129,11 @@ $(document).ready(function() {
       $(".init-wrapper").show();
       $("#btn-start-modal").show();
       $("#btn-results-modal").hide();
+      $(".header-details").empty();
+      $(".information-details h4").empty();
+      $("#btn-restart").hide();
+      $("#btn-exit").hide();
+      $(".card-details").empty();
     },
 
     // Get the player game environment data
@@ -144,6 +144,9 @@ $(document).ready(function() {
       $(".init-wrapper").hide();
       game.getHeaderDetails();
       game.getInformationDetails();
+      game.gameLevel = 1;
+      game.getDeckOfCard(game.gameLevel);
+      game.test();
     },
 
     // Display game title
@@ -154,13 +157,15 @@ $(document).ready(function() {
         .addClass("uppercase");
     },
 
-    // Display info buttons (level, moves, time) and action buttons (reset, exit)
+    // Display info badges (level, moves, time) and action buttons (reset, exit)
     getInformationDetails: function() {
       $(".information-details h4").empty();
       $(".information-details h4").append(
         '<span class="badge badge-primary level">Level<span id="levelCounter">0</span></span><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary levelTimer"><span id="levelTimer">0</span> s</span>'
       );
       $(".information-details").show();
+      $("#btn-restart").show();
+      $("#btn-exit").show();
 
       btnExit.addEventListener("click", game.clickBtnExit);
       btnRestart.addEventListener("click", game.clickBtnRestart);
@@ -170,16 +175,16 @@ $(document).ready(function() {
     getCardFigures: function(gameLevel) {
       switch (gameLevel) {
         case (1):
-          // return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
+          // return (game.cardFigures = [1, 2, 3, 1, 2, 3]);
           return (game.cardFigures = [1, 1]);
         case (2):
-          // return (game.cardFigures = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
+          // return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
           return (game.cardFigures = [1, 1]);
         case (3):
-          // return (game.cardFigures = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]);
+          // return (game.cardFigures = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]);
           return (game.cardFigures = [1, 1]);
         default:
-          // return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
+          // return (game.cardFigures = [1, 2, 3, 1, 2, 3]);
           return (game.cardFigures = [1, 1]);
       }
     },
@@ -307,10 +312,7 @@ $(document).ready(function() {
 
       game.resetTime();
       game.resetMoves();
-      game.displayGameLevel(game.gameLevel);
-      game.cardFigures = game.getCardFigures(game.gameLevel);
-      game.shuffleCards();
-      game.getImagesloaded();
+      game.getDeckOfCard(game.gameLevel);
     },
 
     // Display the game level
@@ -353,6 +355,15 @@ $(document).ready(function() {
           "https://placeimg.com/200/200/" + game.imgCategory + "/" + i;
       }
     },
+
+    // Get the deck of cards according to the game level
+    getDeckOfCard: function(level) {
+      game.gameLevel = level;
+      game.displayGameLevel(game.gameLevel);
+      game.cardFigures = game.getCardFigures(game.gameLevel);
+      game.shuffleCards();
+      game.getImagesloaded();
+    }
   };
 
   game.init();
