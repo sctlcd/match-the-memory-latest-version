@@ -90,9 +90,9 @@ An popup window appears showing your result, time and moves to complete the game
 8. Good luck and may the best fan win!
 
 Levels description:
-- Level 1: 4 paired of cards, trigger the animation of flipping back the pair of card after 0,9s
-- Level 2: 6 paired of cards, trigger the animation of flipping back the pair of card after 0,7s
-- Level 3: 8 paired of cards, trigger the animation of flipping back the pair of card after 0,5s
+- Level 1: 3 paired of cards, trigger the animation of flipping back the pair of card after 0,9s
+- Level 2: 4 paired of cards, trigger the animation of flipping back the pair of card after 0,7s
+- Level 3: 6 paired of cards, trigger the animation of flipping back the pair of card after 0,7s
 
 Back to [top](#TableOfContents)
 

@@ -133,7 +133,7 @@ $(document).ready(function() {
       $(".information-details h4").empty();
       $("#btn-restart").hide();
       $("#btn-exit").hide();
-      $(".card-details").empty();
+      $("#card-details").empty();
     },
 
     // Get the player game environment data
@@ -175,17 +175,17 @@ $(document).ready(function() {
     getCardFigures: function(gameLevel) {
       switch (gameLevel) {
         case (1):
-          // return (game.cardFigures = [1, 2, 3, 1, 2, 3]);
-          return (game.cardFigures = [1, 1]);
+          return (game.cardFigures = [1, 2, 3, 1, 2, 3]);
+          // return (game.cardFigures = [1, 1]);
         case (2):
-          // return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
-          return (game.cardFigures = [1, 1]);
+          return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
+          // return (game.cardFigures = [1, 1]);
         case (3):
-          // return (game.cardFigures = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]);
-          return (game.cardFigures = [1, 1]);
+          return (game.cardFigures = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
+          // return (game.cardFigures = [1, 1]);
         default:
-          // return (game.cardFigures = [1, 2, 3, 1, 2, 3]);
-          return (game.cardFigures = [1, 1]);
+          return (game.cardFigures = [1, 2, 3, 1, 2, 3]);
+          // return (game.cardFigures = [1, 1]);
       }
     },
 
@@ -196,15 +196,27 @@ $(document).ready(function() {
     shuffleCards: function() {
       let switching = 0;
       let temp = 0;
-      $(".card-details").empty();
+      $("#card-details").empty();
       for (let i = game.cardFigures.length - 1; i > -1; i -= 1) {
         switching = Math.floor(Math.random() * game.cardFigures.length);
         temp = game.cardFigures[i];
         game.cardFigures[i] = game.cardFigures[switching];
         game.cardFigures[switching] = temp;
-        $(".card-details").append('<div class="card unpaired"></div>');
+        $("#card-details").append('<div class="card unpaired"></div>');
       }
       game.getCards();
+    },
+
+    // Get the deck of cards layout on md, lg and xl: 3 colums (default) or 4
+    // colums according to the number of cards in the current level
+    // On xs, xxs: 2 columns
+    getDeckOfCardsLayout: function() {
+      if (game.cardFigures.length % 4 === 0) {
+        $("#card-details").addClass('columns4');
+      }
+      else {
+        $("#card-details").removeClass('columns4');
+      }
     },
 
     // Assign cards
@@ -248,7 +260,7 @@ $(document).ready(function() {
           time = 700;
           break;
         case (3):
-          time = 500;
+          time = 700;
           break;
       }
 
@@ -293,6 +305,7 @@ $(document).ready(function() {
     // Once all cards are paired, pop up your results: player name, level,
     // time and moves it took to finish the game round
     getResults: function() {
+      window.scrollTo(0,0);
       $(".information-details").hide();
       $("h1").hide();
       $(".init-wrapper").show();
@@ -361,6 +374,7 @@ $(document).ready(function() {
       game.gameLevel = level;
       game.displayGameLevel(game.gameLevel);
       game.cardFigures = game.getCardFigures(game.gameLevel);
+      game.getDeckOfCardsLayout();
       game.shuffleCards();
       game.getImagesloaded();
     }

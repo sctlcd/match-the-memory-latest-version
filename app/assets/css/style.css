@@ -253,7 +253,7 @@ header {
   flex-direction: column;
 }
 
-.card-details {
+#card-details {
   width: 900px;
   background: transparent;
   padding: 32px;
@@ -325,9 +325,9 @@ footer a:hover {
 }
 
 /*------------------------------------------------------ media queries -------------------*/
-/* xxs - Extra small devices (portrait phones, less than 349px) */
+/* xxs - Double extra small devices (portrait phones, less than 349px) */
 @media (max-width: 349px) {
-  .card-details {
+  #card-details {
     width: 290px;
     padding: 26px;
   }
@@ -392,7 +392,7 @@ footer a:hover {
 
 /* xs - Extra small devices (portrait phones, less than 576px) */
 @media (min-width: 350px) and (max-width: 575px) {
-  .card-details {
+  #card-details {
     width: 350px;
     padding: 26px;
   }
@@ -456,7 +456,7 @@ footer a:hover {
 
 /* sm - Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767px) {
-  .card-details {
+  #card-details {
     width: 450px;
   }
 
@@ -519,7 +519,7 @@ footer a:hover {
 
 /* md - Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
-  .card-details {
+  #card-details {
     width: 700px;
   }
 
@@ -583,9 +583,9 @@ footer a:hover {
   }
 }
 
-/* Large devices (desktops, 992px and up) */
+/* lg - Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .card-details {
+  #card-details {
     width: 800px;
   }
 
@@ -649,10 +649,10 @@ footer a:hover {
   }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
+/* xl - Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  .card-details {
-    /* width: 1100px; */
+  .columns4 {
+    width: 1100px !important;
   }
 
   .card {
