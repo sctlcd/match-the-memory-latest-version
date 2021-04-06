@@ -11,6 +11,10 @@ $(document).ready(function() {
   const btnRestart = document.getElementById("btn-restart");
   const btnExit = document.getElementById("btn-exit");
   const card = document.querySelector('.card');
+  const btnCloseCrossStartModal = document.getElementById("btn-close-cross-start-modal");
+  const btnCloseStartModal = document.getElementById("btn-close-start-modal");
+  const btnCloseCrossResultsModal = document.getElementById("btn-close-cross-results-modal");
+  const btnCloseResultsModal = document.getElementById("btn-close-results-modal");
 
   // game namespace/scope
   let game = {
@@ -22,9 +26,10 @@ $(document).ready(function() {
     gameLevel: 0,
 
     // Event listener BtnStartModal click
-    // Open the start modal
+    // Display the start modal
     clickBtnStartModal: function() {
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
+      $("#btn-start-modal").hide();
       $("#start-modal").modal({
         backdrop: "static",
         keyboard: false,
@@ -32,6 +37,8 @@ $(document).ready(function() {
       $("#player-name").val("");
 
       btnStartGame.addEventListener("click", game.clickBtnStartGame);
+      btnCloseStartModal.addEventListener("click", game.clickBtnCloseStartModal);
+      btnCloseCrossStartModal.addEventListener("click", game.clickBtnCloseCrossStartModal);
     },
 
     // Event listener BtnStartGame click
@@ -56,7 +63,8 @@ $(document).ready(function() {
     // Event listener BtnResultsModal click
     // Display the result modal according to the game level
     clickBtnResultsModal: function() {
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
+      $("#btn-results-modal").hide();
       $("#results-modal").modal({
         backdrop: "static",
         keyboard: false,
@@ -64,7 +72,6 @@ $(document).ready(function() {
       $("#btn-level-up").hide();
       $("#btn-play-again").hide();
 
-      // todo: change end game level
       if (game.gameLevel === 3) {
         $(".results-text").text(
           `Well done ${game.playerName}! You finished the game. Do you want to \
@@ -73,6 +80,7 @@ $(document).ready(function() {
         $("#btn-play-again").show();
         btnPlayAgain.addEventListener("click", game.clickBtnPlayAgain);
       } else {
+        $("#btn-results-modal").hide();
         $(".results-text").text(
           `Well done ${game.playerName}! You finished Level ${game.gameLevel} \
           in ${game.timeCounter} seconds and ${game.moves} moves.`
@@ -80,6 +88,9 @@ $(document).ready(function() {
         $("#btn-level-up").show();
         btnLevelUp.addEventListener("click", game.clickBtnLevelUp);
       }
+
+      btnCloseResultsModal.addEventListener("click", game.clickBtnCloseResultsModal);
+      btnCloseCrossResultsModal.addEventListener("click", game.clickBtnCloseCrossResultsModal);
     },
 
     // Event listener BtnLevelUp click
@@ -116,6 +127,30 @@ $(document).ready(function() {
       game.init();
     },
 
+    // Event listener BtnCloseCrossStartModal click
+    // Display the btn start modal
+    clickBtnCloseCrossStartModal: function() {
+      $("#btn-start-modal").show();
+    },
+
+    // Event listener BtnCloseStartModal click
+    // Display the btn start modal
+    clickBtnCloseStartModal: function() {
+      $("#btn-start-modal").show();
+    },
+
+    // Event listener BtnCloseCrossResultsModal click
+    // Display the btn results modal
+    clickBtnCloseCrossResultsModal: function() {
+      $("#btn-results-modal").show();
+    },
+
+    // Event listener BtnCloseResultsModal click
+    // Display the btn results modal
+    clickBtnCloseResultsModal: function() {
+      $("#btn-results-modal").show();
+    },
+
     // Event listener card class click
     // Flip the card
     clickCardHandlers: function() {
@@ -148,7 +183,6 @@ $(document).ready(function() {
       game.getInformationDetails();
       game.gameLevel = 1;
       game.getDeckOfCard(game.gameLevel);
-      game.test();
     },
 
     // Display game title
@@ -211,8 +245,7 @@ $(document).ready(function() {
     getDeckOfCardsLayout: function() {
       if (game.cardFigures.length % 4 === 0) {
         $("#card-details").addClass('columns4');
-      }
-      else {
+      } else {
         $("#card-details").removeClass('columns4');
       }
     },
@@ -316,7 +349,6 @@ $(document).ready(function() {
     // Continue the game by starting a new game round to the level up
     getLevelUp: function() {
       game.clickCardHandlers();
-      $("#results-modal").modal("toggle");
       $(".init-wrapper").hide();
       game.getHeaderDetails();
       $(".information-details").show();
