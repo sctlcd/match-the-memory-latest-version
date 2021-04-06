@@ -2,19 +2,19 @@
 
 $(document).ready(function() {
 
-  const btnStartModal = document.getElementById("btnStartModal");
-  const btnStartGame = document.getElementById("btnStartGame");
-  const inputPlayerName = document.getElementById("playerName");
-  const btnResultsModal = document.getElementById("btnResultsModal");
-  const btnLevelUp = document.getElementById("btnLevelUp");
-  const btnPlayAgain = document.getElementById("btnPlayAgain");
-  const btnRestart = document.getElementById("btnRestart");
-  const btnExit = document.getElementById("btnExit");
+  const btnStartModal = document.getElementById("btn-start-modal");
+  const btnStartGame = document.getElementById("btn-start-game");
+  const inputPlayerName = document.getElementById("player-name");
+  const btnResultsModal = document.getElementById("btn-results-modal");
+  const btnLevelUp = document.getElementById("btn-level-up");
+  const btnPlayAgain = document.getElementById("btn-play-again");
+  const btnRestart = document.getElementById("btn-restart");
+  const btnExit = document.getElementById("btn-exit");
   const card = document.querySelector('.card');
 
   // game namespace/scope
   let game = {
-    playerName: "noname",
+    playerName: "",
     moves: 0,
     timeCounter: 0,
     imgCategory: "any",
@@ -24,11 +24,12 @@ $(document).ready(function() {
     // Event listener BtnStartModal click
     // Open the start modal
     clickBtnStartModal: function() {
-      $("#startModal").modal({
+      window.scrollTo(0,0);
+      $("#start-modal").modal({
         backdrop: "static",
         keyboard: false,
       });
-      inputPlayerName.value === "";
+      $("#player-name").val("");
 
       btnStartGame.addEventListener("click", game.clickBtnStartGame);
     },
@@ -36,14 +37,9 @@ $(document).ready(function() {
     // Event listener BtnStartGame click
     // Start the player's game
     clickBtnStartGame: function() {
-      inputPlayerName.addEventListener("input", game.changeInputPlayerName());
-
       game.initTime();
-      game.gameLevel = 1;
-      game.displayGameLevel(game.gameLevel);
-      game.cardFigures = game.getCardFigures(game.gameLevel);
-      game.shuffleCards();
-      game.getImagesloaded();
+
+      inputPlayerName.addEventListener("input", game.changeInputPlayerName());
     },
 
     // Event listener InputPlayerName change
@@ -52,7 +48,7 @@ $(document).ready(function() {
         game.getPlayerData();
       } else {
         setTimeout(function() {
-          $("#playerName").effect("bounce");
+          $("#player-name").effect("bounce");
         }, 10);
       }
     },
@@ -60,27 +56,28 @@ $(document).ready(function() {
     // Event listener BtnResultsModal click
     // Display the result modal according to the game level
     clickBtnResultsModal: function() {
-      $("#resultsModal").modal({
+      window.scrollTo(0,0);
+      $("#results-modal").modal({
         backdrop: "static",
         keyboard: false,
       });
-      $("#btnLevelUp").hide();
-      $("#btnPlayAgain").hide();
+      $("#btn-level-up").hide();
+      $("#btn-play-again").hide();
 
       // todo: change end game level
-      if (game.gameLevel == 3) {
-        $(".resultsText").text(
+      if (game.gameLevel === 3) {
+        $(".results-text").text(
           `Well done ${game.playerName}! You finished the game. Do you want to \
           start the game over?`
         );
-        $("#btnPlayAgain").show();
+        $("#btn-play-again").show();
         btnPlayAgain.addEventListener("click", game.clickBtnPlayAgain);
       } else {
-        $(".resultsText").text(
+        $(".results-text").text(
           `Well done ${game.playerName}! You finished Level ${game.gameLevel} \
           in ${game.timeCounter} seconds and ${game.moves} moves.`
         );
-        $("#btnLevelUp").show();
+        $("#btn-level-up").show();
         btnLevelUp.addEventListener("click", game.clickBtnLevelUp);
       }
     },
@@ -88,16 +85,16 @@ $(document).ready(function() {
     // Event listener BtnLevelUp click
     // Display a level up game round
     clickBtnLevelUp: function() {
-      $("#resultsModal").modal("toggle");
+      $("#results-modal").modal("toggle");
       game.gameLevel++;
-      game.getLevelUp(game.gameLevel);
+      game.getLevelUp();
     },
 
     // Event listener BtnPlayAgain click
     // Start the game over from the result pop up when the player has completed
     // the 5 levels
     clickBtnPlayAgain: function() {
-      $("#resultsModal").modal("toggle");
+      $("#results-modal").modal("toggle");
       game.clearTime();
       game.resetTime();
       game.init();
@@ -131,36 +128,46 @@ $(document).ready(function() {
     init: function() {
       btnStartModal.addEventListener("click", game.clickBtnStartModal);
 
-      $(".initWrapper").show();
-      $("#btnStartModal").show();
-      $("#btnResultsModal").hide();
+      $(".init-wrapper").show();
+      $("#btn-start-modal").show();
+      $("#btn-results-modal").hide();
+      $(".header-details").empty();
+      $(".information-details h4").empty();
+      $("#btn-restart").hide();
+      $("#btn-exit").hide();
+      $("#card-details").empty();
     },
 
     // Get the player game environment data
     getPlayerData: function() {
       game.playerName = inputPlayerName.value;
       game.clickCardHandlers();
-      $("#startModal").modal("toggle");
-      $(".initWrapper").hide();
+      $("#start-modal").modal("toggle");
+      $(".init-wrapper").hide();
       game.getHeaderDetails();
       game.getInformationDetails();
+      game.gameLevel = 1;
+      game.getDeckOfCard(game.gameLevel);
+      game.test();
     },
 
     // Display game title
     getHeaderDetails: function() {
-      $(".headerDetails").empty();
-      $(".headerDetails")
+      $(".header-details").empty();
+      $(".header-details")
         .append("<h1>Match the memory</h1>")
         .addClass("uppercase");
     },
 
-    // Display info buttons (level, moves, time) and action buttons (reset, exit)
+    // Display info badges (level, moves, time) and action buttons (reset, exit)
     getInformationDetails: function() {
-      $(".informationDetails h4").empty();
-      $(".informationDetails h4").append(
+      $(".information-details h4").empty();
+      $(".information-details h4").append(
         '<span class="badge badge-primary level">Level<span id="levelCounter">0</span></span><span class="badge badge-primary moves"><span id="moves">0</span> moves</span><span class="badge badge-primary levelTimer"><span id="levelTimer">0</span> s</span>'
       );
-      $(".informationDetails").show();
+      $(".information-details").show();
+      $("#btn-restart").show();
+      $("#btn-exit").show();
 
       btnExit.addEventListener("click", game.clickBtnExit);
       btnRestart.addEventListener("click", game.clickBtnRestart);
@@ -169,24 +176,14 @@ $(document).ready(function() {
     // Get the card deck according to the game round level
     getCardFigures: function(gameLevel) {
       switch (gameLevel) {
-        case (gameLevel = 1):
-          // return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
-          return (game.cardFigures = [1, 1]);
-        case (gameLevel = 2):
-          // return (game.cardFigures = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
-          return (game.cardFigures = [1, 1]);
-        case (gameLevel = 3):
-          // return (game.cardFigures = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]);
-          return (game.cardFigures = [1, 1]);
-        case (gameLevel = 4):
-          // return (game.cardFigures = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-          return (game.cardFigures = [1, 1]);
-        case (gameLevel = 5):
-          // return (game.cardFigures = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-          return (game.cardFigures = [1, 1]);
+        case (1):
+          return (game.cardFigures = [1, 2, 3, 1, 2, 3]);
+        case (2):
+          return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
+        case (3):
+          return (game.cardFigures = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
         default:
-          // return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
-          return (game.cardFigures = [1, 1]);
+          return (game.cardFigures = [1, 2, 3, 1, 2, 3]);
       }
     },
 
@@ -197,15 +194,27 @@ $(document).ready(function() {
     shuffleCards: function() {
       let switching = 0;
       let temp = 0;
-      $(".card-details").empty();
+      $("#card-details").empty();
       for (let i = game.cardFigures.length - 1; i > -1; i -= 1) {
         switching = Math.floor(Math.random() * game.cardFigures.length);
         temp = game.cardFigures[i];
         game.cardFigures[i] = game.cardFigures[switching];
         game.cardFigures[switching] = temp;
-        $(".card-details").append('<div class="card unpaired"></div>');
+        $("#card-details").append('<div class="card unpaired"></div>');
       }
       game.getCards();
+    },
+
+    // Get the deck of cards layout on md, lg and xl: 3 colums (default) or 4
+    // colums according to the number of cards in the current level
+    // On xs, xxs: 2 columns
+    getDeckOfCardsLayout: function() {
+      if (game.cardFigures.length % 4 === 0) {
+        $("#card-details").addClass('columns4');
+      }
+      else {
+        $("#card-details").removeClass('columns4');
+      }
     },
 
     // Assign cards
@@ -230,7 +239,7 @@ $(document).ready(function() {
           card.data("cardFigure") +
           '")',
       });
-      if ($(".visible").length == 2) {
+      if ($(".visible").length === 2) {
         game.checkForPairedCards(game.gameLevel);
       }
     },
@@ -242,25 +251,19 @@ $(document).ready(function() {
       let time = 0;
       game.gameLevel = level;
       switch (game.gameLevel) {
-        case (game.gameLevel = 1):
-          time = 1000;
-          break;
-        case (game.gameLevel = 2):
+        case (1):
           time = 900;
           break;
-        case (game.gameLevel = 3):
+        case (2):
           time = 700;
           break;
-        case (game.gameLevel = 4):
+        case (3):
           time = 700;
-          break;
-        case (game.gameLevel = 5):
-          time = 500;
           break;
       }
 
       if (
-        $(".visible").first().data("cardFigure") ==
+        $(".visible").first().data("cardFigure") ===
         $(".visible").last().data("cardFigure")
       ) {
         setTimeout(function() {
@@ -300,11 +303,12 @@ $(document).ready(function() {
     // Once all cards are paired, pop up your results: player name, level,
     // time and moves it took to finish the game round
     getResults: function() {
-      $(".informationDetails").hide();
+      $(".information-details").hide();
       $("h1").hide();
-      $(".initWrapper").show();
-      $("#btnStartModal").hide();
-      $("#btnResultsModal").show();
+      $(".init-wrapper").show();
+      $("#card-details").empty();
+      $("#btn-start-modal").hide();
+      $("#btn-results-modal").show();
 
       btnResultsModal.addEventListener("click", game.clickBtnResultsModal)
     },
@@ -312,17 +316,14 @@ $(document).ready(function() {
     // Continue the game by starting a new game round to the level up
     getLevelUp: function() {
       game.clickCardHandlers();
-      $("#resultsModal").modal("toggle");
-      $(".initWrapper").hide();
+      $("#results-modal").modal("toggle");
+      $(".init-wrapper").hide();
       game.getHeaderDetails();
-      $(".informationDetails").show();
+      $(".information-details").show();
 
       game.resetTime();
       game.resetMoves();
-      game.displayGameLevel(game.gameLevel);
-      game.cardFigures = game.getCardFigures(game.gameLevel);
-      game.shuffleCards();
-      game.getImagesloaded();
+      game.getDeckOfCard(game.gameLevel);
     },
 
     // Display the game level
@@ -365,6 +366,16 @@ $(document).ready(function() {
           "https://placeimg.com/200/200/" + game.imgCategory + "/" + i;
       }
     },
+
+    // Get the deck of cards according to the game level
+    getDeckOfCard: function(level) {
+      game.gameLevel = level;
+      game.displayGameLevel(game.gameLevel);
+      game.cardFigures = game.getCardFigures(game.gameLevel);
+      game.getDeckOfCardsLayout();
+      game.shuffleCards();
+      game.getImagesloaded();
+    }
   };
 
   game.init();
