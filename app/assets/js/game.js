@@ -24,6 +24,7 @@ $(document).ready(function() {
     // Event listener BtnStartModal click
     // Open the start modal
     clickBtnStartModal: function() {
+      window.scrollTo(0,0);
       $("#start-modal").modal({
         backdrop: "static",
         keyboard: false,
@@ -55,6 +56,7 @@ $(document).ready(function() {
     // Event listener BtnResultsModal click
     // Display the result modal according to the game level
     clickBtnResultsModal: function() {
+      window.scrollTo(0,0);
       $("#results-modal").modal({
         backdrop: "static",
         keyboard: false,
@@ -176,16 +178,12 @@ $(document).ready(function() {
       switch (gameLevel) {
         case (1):
           return (game.cardFigures = [1, 2, 3, 1, 2, 3]);
-          // return (game.cardFigures = [1, 1]);
         case (2):
           return (game.cardFigures = [1, 2, 3, 4, 1, 2, 3, 4]);
-          // return (game.cardFigures = [1, 1]);
         case (3):
           return (game.cardFigures = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
-          // return (game.cardFigures = [1, 1]);
         default:
           return (game.cardFigures = [1, 2, 3, 1, 2, 3]);
-          // return (game.cardFigures = [1, 1]);
       }
     },
 
@@ -305,10 +303,10 @@ $(document).ready(function() {
     // Once all cards are paired, pop up your results: player name, level,
     // time and moves it took to finish the game round
     getResults: function() {
-      window.scrollTo(0,0);
       $(".information-details").hide();
       $("h1").hide();
       $(".init-wrapper").show();
+      $("#card-details").empty();
       $("#btn-start-modal").hide();
       $("#btn-results-modal").show();
 
