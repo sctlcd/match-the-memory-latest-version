@@ -113,9 +113,9 @@ body {
   border-radius: 4px;
   position: relative;
   width: 500px;
-  max-width: 90%;
+  max-width: 82%;
   background: #1f1740;
-  padding: 1em 2em;
+  padding: 1em;
 }
 
 .modal-content h3 {
@@ -365,14 +365,22 @@ footer a:hover {
     margin-left: 10px;
   }
 
+  #btn-results-modal,
   #btn-start-modal {
-    /* font-size: 12px; */
+    font-size: 14px;
   }
 
-  .modal-body form {
+  .modal-body {
     font-size: 12px;
   }
 
+  form input#player-name.player-name {
+    font-size: 10px;
+  }
+
+  .btn-secondary,
+  #btn-level-up,
+  #btn-play-again,
   #btn-start-game {
     font-size: 12px;
   }
@@ -421,14 +429,22 @@ footer a:hover {
     margin-left: 10px;
   }
 
+  #btn-results-modal,
   #btn-start-modal {
-    /* font-size: 12px; */
+    font-size: 18px;
   }
 
-  .modal-body form {
+  .modal-body {
     font-size: 12px;
   }
 
+  form input#player-name.player-name {
+    font-size: 10px;
+  }
+
+  .btn-secondary,
+  #btn-level-up,
+  #btn-play-again,
   #btn-start-game {
     font-size: 12px;
   }
@@ -476,16 +492,24 @@ footer a:hover {
     margin-left: 15px;
   }
 
+  #btn-results-modal,
   #btn-start-modal {
-    /* font-size: 12px; */
+    font-size: 22px;
   }
 
-  .modal-body form {
+  .modal-body {
+    font-size: 14px;
+  }
+
+  form input#player-name.player-name {
     font-size: 12px;
   }
 
+  .btn-secondary,
+  #btn-level-up,
+  #btn-play-again,
   #btn-start-game {
-    /* font-size: 12px; */
+    font-size: 14px;
   }
 
   .modal-content h3 {
@@ -530,20 +554,32 @@ footer a:hover {
     margin-left: 20px;
   }
 
+  #btn-results-modal,
   #btn-start-modal {
-    /* font-size: 16px; */
+    font-size: 28px;
   }
 
-  .modal-body form {
+  .modal-body {
     font-size: 16px;
   }
 
+  form input#player-name.player-name {
+    font-size: 14px;
+  }
+
+  .btn-secondary,
+  #btn-level-up,
+  #btn-play-again,
   #btn-start-game {
-    /* font-size: 16px; */
+    font-size: 16px;
   }
 
   .modal-content h3 {
     font-size: 28px;
+  }
+
+  .modal-content {
+    max-width: 90%;
   }
 }
 
@@ -584,20 +620,32 @@ footer a:hover {
     margin-left: 30px;
   }
 
+  #btn-results-modal,
   #btn-start-modal {
-    /* font-size: 18px; */
+    font-size: 32px;
   }
 
-  .modal-body form {
+  .modal-body {
     font-size: 18px;
   }
 
+  form input#player-name.player-name {
+    font-size: 16px;
+  }
+
+  .btn-secondary,
+  #btn-level-up,
+  #btn-play-again,
   #btn-start-game {
-    /* font-size: 18px; */
+    font-size: 18px;
   }
 
   .modal-content h3 {
     font-size: 30px;
+  }
+
+  .modal-content {
+    max-width: 100%;
   }
 }
 
@@ -638,23 +686,31 @@ footer a:hover {
     margin-left: 40px;
   }
 
+  #btn-results-modal,
   #btn-start-modal {
-    /* font-size: 20px; */
+    font-size: 36px;
   }
 
-  .modal-body form {
-    font-size: 20px;
+  .modal-body {
+    font-size: 18px;
   }
 
   form input#player-name.player-name {
     font-size: 16px;
   }
 
+  .btn-secondary,
+  #btn-level-up,
+  #btn-play-again,
   #btn-start-game {
-    /* font-size: 20px; */
+    font-size: 18px;
   }
 
   .modal-content h3 {
     font-size: 32px;
+  }
+
+  .modal-content {
+    max-width: 100%;
   }
 }
