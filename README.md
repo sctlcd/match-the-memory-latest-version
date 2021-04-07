@@ -405,6 +405,7 @@ Sources of the images used on this site:
 - From images sub-directory - [Github](https://github.com/sctlcd/match-the-memory-latest-version/tree/master/app/assets/images)
 	- city-art-los-angeles-street-art-min.jpg - [Pexel | copyright ᒷ⟁⨃.ᖇ.ᕮ.∥.ᕮ](https://www.pexels.com/photo/city-art-los-angeles-street-art-2334805/)
 	- photo-of-multicolored-illustration-min.jpg - [Pexel | copyright Anni Roenkae](https://www.pexels.com/photo/photo-of-multicolored-illustration-2832382/)
+	- favicon.ico - [Flaticon](https://www.flaticon.com/free-icon/memory_2665733?term=memory%20game&related_id=2665733) | copyright [Freepik](https://www.freepik.com)
 
 	Back to [top](#TableOfContents)
 
