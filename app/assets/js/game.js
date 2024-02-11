@@ -265,9 +265,16 @@ $(document).ready(function() {
     // randomly generated from https://placeimg.com
     flipCard: function(card) {
       card.addClass("visible");
+      // card.css({
+      //   "background-image": 'url("https://placeimg.com/200/200/' +
+      //     game.imgCategory +
+      //     "/" +
+      //     card.data("cardFigure") +
+      //     '")',
+      // });
       card.css({
-        "background-image": 'url("https://placeimg.com/200/200/' +
-          game.imgCategory +
+        "background-image": 'url("https://loremflickr.com/200/200' +
+          // game.imgCategory +
           "/" +
           card.data("cardFigure") +
           '")',
